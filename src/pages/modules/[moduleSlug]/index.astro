@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import InterviewPanel from "../../../components/InterviewPanel.astro";
 import { getCollection, render } from "astro:content";
 
 const { moduleSlug } = Astro.params;
@@ -16,6 +17,12 @@ const lessons = (await getCollection("lessons"))
 const lessonSlug = (id: string) => id.split("/").pop()!;
 const num = String(module.data.number).padStart(2, "0");
 const firstLesson = lessons[0];
+
+// Prior modules for interview callbacks
+const priorModules = modules
+  .filter((m) => m.data.number < module.data.number)
+  .sort((a, b) => a.data.number - b.data.number);
+const priorModuleTitles = priorModules.map((m) => m.data.title);
 ---
 
 <BaseLayout title={`${module.data.title} — VialLogic Learn`} description={module.data.summary}>
@@ -142,3 +149,9 @@ const firstLesson = lessons[0];
     if (label) label.textContent = "Review module";
   }
 </script>
+
+<InterviewPanel
+  moduleNumber={module.data.number}
+  moduleTitle={module.data.title}
+  priorModuleTitles={priorModuleTitles}
+/>

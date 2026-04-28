@@ -1,0 +1,405 @@
+---
+interface Props {
+    moduleNumber: number;
+    moduleTitle: string;
+    priorModuleTitles: string[];
+}
+const { moduleNumber, moduleTitle, priorModuleTitles } = Astro.props;
+const passThreshold = moduleNumber <= 2 ? 6 : 7;
+---
+
+<section class="border-t border-border mt-16 pt-12" id="interview-section">
+    <div class="max-w-[var(--container-wide)] mx-auto px-6">
+
+        <!-- Entry point -->
+        <div id="interview-entry" class="text-center py-12 rounded-2xl border border-border bg-card">
+            <div class="w-12 h-12 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center mx-auto mb-4">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="text-cyan"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+            </div>
+            <h2 class="text-[22px] font-bold text-text mb-2">Module Interview</h2>
+            <p class="text-text-muted text-[15px] max-w-md mx-auto mb-2">
+                Dr. Harmon will interview you on <strong class="text-text">{moduleTitle}</strong> in a podcast-style conversation.
+                Show you can actually explain the material — not just recite it.
+            </p>
+            <p class="text-text-faint text-[13px] mb-8">~8 minutes · Required to advance · Retry anytime</p>
+            <button
+                id="start-interview-btn"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-cyan text-bg font-semibold text-[15px] hover:bg-cyan/90 transition-colors"
+            >
+                Start Interview
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+        </div>
+
+        <!-- Chat panel (hidden until started) -->
+        <div id="interview-panel" class="hidden rounded-2xl border border-border bg-card overflow-hidden">
+
+            <!-- Header -->
+            <div class="flex items-center justify-between px-5 py-4 border-b border-border bg-elevated">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                    </div>
+                    <div>
+                        <div class="text-[13px] font-semibold text-text">Dr. Harmon · The VialLogic Podcast</div>
+                        <div id="interview-status" class="text-[11px] text-text-muted">Module {moduleNumber}: {moduleTitle}</div>
+                    </div>
+                </div>
+                <div id="pause-badge" class="hidden items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[11px] font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                    PAUSED
+                </div>
+            </div>
+
+            <!-- Messages -->
+            <div id="messages" class="flex flex-col gap-4 p-5 min-h-[340px] max-h-[520px] overflow-y-auto"></div>
+
+            <!-- Typing indicator -->
+            <div id="typing-indicator" class="hidden px-5 pb-3">
+                <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-cyan"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/></svg>
+                    </div>
+                    <div class="flex gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-text-muted animate-bounce" style="animation-delay:0ms"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-text-muted animate-bounce" style="animation-delay:150ms"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-text-muted animate-bounce" style="animation-delay:300ms"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input -->
+            <div id="input-area" class="border-t border-border p-4 flex gap-3">
+                <textarea
+                    id="user-input"
+                    placeholder="Your answer…"
+                    rows="2"
+                    class="flex-1 resize-none bg-elevated border border-border rounded-lg px-4 py-2.5 text-[14px] text-text placeholder:text-text-muted focus:outline-none focus:border-cyan transition-colors leading-relaxed"
+                ></textarea>
+                <button
+                    id="send-btn"
+                    class="flex-shrink-0 self-end px-4 py-2.5 rounded-lg bg-cyan text-bg font-semibold text-[13px] hover:bg-cyan/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                    Send
+                </button>
+            </div>
+        </div>
+
+        <!-- Score card (hidden until evaluation) -->
+        <div id="score-card" class="hidden rounded-2xl border overflow-hidden">
+            <div id="score-header" class="px-6 py-5 text-center">
+                <div id="score-result-icon" class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3"></div>
+                <div id="score-result-label" class="text-[22px] font-bold mb-1"></div>
+                <div id="score-result-sub" class="text-[14px] text-text-muted"></div>
+            </div>
+            <div class="px-6 py-6 bg-card space-y-6">
+                <!-- Score bars -->
+                <div id="score-bars" class="space-y-4"></div>
+                <!-- Feedback -->
+                <div>
+                    <div class="text-[10px] uppercase tracking-[0.12em] font-bold text-text-muted mb-2">Dr. Harmon's Notes</div>
+                    <p id="score-feedback" class="text-[14px] text-text-dim leading-relaxed"></p>
+                </div>
+                <!-- Review topics -->
+                <div id="review-topics-block" class="hidden">
+                    <div class="text-[10px] uppercase tracking-[0.12em] font-bold text-text-muted mb-2">Suggested Review</div>
+                    <ul id="review-topics-list" class="space-y-1"></ul>
+                </div>
+                <!-- Actions -->
+                <div id="score-actions" class="flex gap-3 pt-2"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script define:vars={{ moduleNumber, moduleTitle, priorModuleTitles, passThreshold }}>
+
+const conversationHistory = [];
+let isStreaming = false;
+let isPaused = false;
+let interviewDone = false;
+
+// ── Elements ──────────────────────────────────────────────────────────────
+const entryEl      = document.getElementById('interview-entry');
+const panelEl      = document.getElementById('interview-panel');
+const messagesEl   = document.getElementById('messages');
+const inputEl      = document.getElementById('user-input');
+const sendBtn      = document.getElementById('send-btn');
+const typingEl     = document.getElementById('typing-indicator');
+const pauseBadge   = document.getElementById('pause-badge');
+const scoreCard    = document.getElementById('score-card');
+const statusEl     = document.getElementById('interview-status');
+
+// ── Start ─────────────────────────────────────────────────────────────────
+document.getElementById('start-interview-btn').addEventListener('click', () => {
+    entryEl.classList.add('hidden');
+    panelEl.classList.remove('hidden');
+    sendToHarmon();
+});
+
+// ── Send ──────────────────────────────────────────────────────────────────
+sendBtn.addEventListener('click', sendUserMessage);
+inputEl.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendUserMessage(); }
+});
+
+function sendUserMessage() {
+    const text = inputEl.value.trim();
+    if (!text || isStreaming || interviewDone) return;
+    inputEl.value = '';
+    appendMessage('user', text);
+    conversationHistory.push({ role: 'user', content: text });
+    sendToHarmon();
+}
+
+// ── API call + streaming ──────────────────────────────────────────────────
+async function sendToHarmon() {
+    isStreaming = true;
+    sendBtn.disabled = true;
+    inputEl.disabled = true;
+    typingEl.classList.remove('hidden');
+    scrollToBottom();
+
+    let fullText = '';
+    const msgEl = createStreamingBubble();
+
+    try {
+        const res = await fetch('/api/interview', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                messages: conversationHistory,
+                moduleNumber,
+                priorModuleTitles,
+            }),
+        });
+
+        typingEl.classList.add('hidden');
+
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop();
+
+            for (const line of lines) {
+                if (!line.startsWith('data: ')) continue;
+                const payload = line.slice(6).trim();
+                if (payload === '[DONE]') break;
+                try {
+                    const { text } = JSON.parse(payload);
+                    if (text) {
+                        fullText += text;
+                        updateStreamingBubble(msgEl, fullText);
+                        scrollToBottom();
+                    }
+                } catch {}
+            }
+        }
+    } catch (err) {
+        typingEl.classList.add('hidden');
+        appendMessage('system', 'Connection error — please refresh and try again.');
+    }
+
+    // Process completed message
+    const displayText = processMarkers(fullText);
+    finalizeStreamingBubble(msgEl, displayText);
+
+    conversationHistory.push({ role: 'assistant', content: fullText });
+
+    // Check for evaluation block
+    const evalMatch = fullText.match(/\[EVALUATE\]\s*(\{[\s\S]*\})/);
+    if (evalMatch) {
+        interviewDone = true;
+        try {
+            const result = JSON.parse(evalMatch[1]);
+            renderScoreCard(result);
+        } catch {
+            appendMessage('system', 'Could not parse evaluation. Please retry the interview.');
+        }
+        hideInputArea();
+    }
+
+    isStreaming = false;
+    if (!interviewDone) {
+        sendBtn.disabled = false;
+        inputEl.disabled = false;
+        inputEl.focus();
+    }
+    scrollToBottom();
+}
+
+// ── Marker processing ─────────────────────────────────────────────────────
+function processMarkers(text) {
+    // Remove [EVALUATE] block from display
+    text = text.replace(/\[EVALUATE\][\s\S]*$/, '').trim();
+
+    // Detect pause
+    if (/let me pause the interview/i.test(text)) {
+        isPaused = true;
+        pauseBadge.classList.remove('hidden');
+        pauseBadge.classList.add('flex');
+        statusEl.textContent = 'Interview paused';
+    }
+
+    // Detect resume
+    if (/ready to (continue|pick back up)/i.test(text)) {
+        isPaused = false;
+        pauseBadge.classList.add('hidden');
+        pauseBadge.classList.remove('flex');
+        statusEl.textContent = `Module ${moduleNumber}: ${moduleTitle}`;
+    }
+
+    return text;
+}
+
+// ── DOM helpers ───────────────────────────────────────────────────────────
+function appendMessage(role, text) {
+    const wrap = document.createElement('div');
+    wrap.className = role === 'user'
+        ? 'flex justify-end'
+        : role === 'system'
+        ? 'flex justify-center'
+        : 'flex justify-start';
+
+    if (role === 'system') {
+        wrap.innerHTML = `<span class="text-[12px] text-text-faint italic">${escHtml(text)}</span>`;
+    } else if (role === 'user') {
+        wrap.innerHTML = `
+            <div class="max-w-[75%] px-4 py-3 rounded-2xl rounded-tr-sm bg-cyan/10 border border-cyan/20 text-[14px] text-text leading-relaxed whitespace-pre-wrap">
+                ${escHtml(text)}
+            </div>`;
+    } else {
+        wrap.innerHTML = harmonBubble(escHtml(text));
+    }
+
+    messagesEl.appendChild(wrap);
+    return wrap;
+}
+
+function harmonBubble(html) {
+    return `
+        <div class="flex items-start gap-2.5 max-w-[85%]">
+            <div class="w-7 h-7 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-cyan"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+            </div>
+            <div class="px-4 py-3 rounded-2xl rounded-tl-sm bg-elevated border border-border text-[14px] text-text leading-relaxed whitespace-pre-wrap">${html}</div>
+        </div>`;
+}
+
+function createStreamingBubble() {
+    const wrap = document.createElement('div');
+    wrap.className = 'flex justify-start';
+    wrap.innerHTML = harmonBubble('');
+    messagesEl.appendChild(wrap);
+    return wrap;
+}
+
+function updateStreamingBubble(el, text) {
+    const display = text.replace(/\[EVALUATE\][\s\S]*$/, '').trim();
+    const bubble = el.querySelector('.px-4');
+    if (bubble) bubble.textContent = display;
+}
+
+function finalizeStreamingBubble(el, text) {
+    const bubble = el.querySelector('.px-4');
+    if (bubble) bubble.textContent = text;
+}
+
+function hideInputArea() {
+    document.getElementById('input-area').classList.add('hidden');
+}
+
+function scrollToBottom() {
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+function escHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Score card ────────────────────────────────────────────────────────────
+function renderScoreCard(result) {
+    panelEl.classList.add('hidden');
+    scoreCard.classList.remove('hidden');
+
+    const passed = result.passed;
+    const header = document.getElementById('score-header');
+    const icon   = document.getElementById('score-result-icon');
+    const label  = document.getElementById('score-result-label');
+    const sub    = document.getElementById('score-result-sub');
+
+    if (passed) {
+        header.classList.add('bg-emerald/5', 'border-emerald/20');
+        scoreCard.classList.add('border-emerald/20');
+        icon.classList.add('bg-emerald/10', 'border', 'border-emerald/20');
+        icon.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-emerald"><polyline points="20 6 9 17 4 12"/></svg>`;
+        label.textContent = 'Interview Passed';
+        label.classList.add('text-emerald');
+        sub.textContent = 'You demonstrated solid understanding of this module.';
+    } else {
+        header.classList.add('bg-rose-500/5', 'border-rose-500/20');
+        scoreCard.classList.add('border-rose-500/20');
+        icon.classList.add('bg-rose-500/10', 'border', 'border-rose-500/20');
+        icon.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-rose-400"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
+        label.textContent = 'Not Quite Yet';
+        label.classList.add('text-rose-400');
+        sub.textContent = `Review the suggested lessons and try again — pass requires ${passThreshold}/10 on all three.`;
+    }
+
+    // Score bars
+    const bars = document.getElementById('score-bars');
+    const scores = [
+        { label: 'Accuracy', key: 'accuracy', desc: 'Factual correctness' },
+        { label: 'Depth', key: 'depth', desc: 'Mechanism understanding' },
+        { label: 'Fluency', key: 'fluency', desc: 'Handled follow-ups' },
+    ];
+    bars.innerHTML = scores.map(s => {
+        const val = result[s.key] ?? 0;
+        const pct = (val / 10) * 100;
+        const color = val >= passThreshold ? 'bg-emerald' : val >= passThreshold - 2 ? 'bg-amber-400' : 'bg-rose-400';
+        return `
+            <div>
+                <div class="flex justify-between items-baseline mb-1.5">
+                    <span class="text-[13px] font-medium text-text">${s.label}</span>
+                    <span class="text-[12px] font-mono text-text-dim">${val}/10</span>
+                </div>
+                <div class="h-2 rounded-full bg-elevated overflow-hidden">
+                    <div class="h-full rounded-full ${color} transition-all" style="width:${pct}%"></div>
+                </div>
+                <div class="text-[11px] text-text-faint mt-1">${s.desc}</div>
+            </div>`;
+    }).join('');
+
+    // Feedback
+    document.getElementById('score-feedback').textContent = result.feedback || '';
+
+    // Review topics
+    if (result.review_topics?.length > 0) {
+        const block = document.getElementById('review-topics-block');
+        const list  = document.getElementById('review-topics-list');
+        block.classList.remove('hidden');
+        list.innerHTML = result.review_topics.map(t => `
+            <li class="flex items-center gap-2 text-[13px] text-text-dim">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400 flex-shrink-0"><polyline points="9 18 15 12 9 6"/></svg>
+                ${escHtml(t)}
+            </li>`).join('');
+    }
+
+    // Actions
+    const actions = document.getElementById('score-actions');
+    actions.innerHTML = `
+        <button onclick="location.reload()" class="flex-1 py-2.5 rounded-lg border border-border text-text-dim hover:text-text hover:border-border-light transition-colors text-[13px] font-medium">
+            ${passed ? 'Retry Interview' : 'Try Again'}
+        </button>
+        ${passed ? `<a href="/" class="flex-1 py-2.5 rounded-lg bg-cyan text-bg font-semibold text-[13px] text-center hover:bg-cyan/90 transition-colors">Back to Course →</a>` : ''}
+    `;
+}
+
+</script>
