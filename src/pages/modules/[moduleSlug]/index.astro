@@ -2,17 +2,13 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
 
-export async function getStaticPaths() {
-  const modules = await getCollection("modules");
-  return modules.map((m) => ({
-    params: { moduleSlug: m.id },
-    props: { module: m },
-  }));
-}
+const { moduleSlug } = Astro.params;
 
-const { module } = Astro.props;
+const modules = await getCollection("modules");
+const module = modules.find((m) => m.id === moduleSlug);
+if (!module) return Astro.redirect("/");
+
 const { Content } = await render(module);
-const moduleSlug = module.id;
 const lessons = (await getCollection("lessons"))
   .filter((l) => l.data.module === moduleSlug)
   .sort((a, b) => a.data.order - b.data.order);
@@ -136,7 +132,6 @@ const firstLesson = lessons[0];
   if (cEl) cEl.textContent = String(count);
   if (bEl && total) bEl.style.width = `${(count / total) * 100}%`;
 
-  // CTA: change "Begin module" to "Continue" + jump to first incomplete
   if (count > 0 && count < total && firstIncomplete) {
     const cta = document.querySelector<HTMLAnchorElement>("[data-start-cta]");
     const label = document.querySelector("[data-start-label]");

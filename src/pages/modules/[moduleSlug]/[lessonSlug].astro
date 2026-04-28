@@ -2,21 +2,16 @@
 import LessonLayout from "../../../layouts/LessonLayout.astro";
 import { getCollection, render } from "astro:content";
 
-export async function getStaticPaths() {
-  const modules = await getCollection("modules");
-  const lessons = await getCollection("lessons");
-  return lessons.map((lesson) => {
-    const module = modules.find((m) => m.id === lesson.data.module);
-    if (!module) throw new Error(`Lesson "${lesson.id}" references missing module "${lesson.data.module}"`);
-    const slug = lesson.id.split("/").pop()!;
-    return {
-      params: { moduleSlug: module.id, lessonSlug: slug },
-      props: { module, lesson },
-    };
-  });
-}
+const { moduleSlug, lessonSlug } = Astro.params;
 
-const { module, lesson } = Astro.props;
+const modules = await getCollection("modules");
+const module = modules.find((m) => m.id === moduleSlug);
+if (!module) return Astro.redirect("/");
+
+const lessons = await getCollection("lessons");
+const lesson = lessons.find((l) => l.id === `${moduleSlug}/${lessonSlug}`);
+if (!lesson) return Astro.redirect(`/modules/${moduleSlug}`);
+
 const { Content } = await render(lesson);
 ---
 
