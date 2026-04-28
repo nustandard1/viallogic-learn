@@ -1,0 +1,25 @@
+---
+interface Props {
+  type?: "info" | "warning" | "key" | "caution";
+  title?: string;
+}
+const { type = "info", title } = Astro.props;
+
+const styles = {
+  info:    { bg: "bg-cyan/[0.04]",    border: "border-cyan/20",    accent: "text-cyan",    label: "Note" },
+  key:     { bg: "bg-purple/[0.04]",  border: "border-purple/20",  accent: "text-purple",  label: "Key Concept" },
+  warning: { bg: "bg-amber/[0.04]",   border: "border-amber/20",   accent: "text-amber",   label: "Important" },
+  caution: { bg: "bg-rose/[0.04]",    border: "border-rose/20",    accent: "text-rose",    label: "Caution" },
+};
+const s = styles[type];
+const displayTitle = title ?? s.label;
+---
+
+<aside class={`not-prose my-7 rounded-lg border ${s.border} ${s.bg} px-5 py-4`}>
+  <div class={`text-[10px] uppercase tracking-[0.12em] font-bold ${s.accent} mb-1.5`}>
+    {displayTitle}
+  </div>
+  <div class="text-[14.5px] text-text-dim leading-relaxed [&>p]:m-0 [&>p+p]:mt-2">
+    <slot />
+  </div>
+</aside>

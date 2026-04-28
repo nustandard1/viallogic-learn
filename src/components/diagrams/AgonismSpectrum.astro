@@ -1,0 +1,49 @@
+---
+interface Item { label: string; level: number; example?: string; color?: string; }
+interface Props {
+  items: Item[];
+  caption?: string;
+}
+const { items, caption } = Astro.props;
+---
+
+<figure class="not-prose my-10 rounded-xl border border-border bg-card overflow-hidden">
+  <header class="px-6 py-4 border-b border-border bg-elevated/40">
+    <div class="text-[10px] uppercase tracking-[0.14em] font-bold text-cyan">Receptor Activation Spectrum</div>
+    <div class="text-[15px] font-semibold text-text mt-0.5">From inverse agonist to full agonist</div>
+  </header>
+
+  <div class="p-6 space-y-3">
+    {items.map((it) => {
+      const pct = Math.max(-100, Math.min(100, it.level));
+      const fromZero = pct >= 0;
+      const widthPct = Math.abs(pct);
+      const startPct = fromZero ? 50 : 50 - widthPct / 2;
+      const color = it.color ?? (fromZero ? "#00d4ff" : "#f43f5e");
+      return (
+        <div class="grid grid-cols-[140px_1fr_auto] items-center gap-4">
+          <div class="text-[13px] font-medium text-text">{it.label}</div>
+          <div class="relative h-7 rounded-md bg-bg/50 border border-border">
+            <div class="absolute top-0 bottom-0 w-px bg-text-faint" style="left:50%"></div>
+            <div class="absolute top-0 bottom-0 rounded-sm transition-all" style={`left:${fromZero ? 50 : startPct}%;width:${widthPct/2}%;background:${color};opacity:0.85`}></div>
+          </div>
+          <div class="text-[11px] font-mono text-text-muted text-right w-16">{pct >= 0 ? "+" : ""}{pct}%</div>
+          {it.example && <div class="col-span-3 -mt-1 text-[12px] text-text-muted italic ml-[156px]">{it.example}</div>}
+        </div>
+      );
+    })}
+    <div class="grid grid-cols-[140px_1fr_auto] gap-4 pt-2 border-t border-border">
+      <div></div>
+      <div class="relative">
+        <div class="flex justify-between text-[10px] font-mono text-text-faint">
+          <span>−100% (inverse)</span>
+          <span>0 (baseline)</span>
+          <span>+100% (full)</span>
+        </div>
+      </div>
+      <div class="w-16"></div>
+    </div>
+  </div>
+
+  {caption && <figcaption class="px-6 py-3 border-t border-border text-[12px] text-text-muted">{caption}</figcaption>}
+</figure>

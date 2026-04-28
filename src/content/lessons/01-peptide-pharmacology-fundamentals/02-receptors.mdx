@@ -1,0 +1,56 @@
+---
+module: "01-peptide-pharmacology-fundamentals"
+order: 2
+title: Receptors — how a peptide talks to a cell
+summary: Why peptides can't enter cells, and the two receptor families that handle nearly every peptide drug.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import ReceptorDiagram from "../../../components/diagrams/ReceptorDiagram.astro";
+
+A peptide circulating in your blood does nothing on its own. It has no power to break down fat, repair a tendon, or trigger growth hormone release. It needs to find a *doorway* — and the doorway is called a <Term id="receptor">receptor</Term>.
+
+(Quick vocabulary note: any molecule that binds a receptor is called a <Term id="ligand">**ligand**</Term> — it's a generic word you'll see throughout the course. The peptide is the ligand; the receptor is its target.)
+
+## Why peptides talk through the membrane, not across it
+
+Peptides are too big and too charged to slip through a cell membrane. The membrane is a thin layer of fat (phospholipids) — small, fat-soluble molecules cross it easily, but a peptide carrying a string of *polar* (water-loving, charged) amino acids does not.
+
+So peptide receptors live on the **cell surface**. One end of the receptor sticks out into the bloodstream (where the peptide can bind it). The other end faces inward (where it can talk to the cell's machinery). The peptide never enters the cell. It only flips a switch on the outside.
+
+<Callout type="info" title="The lock-and-key picture is half right">
+The classic textbook image is "lock and key" — the ligand fits the receptor like a key fits a lock. The truer picture is **induced fit**: the receptor and the ligand are both flexible, and binding involves a small mutual reshape. This matters because it explains how some molecules can bind a receptor without fully activating it. They fit the slot — but not perfectly enough to trigger the full conformational change. That's the seed of the agonist/antagonist distinction we'll cover in lesson 5.
+</Callout>
+
+## Two receptor families do nearly all the work
+
+The peptide world is dominated by two architectures. Knowing which one a peptide targets tells you a lot about what to expect.
+
+<ReceptorDiagram />
+
+**GPCRs (G-protein coupled receptors)** — a single protein that snakes back and forth across the membrane seven times. Ligand binding on the outside causes a small twist; the inside end then activates a "G-protein," which kicks off a cascade. About a third of all FDA-approved drugs target GPCRs. Most appetite, GH-axis, and metabolic peptides — GLP-1, GHRH, GHRPs, somatostatin — work here.
+
+**RTKs (receptor tyrosine kinases)** — different architecture. Two receptor copies sit in the membrane separately. When a ligand binds, it bridges them so they pair up (a process called *dimerization*), and each copy <Term id="phosphorylation">phosphorylates</Term> the other — meaning it tags specific spots on the partner with a phosphate group, the cell's most common on/off switch. The phosphorylated receptor is the activated one. Insulin and IGF-1 are the canonical ligands. This is the family that drives long-term growth and proliferation.
+
+GPCRs and RTKs cover the vast majority of what you'll see in this course.
+
+## Three terms you need to keep straight
+
+You'll hear these constantly. They are not synonyms.
+
+- <Term id="affinity">**Affinity**</Term> — how *tightly* a ligand binds. Measured by *Kd* or *EC50*. Lower number = tighter binding.
+- <Term id="selectivity">**Selectivity**</Term> — how much it *prefers* one receptor over similar ones. Selective = hits one target. Promiscuous = hits several.
+- <Term id="potency">**Potency**</Term> — how *little* drug you need for an effect. A function of both affinity *and* how efficiently the receptor signals once bound.
+
+A drug can have high affinity for the wrong receptor (selective for trouble). A drug can have high potency without especially high affinity (a small amount triggers a strong cascade). When a manufacturer says a peptide is "more potent" than an alternative, the right question is: *for which receptor, and at what dose?*
+
+<Checkpoint number={1}>
+<span slot="question">Why can't peptide drugs target nuclear receptors the way steroids do?</span>
+
+Nuclear receptors live *inside* the cell — many in the cytoplasm, some in the nucleus. The ligand has to physically get in there to bind them. Steroid hormones (testosterone, cortisol, estrogen) are small and fat-soluble, so they cross the cell membrane easily. Peptides cannot. This is why the entire peptide world is built around membrane receptors (GPCRs and RTKs) rather than nuclear ones — the architecture is forced by the molecule's chemistry, not by choice.
+</Checkpoint>
+
+So far we have a key, and a lock on the outside of the cell. Next: what actually happens *inside* the cell once the lock turns. This is the cascade — and it's where the real amplification happens.

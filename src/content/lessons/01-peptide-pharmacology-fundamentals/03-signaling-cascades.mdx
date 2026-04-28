@@ -1,0 +1,95 @@
+---
+module: "01-peptide-pharmacology-fundamentals"
+order: 3
+title: Signaling cascades — what happens after binding
+summary: How a single molecule binding outside the cell triggers millions of downstream events inside.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import CascadeFlow from "../../../components/diagrams/CascadeFlow.astro";
+
+Receptor binding is step one. What happens *next* — the cascade inside the cell — is what determines the actual biological effect. And it's where the most important fact about peptide pharmacology hides:
+
+**One peptide molecule binding one receptor can trigger thousands of downstream events.**
+
+The original signal gets amplified roughly a million-fold by the time it reaches the nucleus. This is why peptides work at vanishingly small doses — micrograms, sometimes nanograms. You're not delivering a payload, you're flipping a switch that the cell amplifies for you.
+
+## The three cascades that cover almost everything
+
+There are dozens of signaling pathways in biology. For peptides, three do most of the work.
+
+### 1. The cAMP pathway (Gs-coupled GPCRs)
+
+This is the classic endocrine cascade. GHRH uses it. Glucagon uses it. Many hormone-releasing peptides use it.
+
+<CascadeFlow
+  title="cAMP / PKA pathway"
+  trigger="GHRH binds GHRH receptor"
+  color="cyan"
+  steps={[
+    { label: "Receptor activates Gαs", sub: "The G-protein alpha subunit dissociates and travels along the inner membrane." },
+    { label: "Gαs activates adenylyl cyclase", sub: "An enzyme that converts ATP into cyclic AMP." },
+    { label: "cAMP rises inside the cell", sub: "Acts as a 'second messenger' — diffuses freely, amplifies signal." },
+    { label: "cAMP activates PKA", sub: "Protein kinase A — an enzyme that tags other proteins with phosphate groups — switches on targets including the transcription factor CREB (a protein that turns specific genes on)." },
+  ]}
+  outcome="Gene expression changes + GH released from pituitary stores"
+  caption="The Gs/cAMP cascade is behind GHRH-driven growth-hormone release and most hormone-releasing endocrine peptides."
+/>
+
+When you see "raises intracellular <Term id="camp">cAMP</Term>" in a peptide write-up, this is what's happening.
+
+### 2. The Gq / calcium pathway
+
+Ipamorelin, GHRP-2, GHRP-6 — all the synthetic <Term id="ghrp">GHRPs</Term> — work through the ghrelin receptor, which is Gq-coupled. So does oxytocin, and many smooth-muscle and secretory peptides.
+
+<CascadeFlow
+  title="Gq / IP₃ / calcium pathway"
+  trigger="Ipamorelin binds the ghrelin receptor (GHSR)"
+  color="purple"
+  steps={[
+    { label: "Receptor activates Gαq", sub: "Different alpha subunit, different downstream enzyme." },
+    { label: "Gαq activates phospholipase C (PLC)", sub: "Cleaves the membrane lipid PIP₂ into two messengers: IP₃ and DAG." },
+    { label: "IP₃ releases Ca²⁺ from the ER", sub: "Calcium is the universal 'do something now' signal in cells." },
+    { label: "Ca²⁺ + DAG activate PKC", sub: "Protein kinase C drives the fusion of secretory vesicles — tiny storage sacs holding pre-made hormone — with the cell membrane." },
+  ]}
+  outcome="Stored growth hormone is physically released into circulation (a process called exocytosis)"
+  caption="The Gq/calcium cascade triggers immediate release of pre-stored hormone — the actual physical exocytosis event."
+/>
+
+### 3. The PI3K/Akt and MAPK pathways (RTKs)
+
+Insulin, IGF-1, and the long-term anabolic effects of GH all run through these. Receptor binding causes dimerization → autophosphorylation → recruitment of adapter proteins → branching into <Term id="pi3k-akt">PI3K/Akt</Term> (the protein-synthesis and growth arm, eventually feeding mTOR) and <Term id="mapk">MAPK/ERK</Term> (the proliferation and gene-expression arm).
+
+When people say a peptide is "anabolic," they usually mean — eventually, downstream — *this pathway gets triggered.*
+
+## The synergy that explains an entire protocol class
+
+Here's the lesson within the lesson, and the example you should remember whenever you read about a peptide stack.
+
+GHRH and GHRPs both drive growth hormone release from the **same pituitary cells**. But they work through **different cascades** — cAMP from GHRH (lesson 3.1), calcium from GHRPs (lesson 3.2). Combine them, and you get *synergy*, not addition: the cell releases more GH than either pathway alone could ever trigger.
+
+<Callout type="key" title="Why this matters">
+This single mechanism is the entire pharmacological justification for stacking CJC-1295 with ipamorelin. Two pathways, one cell, multiplied output. It's the difference between someone repeating a protocol they read on a forum and someone understanding *why* the protocol exists. We'll come back to this when we hit the GH Axis modules.
+</Callout>
+
+## A note on amplification
+
+Why does a single bound receptor produce a million-fold effect? Because each step amplifies:
+
+- One activated GPCR activates many G-proteins.
+- Each G-protein activates an enzyme that produces many second-messenger molecules.
+- Each second-messenger activates many <Term id="kinase">kinase</Term> molecules.
+- Each kinase <Term id="phosphorylation">phosphorylates</Term> many targets.
+
+The signal fans out at each layer. This is the technical reason **timing matters more than total dose** for many peptides — you're flipping a switch, and the cell does the rest.
+
+<Checkpoint number={1}>
+<span slot="question">If GHRH and GHRPs both cause GH release, why isn't one enough — why use both?</span>
+
+Because they activate different cascades inside the same cell. GHRH triggers the cAMP/PKA pathway (priming and gene expression for new GH). GHRPs trigger the Gq/calcium pathway (causing physical release of pre-stored GH). They aren't redundant — they hit different machinery. Run both at once and the cell releases substantially more GH than either pathway alone, because the synthesis side and the release side are both pushed simultaneously. This is why "stacking" CJC-1295 with ipamorelin isn't just additive — it's multiplicative, and it's the entire mechanistic point of the combination.
+</Checkpoint>
+
+We have a molecule, a receptor, and a cascade. Next: the half of pharmacology that determines protocols — what the body does *to* the peptide, and why every shot you'll ever read about is shaped by an enzyme called DPP-4.

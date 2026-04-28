@@ -1,0 +1,88 @@
+---
+module: "01-peptide-pharmacology-fundamentals"
+order: 4
+title: Pharmacokinetics — what the body does to the peptide
+summary: Why peptides aren't pills, why native molecules last minutes, and how engineering buys days or weeks of half-life.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import HalfLifeCurve from "../../../components/diagrams/HalfLifeCurve.astro";
+
+So far we've talked about what the peptide does *to* the body. The other half of pharmacology — and the half that determines protocol design — is what the body does *to* the peptide.
+
+This is <Term id="pharmacokinetics">pharmacokinetics</Term>, abbreviated **ADME**:
+
+- **A**bsorption — how the molecule gets into circulation
+- **D**istribution — where it goes
+- **M**etabolism — how it's broken down
+- **E**xcretion — how the breakdown products are removed
+
+For peptides, two of these dominate everything: **absorption** (because peptides are notoriously hard to get into the body) and **metabolism** (because the body destroys them remarkably fast).
+
+## Why peptides aren't pills
+
+Take a peptide orally and almost nothing reaches your bloodstream. The reasons are concrete:
+
+1. **Stomach acid** denatures the molecule — destroys its shape and breaks bonds.
+2. **Pancreatic and intestinal proteases** (trypsin, chymotrypsin, elastase, carboxypeptidases — enzymes whose job is to cut proteins) chop peptide bonds for a living.
+3. **Intestinal epithelium** is a tight membrane barrier — peptides don't cross passively.
+4. **First-pass hepatic metabolism** — whatever does cross goes straight to the liver, which clears most of it before it ever reaches general circulation.
+
+The result: oral <Term id="bioavailability">bioavailability</Term> for most peptides is **under 1%**. This is why peptides are usually injected. The shot isn't ritual — it's the only route that reliably delivers an intact molecule.
+
+The exceptions are real but engineered. Oral semaglutide (Rybelsus) achieves 0.4–1% bioavailability through a permeation-enhancer (SNAC) that briefly opens the stomach lining. Intranasal, sublingual, and transdermal routes work for select small peptides but require specialized formulation. Module 2 covers route in detail.
+
+## The central pharmacokinetic fact of the entire peptide world
+
+<Callout type="warning" title="Native peptide half-lives are shockingly short">
+Native GHRH: ~7 minutes. Native ghrelin: ~30 minutes. Native GLP-1: ~2 minutes. Native oxytocin: ~3 minutes.
+
+The body is *built* to break peptides down quickly. Plasma is full of peptidases — enzymes whose entire job is to cleave peptide bonds. Two are responsible for most of it: <Term id="dpp-4">DPP-4</Term> cleaves residues from the N-terminus of dozens of peptides, and neutral endopeptidase (NEP) cuts internally.
+</Callout>
+
+This is the reason peptide engineering exists. Almost every "modern" peptide drug is the natural molecule **plus modifications designed to evade these enzymes**:
+
+- **D-amino acid substitutions** at the cleavage site — DPP-4 only recognizes L-amino acids, so swapping in a mirror-image residue confuses the enzyme.
+- **N-methylation** of the peptide bond — changes the bond's geometry just enough to block recognition.
+- **<Term id="pegylation">PEGylation</Term>** — attaching a polyethylene glycol chain that physically shields the molecule.
+- **<Term id="lipidation">Lipidation</Term>** — attaching a fatty acid that lets the molecule bind <Term id="albumin">albumin</Term> (the most abundant protein in your blood, which has a 19-day half-life) and ride along it like a taxi. This is how semaglutide gets to a once-a-week dose.
+- **<Term id="dac">DAC</Term> (Drug Affinity Complex)** — the trick on CJC-1295: a reactive group that *covalently* (permanently, via a chemical bond) attaches itself to albumin in vivo. Half-life jumps from ~30 minutes to roughly a week.
+
+Each of these turns a 2-minute molecule into a 6-hour, 12-hour, or week-long molecule.
+
+## The trade-off you should never forget
+
+<HalfLifeCurve compounds={[
+  { name: "Sermorelin (native GHRH analog)", halfLife: "~10 min", halfLifeMin: 10 },
+  { name: "Ipamorelin", halfLife: "~2 hr", halfLifeMin: 120 },
+  { name: "Tesamorelin", halfLife: "~30 min (acute) / longer functional", halfLifeMin: 30 },
+  { name: "Semaglutide", halfLife: "~7 days", halfLifeMin: 7*24*60 },
+  { name: "CJC-1295 with DAC", halfLife: "~7 days", halfLifeMin: 7*24*60 },
+]} caption="Five compounds, plotted on a normalized time scale. Notice how flat the long-half-life curves are — that's continuous receptor exposure, not pulsatile signaling." />
+
+Engineering buys you half-life. But it costs you something subtle: the natural <Term id="pulsatility">pulsatility</Term> the body uses to talk to itself.
+
+The hypothalamus doesn't release GHRH continuously — it releases it in pulses, every few hours. The pituitary responds to *pulses*, not to a flat steady-state. Replace pulses with a constant signal and, over weeks, the system can blunt itself: receptors get desensitized (more on this next lesson), the pulse-generating circuitry gets quieter, and the response can actually drop.
+
+This is why short-half-life peptides like sermorelin are sometimes preferred over long ones like CJC-1295-with-DAC — not because more is worse, but because *flat* is sometimes worse than *pulsed*. We'll see this play out concretely in the GH Axis modules.
+
+## Half-life decides your protocol
+
+When you read about a peptide, half-life is one of the first numbers to look for. It tells you:
+
+- **Dosing frequency** — short half-life → multiple doses per day; long half-life → daily or weekly.
+- **Pulsatility vs. saturation** — short → mimics natural pulses; long → flattens them.
+- **Side-effect persistence** — long half-lives mean side effects also last longer once they appear. There's no "just stop and wait it out" with a 1-week molecule.
+
+A useful rule: after roughly **5 half-lives**, only ~3% of a dose remains. That's the convention for "out of the system" — even though trace amounts persist longer.
+
+<Checkpoint number={1}>
+<span slot="question">A peptide with a 30-minute half-life is given by daily injection. Why might this be a poor protocol design?</span>
+
+After 30 minutes, half the dose is gone. After 90 minutes, ~88% is gone. After 2.5 hours (5 half-lives), only ~3% remains. So a once-daily injection of a 30-minute molecule means receptors see the drug for maybe 2–3 hours, then nothing for 21+ hours. Either the drug needs multiple doses per day to maintain effect, or it needs an engineering modification (lipidation, PEG, DAC) to extend half-life into the daily-dosing range. This is the practical reason "native" GHRH was never a useful drug — and why every clinically used GH-axis peptide has at least one stability tweak.
+</Checkpoint>
+
+We have molecule, receptor, cascade, and clearance. Next: the spectrum between full activation and full block — and why some peptides are "cleaner" than others on the same target.

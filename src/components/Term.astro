@@ -1,0 +1,26 @@
+---
+import { glossary } from "../data/glossary";
+
+interface Props {
+  id: keyof typeof glossary | string;
+}
+const { id } = Astro.props;
+const entry = glossary[id as keyof typeof glossary];
+---
+
+{entry ? (
+  <span class="vl-term group relative inline-block cursor-help">
+    <span class="border-b border-dotted border-cyan/50 text-cyan/90"><slot>{entry.term}</slot></span>
+    <span class="vl-term-popover invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-opacity absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-30 w-72 rounded-lg border border-border-light bg-elevated shadow-2xl px-4 py-3 text-left">
+      <span class="block text-[11px] uppercase tracking-[0.12em] font-bold text-cyan mb-1">{entry.term}</span>
+      <span class="block text-[13px] text-text-dim leading-relaxed">{entry.short}</span>
+      {entry.long && <span class="block mt-1.5 pt-1.5 border-t border-border text-[12.5px] text-text-muted leading-relaxed">{entry.long}</span>}
+    </span>
+  </span>
+) : (
+  <slot>{id}</slot>
+)}
+
+<style>
+  .vl-term-popover { pointer-events: none; }
+</style>

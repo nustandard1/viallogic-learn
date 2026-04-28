@@ -1,0 +1,122 @@
+---
+module: "01-peptide-pharmacology-fundamentals"
+order: 6
+title: Recap & quick check
+summary: Lock in the framework — vocabulary card, retrieval practice, and the bridge to Module 2.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import KeyTerms from "../../../components/KeyTerms.astro";
+import Quiz from "../../../components/Quiz.astro";
+
+Before you move on, take five minutes to lock the framework in. The terms below should feel ordinary now, not technical. Click any of them to refresh the definition.
+
+<KeyTerms ids={[
+  "peptide",
+  "ligand",
+  "receptor",
+  "gpcr",
+  "rtk",
+  "affinity",
+  "selectivity",
+  "potency",
+  "phosphorylation",
+  "kinase",
+  "second-messenger",
+  "camp",
+  "transcription-factor",
+  "half-life",
+  "bioavailability",
+  "albumin",
+  "dpp-4",
+  "dac",
+  "pulsatility",
+  "agonist",
+  "antagonist",
+  "biased-agonism",
+  "desensitization",
+]} />
+
+## The whole module in one paragraph
+
+A peptide is a short chain of amino acids. It binds a receptor on the cell surface — almost always a GPCR or RTK, because peptides can't enter cells. The bound receptor triggers a signaling cascade (cAMP, calcium, or PI3K/Akt depending on the receptor) that amplifies the signal up to a million-fold inside the cell. Native peptides are cleared in minutes by enzymes like DPP-4, so therapeutic peptides are engineered (D-amino acids, lipidation, DAC) to extend half-life — at the cost of natural pulsatility. Receptors push back against persistent activation through phosphorylation, internalization, and downregulation, which is why protocols often cycle on and off. Whether a ligand activates the receptor fully, partially, blocks it, or biases it toward one downstream pathway is the difference between a clean peptide and a messy one. Everything else in this course is a special case of these ideas.
+
+## Quick check
+
+Six questions. The score is just for you — there's no grade and you can't fail. The goal is retrieval, not testing. Try to answer before you read the options.
+
+<Quiz questions={[
+  {
+    q: "Why do peptide receptors live on the cell surface rather than inside the cell?",
+    options: [
+      "Surface receptors are easier to evolve than intracellular ones.",
+      "Peptides are too large and too charged to cross the lipid membrane, so the receptor has to span it.",
+      "Intracellular receptors only respond to DNA-binding ligands.",
+      "Surface receptors produce stronger signals than intracellular ones.",
+    ],
+    answer: 1,
+    explain: "Peptides are large polar molecules — they can't cross the lipid bilayer passively. The receptor has to span the membrane: outside end binds the ligand, inside end propagates the signal. Steroid hormones, by contrast, are small and fat-soluble, which is why their receptors are intracellular.",
+  },
+  {
+    q: "GHRH and GHRPs both trigger growth-hormone release from the same pituitary cells. Why is combining them more effective than using either alone?",
+    options: [
+      "GHRH and GHRPs activate the same downstream cascade, so two doses of activation are stronger than one.",
+      "They activate different cascades (cAMP from GHRH, calcium from GHRPs), and pushing both at once produces synergistic GH release.",
+      "GHRPs block GHRH receptors, so the combination prevents desensitization.",
+      "GHRH only works in the presence of insulin, which GHRPs trigger.",
+    ],
+    answer: 1,
+    explain: "This is the entire mechanistic justification for the CJC-1295 + ipamorelin stack. GHRH drives the Gs/cAMP pathway (gene expression, GH synthesis). GHRPs drive the Gq/calcium pathway (physical release of stored GH from secretory vesicles). Activating both at once means more GH released than either pathway alone could produce — true synergy, not addition.",
+  },
+  {
+    q: "Native GLP-1 has a plasma half-life of about 2 minutes. Semaglutide has a half-life of about 7 days. What single class of engineering modification accomplishes this kind of extension?",
+    options: [
+      "Adding more amino acids to the chain.",
+      "Switching from injection to oral delivery.",
+      "Attaching a fatty acid (lipidation) so the molecule binds albumin and rides along its multi-day half-life.",
+      "Coating the peptide in a sugar shell.",
+    ],
+    answer: 2,
+    explain: "Lipidation — attaching a fatty acid that allows binding to serum albumin — is the key trick. Albumin has a half-life of about 19 days, so a peptide that rides along inherits much of that. Combined with D-amino acid substitutions to evade DPP-4, lipidation is what turns a 2-minute molecule into a once-weekly drug.",
+  },
+  {
+    q: "A peptide with a 30-minute half-life and a peptide with a 7-day half-life both target the same receptor. Why might the short-half-life version produce better long-term results?",
+    options: [
+      "It's cheaper to manufacture.",
+      "Pulsatile receptor exposure avoids the desensitization that chronic saturation causes.",
+      "Short-half-life peptides have higher affinity by definition.",
+      "Long-half-life peptides have to be injected more often.",
+    ],
+    answer: 1,
+    explain: "The body talks to itself in pulses, not continuous exposure. A long-half-life agonist saturates the receptor 24/7, which over weeks triggers desensitization (phosphorylation, internalization, downregulation). The same receptor that lit up brightly on day one stops responding by week six. Pulsatile peptides give the receptor rest, preserving response. This is why sermorelin sometimes outperforms CJC-1295-with-DAC for long-term GH-axis health — and why protocols often cycle.",
+  },
+  {
+    q: "Ipamorelin and GHRP-6 hit the same receptor (the ghrelin receptor) but ipamorelin doesn't cause hunger or cortisol spikes. What pharmacological concept explains this?",
+    options: [
+      "Ipamorelin has higher affinity than GHRP-6.",
+      "Ipamorelin is a partial agonist, so it can't trigger any side effects.",
+      "Biased agonism — different ligands at the same receptor can preferentially activate different downstream pathways.",
+      "GHRP-6 binds the wrong receptor.",
+    ],
+    answer: 2,
+    explain: "Biased agonism. The ghrelin receptor has multiple active conformations, each favoring different downstream cascades. Ipamorelin preferentially activates the calcium pathway that drives GH release, while leaving the parallel pathways (cortisol, prolactin, hunger signaling) relatively quiet. GHRP-6 activates them all. Same receptor, same affinity ballpark, very different downstream signature — and that signature is why one is considered 'clean' and the other isn't.",
+  },
+  {
+    q: "What does it mean that a typical peptide signal is 'amplified about a million-fold' on its way from receptor to nucleus?",
+    options: [
+      "A million peptide molecules bind to produce one signaling event.",
+      "Each step in the cascade activates many copies of the next, so one receptor binding triggers thousands of downstream events.",
+      "The receptor releases a million copies of itself once activated.",
+      "Amplification is a colloquial term — the signal isn't actually amplified.",
+    ],
+    answer: 1,
+    explain: "Each layer fans out: one activated GPCR activates many G-proteins, each G-protein activates an enzyme that produces many second-messenger molecules, each second-messenger activates many kinase molecules, each kinase phosphorylates many targets. The fan-out at every step is what produces the ~10⁶-fold amplification. Practically, this is why peptides work at vanishingly small doses (micrograms or nanograms) and why timing often matters more than total amount — you're flipping a switch, not delivering a payload.",
+  },
+]} />
+
+## Up next
+
+You now have the framework. Module 2 takes the receptor-and-cascade model and asks the practical question: *how do we actually get a peptide to a receptor?* You'll learn why subcutaneous and intramuscular injections behave differently, what reconstitution actually does to the molecule, and the dosing math that sits behind every protocol you'll ever read.
+
+When you click "Module complete" below, this module will be marked finished on your home page.

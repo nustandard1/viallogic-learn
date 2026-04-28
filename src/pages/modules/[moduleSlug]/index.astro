@@ -1,0 +1,149 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const modules = await getCollection("modules");
+  return modules.map((m) => ({
+    params: { moduleSlug: m.id },
+    props: { module: m },
+  }));
+}
+
+const { module } = Astro.props;
+const { Content } = await render(module);
+const moduleSlug = module.id;
+const lessons = (await getCollection("lessons"))
+  .filter((l) => l.data.module === moduleSlug)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const lessonSlug = (id: string) => id.split("/").pop()!;
+const num = String(module.data.number).padStart(2, "0");
+const firstLesson = lessons[0];
+---
+
+<BaseLayout title={`${module.data.title} — VialLogic Learn`} description={module.data.summary}>
+  <!-- Module hero -->
+  <section class="relative overflow-hidden border-b border-border">
+    <div class="absolute inset-0 gradient-mesh pointer-events-none"></div>
+    <div class="relative max-w-[var(--container-wide)] mx-auto px-6 pt-14 pb-12">
+      <div class="flex items-center gap-2 text-[12px] text-text-muted mb-4">
+        <a href="/" class="hover:text-text transition-colors">Course</a>
+        <span class="text-text-faint">/</span>
+        <span class="font-mono text-text-faint">MODULE {num}</span>
+      </div>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-[10px] uppercase tracking-[0.14em] font-bold text-cyan">{module.data.category}</span>
+        <span class="text-text-faint">·</span>
+        <span class="text-[12px] text-text-muted">{module.data.duration} total · {lessons.length} lessons</span>
+      </div>
+      <h1 class="text-[clamp(2rem,4.5vw,3.25rem)] font-bold tracking-[-0.035em] leading-[1.05] text-text max-w-3xl">
+        {module.data.title}
+      </h1>
+      <p class="mt-4 text-[18px] text-text-muted leading-relaxed max-w-2xl">
+        {module.data.subtitle}
+      </p>
+
+      {firstLesson && (
+        <a
+          href={`/modules/${moduleSlug}/${lessonSlug(firstLesson.id)}`}
+          class="mt-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-cyan text-bg font-semibold text-[14px] hover:bg-cyan/90 transition-colors"
+          data-start-cta
+        >
+          <span data-start-label>Begin module</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      )}
+    </div>
+  </section>
+
+  <div class="max-w-[var(--container-wide)] mx-auto px-6 py-12 grid lg:grid-cols-[1fr_320px] gap-12">
+
+    <!-- Module summary / overview MDX -->
+    <article class="prose">
+      <Content />
+    </article>
+
+    <!-- Lesson list -->
+    <aside>
+      <div class="sticky top-24">
+        <div class="text-[10px] uppercase tracking-[0.14em] font-bold text-text-muted mb-3">Module Contents</div>
+        <ol class="space-y-2">
+          {lessons.map((l, i) => (
+            <li>
+              <a
+                href={`/modules/${moduleSlug}/${lessonSlug(l.id)}`}
+                data-lesson-id={l.id}
+                class="vl-lesson-item group flex items-start gap-3 px-4 py-3 rounded-lg border border-border bg-card hover:border-cyan/30 hover:bg-elevated transition-all"
+              >
+                <span class="vl-lesson-num flex-shrink-0 w-7 h-7 rounded-full border border-border-light flex items-center justify-center text-[11px] font-mono text-text-muted mt-0.5">{i + 1}</span>
+                <div class="flex-1 min-w-0">
+                  <div class="text-[14px] font-medium text-text group-hover:text-cyan transition-colors leading-snug">{l.data.title}</div>
+                  <div class="text-[12px] text-text-muted mt-0.5 flex items-center gap-2">
+                    <span>{l.data.duration}</span>
+                    <span class="text-text-faint">·</span>
+                    <span class="truncate">{l.data.summary}</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ol>
+
+        <!-- Progress summary -->
+        <div class="mt-6 px-4 py-3 rounded-lg border border-border bg-card">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[11px] uppercase tracking-[0.12em] font-bold text-text-muted">Your progress</span>
+            <span class="text-[12px] font-mono text-text"><span data-completed-count>0</span> / {lessons.length}</span>
+          </div>
+          <div class="h-1.5 rounded-full bg-elevated overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-cyan to-purple transition-all" style="width:0%" data-progress-bar></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<script>
+  const STORAGE_KEY = "vl-learn:completed-lessons";
+  const completed: string[] = (() => {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); }
+    catch { return []; }
+  })();
+
+  let count = 0;
+  let firstIncomplete: HTMLAnchorElement | null = null;
+
+  document.querySelectorAll<HTMLAnchorElement>("[data-lesson-id]").forEach((el) => {
+    const isDone = completed.includes(el.dataset.lessonId!);
+    if (isDone) {
+      count++;
+      const num = el.querySelector(".vl-lesson-num");
+      if (num) {
+        num.classList.remove("border-border-light", "text-text-muted");
+        num.classList.add("border-emerald/40", "text-emerald", "bg-emerald/[0.08]");
+        num.innerHTML = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+      }
+    } else if (!firstIncomplete) {
+      firstIncomplete = el;
+    }
+  });
+
+  const total = document.querySelectorAll("[data-lesson-id]").length;
+  const cEl = document.querySelector("[data-completed-count]");
+  const bEl = document.querySelector<HTMLElement>("[data-progress-bar]");
+  if (cEl) cEl.textContent = String(count);
+  if (bEl && total) bEl.style.width = `${(count / total) * 100}%`;
+
+  // CTA: change "Begin module" to "Continue" + jump to first incomplete
+  if (count > 0 && count < total && firstIncomplete) {
+    const cta = document.querySelector<HTMLAnchorElement>("[data-start-cta]");
+    const label = document.querySelector("[data-start-label]");
+    if (cta) cta.href = (firstIncomplete as HTMLAnchorElement).href;
+    if (label) label.textContent = "Continue module";
+  } else if (count === total && total > 0) {
+    const label = document.querySelector("[data-start-label]");
+    if (label) label.textContent = "Review module";
+  }
+</script>

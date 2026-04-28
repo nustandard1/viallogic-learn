@@ -1,0 +1,96 @@
+---
+interface Question {
+  q: string;
+  options: string[];
+  answer: number;
+  explain: string;
+}
+interface Props {
+  questions: Question[];
+}
+const { questions } = Astro.props;
+const dataId = `quiz-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<section class="not-prose my-10 rounded-xl border border-border bg-card overflow-hidden" data-quiz={dataId}>
+  <header class="px-6 py-4 border-b border-border bg-elevated/50 flex items-center justify-between">
+    <div>
+      <div class="text-[10px] uppercase tracking-[0.14em] font-bold text-cyan">Quick Check</div>
+      <div class="text-[15px] font-medium text-text mt-0.5">Test your understanding</div>
+    </div>
+    <div class="text-[12px] font-mono text-text-muted">
+      <span data-quiz-score>0</span><span class="text-text-faint"> / {questions.length}</span>
+    </div>
+  </header>
+
+  <div class="divide-y divide-border">
+    {questions.map((qq, i) => (
+      <div class="p-6" data-question-index={i}>
+        <div class="flex items-start gap-3 mb-4">
+          <span class="flex-shrink-0 w-6 h-6 rounded-full bg-cyan/10 border border-cyan/30 flex items-center justify-center text-[11px] font-bold text-cyan">{i + 1}</span>
+          <p class="text-[15px] text-text leading-snug font-medium">{qq.q}</p>
+        </div>
+        <div class="space-y-2 ml-9">
+          {qq.options.map((opt, oi) => (
+            <button
+              type="button"
+              class="quiz-option group w-full text-left rounded-md border border-border bg-bg/40 hover:border-cyan/30 hover:bg-elevated transition-colors px-4 py-2.5 text-[14px] text-text-dim flex items-center gap-3"
+              data-option-index={oi}
+              data-correct={oi === qq.answer}
+            >
+              <span class="flex-shrink-0 w-5 h-5 rounded-full border border-border-light flex items-center justify-center text-[10px] font-mono text-text-muted">{String.fromCharCode(65 + oi)}</span>
+              <span class="flex-1">{opt}</span>
+              <svg class="quiz-icon hidden flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          ))}
+        </div>
+        <div class="quiz-explain hidden mt-4 ml-9 rounded-md border border-cyan/20 bg-cyan/[0.04] px-4 py-3">
+          <div class="text-[10px] uppercase tracking-[0.12em] font-bold text-cyan mb-1">Explanation</div>
+          <p class="text-[13.5px] text-text-dim leading-relaxed">{qq.explain}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-quiz]").forEach((quiz) => {
+    const scoreEl = quiz.querySelector<HTMLElement>("[data-quiz-score]");
+    let score = 0;
+
+    quiz.querySelectorAll<HTMLElement>("[data-question-index]").forEach((qBlock) => {
+      const buttons = qBlock.querySelectorAll<HTMLButtonElement>(".quiz-option");
+      const explain = qBlock.querySelector<HTMLElement>(".quiz-explain");
+      let answered = false;
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (answered) return;
+          answered = true;
+          const isCorrect = btn.dataset.correct === "true";
+          if (isCorrect) {
+            score += 1;
+            if (scoreEl) scoreEl.textContent = String(score);
+            btn.classList.remove("border-border", "bg-bg/40", "hover:border-cyan/30", "hover:bg-elevated");
+            btn.classList.add("border-emerald/40", "bg-emerald/[0.08]", "text-emerald");
+          } else {
+            btn.classList.remove("border-border", "bg-bg/40", "hover:border-cyan/30", "hover:bg-elevated");
+            btn.classList.add("border-rose/40", "bg-rose/[0.08]", "text-rose");
+          }
+          buttons.forEach((b) => {
+            const ic = b.querySelector<HTMLElement>(".quiz-icon");
+            if (b.dataset.correct === "true") {
+              if (ic) ic.classList.remove("hidden");
+              b.classList.add("text-emerald");
+              const dot = b.querySelector("span");
+              if (dot) dot.classList.add("border-emerald/40", "text-emerald");
+            }
+            (b as HTMLButtonElement).disabled = true;
+            b.classList.add("cursor-default");
+          });
+          explain?.classList.remove("hidden");
+        });
+      });
+    });
+  });
+</script>

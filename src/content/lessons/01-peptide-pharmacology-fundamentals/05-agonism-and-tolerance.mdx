@@ -1,0 +1,66 @@
+---
+module: "01-peptide-pharmacology-fundamentals"
+order: 5
+title: Agonism, antagonism, and tolerance
+summary: Not every key turns the lock all the way — and even the right key can stop working if you turn it too often.
+duration: "4 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import AgonismSpectrum from "../../../components/diagrams/AgonismSpectrum.astro";
+
+When a ligand binds a receptor, it can do four conceptually distinct things. This vocabulary sits underneath every peptide comparison you'll ever read.
+
+## The activation spectrum
+
+<AgonismSpectrum items={[
+  { label: "Full agonist", level: 100, example: "GHRH at the GHRH receptor" },
+  { label: "Partial agonist", level: 55, example: "Some early GHRH analogs — submaximal even at saturation" },
+  { label: "Antagonist", level: 0, example: "Naloxone at opioid receptors — binds but doesn't activate" },
+  { label: "Inverse agonist", level: -60, example: "Reduces baseline activity below unstimulated level (only matters for receptors with constitutive activity)" },
+]} caption="What a ligand does once bound, on a single axis. Full = max effect; antagonist = block; inverse = drives below baseline." />
+
+- **<Term id="agonist">Full agonist</Term>** — binds and produces the maximum possible response.
+- **<Term id="partial-agonist">Partial agonist</Term>** — binds and produces a sub-maximal response, even at full receptor occupancy. Always less than the full agonist's ceiling.
+- **<Term id="antagonist">Antagonist</Term>** — binds without activating; blocks anything else from activating.
+- **Inverse agonist** — only relevant for receptors that have *constitutive activity* (some baseline signaling without any ligand). An inverse agonist drives that baseline *below* zero.
+
+## Biased agonism — why ipamorelin isn't GHRP-6
+
+A more recent concept, and an important one for this course: <Term id="biased-agonism">biased agonism</Term>.
+
+GPCRs don't actually have a single "on" state. They have multiple <Term id="conformation">conformations</Term> — different 3D shapes the same protein can flex into — and each shape preferentially activates a different downstream pathway. Some ligands bind the receptor in a way that favors one cascade *and not another*.
+
+This is the entire reason ipamorelin is considered a "clean" GHRP. Ipamorelin and GHRP-6 hit the same receptor (the ghrelin receptor / GHSR). But ipamorelin preferentially activates the calcium pathway that drives GH release, while GHRP-6 also strongly activates parallel pathways that drive cortisol, prolactin, and hunger. Same target. Different downstream signature.
+
+When someone says a peptide is "selective" but it hits the same receptor as something less clean — biased agonism is usually the answer.
+
+## Tolerance: why receptors stop listening
+
+Receptors aren't passive. Push on them too hard, too long, and the cell starts dampening the response. Three mechanisms run in parallel:
+
+1. **Receptor phosphorylation and internalization.** Heavily-stimulated GPCRs get phosphorylated by GRKs (GPCR kinases). This recruits β-arrestin, which pulls the receptor inside the cell where it's no longer accessible to ligand. Effects appear within minutes to hours.
+
+2. **Receptor downregulation.** With chronic stimulation, the cell reduces its synthesis of new receptors. Total receptor number falls. Effects appear over days to weeks.
+
+3. **Downstream adaptation.** Even if receptors stay on the surface, downstream signaling components — G-proteins, kinases, transcription factors — can be reduced or sequestered. The receptor still binds; the cell just stops listening to it.
+
+Together these are called <Term id="desensitization">desensitization</Term>, or — when fast — <Term id="tachyphylaxis">tachyphylaxis</Term>.
+
+<Callout type="caution" title="The recurring trap: 'more' is not more">
+Higher doses, longer half-lives, and more frequent injections can produce *worse* outcomes than a moderate, well-timed protocol because of desensitization. A long-half-life GH-axis peptide that keeps receptors saturated 24/7 will, over weeks, often produce *less* GH release than a short-half-life pulsatile peptide that respects the natural rhythm.
+
+Whenever you see a marketing claim that more is better, the question to ask is: *does the receptor still work after a month of this?*
+</Callout>
+
+This is the technical foundation for one of the most common patterns in peptide protocols: **cycling**. Time on, time off. The off period isn't superstition — it gives receptors a window to recycle to the surface and downregulated populations to recover.
+
+<Checkpoint number={1}>
+<span slot="question">Why is "cycling" (time on, time off) a recurring pattern in peptide protocols, and when is it most necessary?</span>
+
+Cycling exists because receptor desensitization is real. With chronic stimulation, GPCRs get phosphorylated and pulled inside the cell (within hours), then receptor synthesis drops (within days to weeks), then downstream machinery dampens too. The cell stops listening. A break period lets receptors recycle to the surface and downregulated populations recover. Cycling matters most for peptides that produce continuous receptor exposure — long-half-life agonists like CJC-1295-with-DAC or GLP-1 analogs — and matters less for short, pulsatile peptides that already give the receptor regular rest. The shape of the protocol should match the pharmacology.
+</Checkpoint>
+
+We've now covered the entire framework: what a peptide is, how it talks to a cell, what happens after it does, how the body clears it, and how the cell pushes back. One more lesson to lock it in.

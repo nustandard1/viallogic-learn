@@ -1,0 +1,71 @@
+---
+module: "01-peptide-pharmacology-fundamentals"
+order: 1
+title: What a peptide actually is
+summary: A short chain of amino acids — and the line where peptide ends and protein begins.
+duration: "4 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import PeptideSizeScale from "../../../components/diagrams/PeptideSizeScale.astro";
+
+If you've ever wondered why insulin has to be injected, why GH builds muscle but BPC-157 heals tissue, or why GLP-1s come in syringes when ibuprofen comes in pills — the answers all start with one number.
+
+How many amino acids are in the chain.
+
+<Callout type="info" title="A note before you start">
+This module introduces a lot of vocabulary in a short space — receptors, cascades, half-life, agonism. **Some of it will feel dense on first read. That's expected.** You don't need to memorize anything; you need to recognize the terms so they stop feeling like a wall when they show up again.
+
+Two design choices to know about: any **<u>underlined dotted term</u>** is hover-able for an instant definition (try it on a phone by tapping). Each lesson ends with one active-recall checkpoint. The final lesson is a vocabulary card and a 6-question quiz that locks everything in. Read once for the shape, let the recap do the rest. By Module 2 these words are ordinary.
+</Callout>
+
+## The molecule, in one sentence
+
+A <Term id="peptide">peptide</Term> is a short chain of <Term id="amino-acid">amino acids</Term> linked by <Term id="peptide-bond">peptide bonds</Term> — the covalent bond formed when the carboxyl group (–COOH) of one amino acid joins the amino group (–NH₂) of the next, with a water molecule released in the process. That bond is what gives the entire molecule class its name.
+
+That's it. Everything you'll learn in this course is downstream of "a chain of amino acids in a particular order."
+
+## Where peptide ends and protein begins
+
+The convention is loose, but useful:
+
+- **Peptide:** roughly 2–50 amino acids
+- **Protein:** ~50+ amino acids, typically folded into a stable 3D shape
+
+The line is fuzzy on purpose — biology doesn't care about our categories. Insulin is 51 <Term id="residue">residues</Term> (one residue = one amino acid in the chain) and gets called both. Growth hormone at 191 is unambiguously a protein. BPC-157 at 15 is squarely a peptide.
+
+<PeptideSizeScale items={[
+  { name: "Oxytocin", aa: 9, tag: "the social-bonding hormone" },
+  { name: "BPC-157", aa: 15, tag: "synthetic, derived from gastric protein" },
+  { name: "GHRH", aa: 44 },
+  { name: "Insulin", aa: 51, tag: "right at the boundary" },
+  { name: "GLP-1 (active)", aa: 30 },
+  { name: "Growth hormone", aa: 191, tag: "fully a protein" },
+  { name: "Albumin", aa: 585, tag: "for scale — a serum protein" },
+]} caption="The amber line is the ~50 amino acid convention. Most therapeutic peptides cluster well below it." />
+
+<Callout type="key" title="Why size is the whole story">
+Larger molecules fold into rigid 3D shapes that are harder to manufacture, harder to deliver, and more likely to trigger an immune response. Small enough to synthesize chemically, small enough to often slip past the immune system, big enough to have a specific receptor target — that's the peptide sweet spot. It's not a biological boundary, it's a manufacturing and delivery one.
+</Callout>
+
+## Three flavors you'll meet in this course
+
+When we talk about a peptide, it usually falls into one of three buckets — and the bucket tells you a lot about what to expect.
+
+**1. <Term id="endogenous">Endogenous</Term> peptides** — molecules your body already makes. *Examples:* GHRH, ghrelin, glucagon, oxytocin. When you read about an "endogenous" molecule, the body has receptors and clearance built specifically for it. They tend to have very short half-lives because the body wants tight control.
+
+**2. Analogs** — synthetic versions of endogenous peptides, modified for stability or potency. *Examples:* sermorelin (a GHRH analog), semaglutide (a GLP-1 analog), tesamorelin. The engineering choices — which amino acids were swapped, which bonds were stabilized — directly explain the half-life and side effects. We'll keep coming back to this.
+
+**3. Synthetic / designed peptides** — molecules engineered to bind a target, sometimes inspired by nature, sometimes invented. *Examples:* BPC-157 (derived from a fragment of stomach protein but not endogenous in that form), the GHRPs.
+
+Knowing which bucket a peptide sits in is the first thing to ask before reading anything else about it. It tells you whether the body has matching receptors waiting, whether the molecule was hand-tuned to evade clearance, and whether you should expect the effects to mirror a natural pathway or look like nothing the body has ever seen.
+
+<Checkpoint number={1}>
+<span slot="question">Why might an endogenous peptide and its analog produce different side-effect profiles even though they bind the same receptor?</span>
+
+The endogenous version has a short half-life — the body releases it in pulses and clears it quickly, so receptors get rest periods. An analog engineered to last hours or days produces continuous receptor occupancy, which can drive desensitization, off-pathway effects, and side effects that simply never appear with the natural rhythm. The receptor binding is the same; the *temporal pattern* of binding is not. This single distinction explains a lot of what makes a "natural-feeling" peptide vs. a "this hits hard" one.
+</Checkpoint>
+
+In the next lesson we'll zoom in on the other half of the conversation: the receptor itself. A peptide is just a key — and a key without a lock does nothing.

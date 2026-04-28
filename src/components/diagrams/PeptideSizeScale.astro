@@ -1,0 +1,39 @@
+---
+interface Item { name: string; aa: number; tag?: string; }
+interface Props { items: Item[]; caption?: string; }
+const { items, caption } = Astro.props;
+const max = Math.max(...items.map(i => i.aa), 200);
+---
+
+<figure class="not-prose my-10 rounded-xl border border-border bg-card overflow-hidden">
+  <header class="px-6 py-4 border-b border-border bg-elevated/40">
+    <div class="text-[10px] uppercase tracking-[0.14em] font-bold text-cyan">Size Scale</div>
+    <div class="text-[15px] font-semibold text-text mt-0.5">Where the peptide / protein line lives</div>
+  </header>
+
+  <div class="p-6 space-y-2.5">
+    {items.map((it) => {
+      const pct = (it.aa / max) * 100;
+      const isProtein = it.aa >= 50;
+      return (
+        <div class="grid grid-cols-[140px_1fr_72px] items-center gap-4">
+          <div class="text-[13px] font-medium text-text truncate">{it.name}</div>
+          <div class="relative h-6 rounded-md bg-bg/50 border border-border overflow-hidden">
+            <!-- 50aa boundary marker -->
+            <div class="absolute top-0 bottom-0 w-px bg-amber/60" style={`left:${(50/max)*100}%`} title="~50 aa boundary"></div>
+            <div class="absolute top-0 bottom-0 rounded-sm" style={`left:0;width:${pct}%;background:${isProtein ? "rgba(168,85,247,0.5)" : "rgba(0,212,255,0.5)"};border-right:1px solid ${isProtein ? "#a855f7" : "#00d4ff"}`}></div>
+          </div>
+          <div class="text-[11px] font-mono text-text-muted text-right">{it.aa} aa</div>
+          {it.tag && <div class="col-span-3 -mt-1 ml-[156px] text-[11.5px] text-text-faint italic">{it.tag}</div>}
+        </div>
+      );
+    })}
+    <div class="pt-3 mt-2 border-t border-border flex items-center justify-between text-[11px] font-mono text-text-muted">
+      <span class="flex items-center gap-2"><span class="w-3 h-2 rounded-sm" style="background:rgba(0,212,255,0.5)"></span>peptide</span>
+      <span class="flex items-center gap-2"><span class="w-px h-3 bg-amber/80"></span>~50 aa convention</span>
+      <span class="flex items-center gap-2"><span class="w-3 h-2 rounded-sm" style="background:rgba(168,85,247,0.5)"></span>protein</span>
+    </div>
+  </div>
+
+  {caption && <figcaption class="px-6 py-3 border-t border-border text-[12px] text-text-muted">{caption}</figcaption>}
+</figure>

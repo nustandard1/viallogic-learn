@@ -1,0 +1,48 @@
+---
+interface Props {
+  number: number;
+  title: string;
+  subtitle: string;
+  duration: string;
+  href: string;
+  available: boolean;
+  category?: string;
+}
+const { number, title, subtitle, duration, href, available, category } = Astro.props;
+const num = String(number).padStart(2, "0");
+---
+
+{available ? (
+  <a href={href} class="group block relative rounded-xl border border-border bg-card hover:border-cyan/40 hover:bg-elevated transition-all p-6 overflow-hidden">
+    <div class="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-cyan/5 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div class="relative">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-3">
+          <span class="text-[11px] font-mono text-text-faint tracking-[0.15em]">MODULE {num}</span>
+          {category && <span class="text-[10px] uppercase tracking-[0.12em] font-bold text-cyan/80">{category}</span>}
+        </div>
+        <span class="text-[11px] text-text-muted">{duration}</span>
+      </div>
+      <h3 class="text-[19px] font-semibold text-text leading-tight mb-1.5 group-hover:text-cyan transition-colors">
+        {title}
+      </h3>
+      <p class="text-[14px] text-text-muted leading-relaxed">{subtitle}</p>
+      <div class="mt-4 inline-flex items-center gap-1.5 text-[12.5px] text-cyan font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+        Begin module
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </div>
+    </div>
+  </a>
+) : (
+  <div class="block relative rounded-xl border border-border/60 bg-card/40 p-6 overflow-hidden">
+    <div class="flex items-center justify-between mb-3">
+      <div class="flex items-center gap-3">
+        <span class="text-[11px] font-mono text-text-faint tracking-[0.15em]">MODULE {num}</span>
+        {category && <span class="text-[10px] uppercase tracking-[0.12em] font-bold text-text-faint">{category}</span>}
+      </div>
+      <span class="text-[10px] uppercase tracking-[0.1em] font-bold text-text-faint border border-border rounded-full px-2 py-0.5">Coming Soon</span>
+    </div>
+    <h3 class="text-[19px] font-semibold text-text-muted leading-tight mb-1.5">{title}</h3>
+    <p class="text-[14px] text-text-faint leading-relaxed">{subtitle}</p>
+  </div>
+)}

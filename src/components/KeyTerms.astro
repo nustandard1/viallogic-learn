@@ -1,0 +1,29 @@
+---
+import { glossary } from "../data/glossary";
+
+interface Props {
+  ids: string[];
+}
+const { ids } = Astro.props;
+const entries = ids.map((id) => ({ id, ...glossary[id] })).filter((e) => e.term);
+---
+
+<section class="not-prose my-10">
+  <div class="text-[10px] uppercase tracking-[0.14em] font-bold text-purple mb-1">Key Terms</div>
+  <h3 class="text-[20px] font-semibold text-text mb-5">Vocabulary from this module</h3>
+
+  <div class="grid sm:grid-cols-2 gap-3">
+    {entries.map((e) => (
+      <details class="group rounded-lg border border-border bg-card hover:border-border-light transition-colors">
+        <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden px-4 py-3 flex items-center justify-between gap-3">
+          <span class="text-[14px] font-medium text-text">{e.term}</span>
+          <svg class="text-text-muted transition-transform group-open:rotate-180 flex-shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="px-4 pb-4 -mt-1 text-[13px] text-text-dim leading-relaxed border-t border-border pt-3">
+          {e.short}
+          {e.long && <p class="mt-2 text-text-muted">{e.long}</p>}
+        </div>
+      </details>
+    ))}
+  </div>
+</section>

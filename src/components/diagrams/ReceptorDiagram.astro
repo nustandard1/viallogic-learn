@@ -1,0 +1,107 @@
+---
+interface Props {
+  caption?: string;
+}
+const { caption = "GPCR vs RTK — two receptor architectures behind nearly every peptide drug." } = Astro.props;
+---
+
+<figure class="not-prose my-10 rounded-xl border border-border bg-card overflow-hidden">
+  <div class="px-6 pt-5 pb-3 flex items-center justify-between border-b border-border">
+    <div class="text-[10px] uppercase tracking-[0.14em] font-bold text-cyan">Receptor Architectures</div>
+    <div class="text-[11px] text-text-muted font-mono">Membrane view</div>
+  </div>
+
+  <svg viewBox="0 0 800 360" class="w-full h-auto" role="img" aria-label="GPCR and RTK receptor diagram">
+    <!-- Membrane background -->
+    <defs>
+      <linearGradient id="membraneG" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0" stop-color="#1c1c1c" />
+        <stop offset="1" stop-color="#161616" />
+      </linearGradient>
+      <linearGradient id="cyanG" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0" stop-color="#00d4ff" stop-opacity="0.9" />
+        <stop offset="1" stop-color="#0099cc" stop-opacity="0.7" />
+      </linearGradient>
+      <linearGradient id="purpG" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0" stop-color="#a855f7" stop-opacity="0.9" />
+        <stop offset="1" stop-color="#7c3aed" stop-opacity="0.7" />
+      </linearGradient>
+    </defs>
+
+    <!-- Membrane band -->
+    <rect x="0" y="150" width="800" height="60" fill="url(#membraneG)" />
+    <line x1="0" y1="150" x2="800" y2="150" stroke="#2a2a2a" stroke-width="1" />
+    <line x1="0" y1="210" x2="800" y2="210" stroke="#2a2a2a" stroke-width="1" />
+    <text x="20" y="145" font-size="10" fill="#555" font-family="monospace" letter-spacing="1.5">EXTRACELLULAR</text>
+    <text x="20" y="225" font-size="10" fill="#555" font-family="monospace" letter-spacing="1.5">INTRACELLULAR</text>
+
+    <!-- LEFT: GPCR -->
+    <g>
+      <text x="180" y="40" font-size="14" font-weight="600" fill="#f0f0f0" text-anchor="middle">GPCR</text>
+      <text x="180" y="58" font-size="11" fill="#888" text-anchor="middle">G-protein coupled · 7 transmembrane passes</text>
+
+      <!-- Ligand -->
+      <circle cx="180" cy="100" r="14" fill="url(#cyanG)" />
+      <text x="180" y="104" font-size="9" fill="#0a0a0a" text-anchor="middle" font-weight="700">L</text>
+      <text x="210" y="104" font-size="11" fill="#b8b8b8">peptide ligand</text>
+
+      <!-- Binding arrow -->
+      <line x1="180" y1="118" x2="180" y2="138" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="3 3" />
+      <polygon points="180,142 176,134 184,134" fill="#00d4ff" />
+
+      <!-- 7 transmembrane helices -->
+      {[0,1,2,3,4,5,6].map((i) => {
+        const x = 145 + i * 12;
+        return <rect x={x} y="148" width="8" height="64" rx="3" fill="#2a2a2a" stroke="#00d4ff" stroke-opacity="0.5" />;
+      })}
+
+      <!-- G-protein α/β/γ -->
+      <circle cx="160" cy="245" r="14" fill="#161616" stroke="#a855f7" stroke-width="1.5" />
+      <text x="160" y="249" font-size="10" fill="#a855f7" text-anchor="middle" font-weight="700">α</text>
+      <circle cx="186" cy="252" r="11" fill="#161616" stroke="#555" stroke-width="1" />
+      <text x="186" y="256" font-size="9" fill="#888" text-anchor="middle">β</text>
+      <circle cx="208" cy="248" r="9" fill="#161616" stroke="#555" stroke-width="1" />
+      <text x="208" y="251" font-size="9" fill="#888" text-anchor="middle">γ</text>
+
+      <!-- Output -->
+      <line x1="160" y1="265" x2="160" y2="295" stroke="#a855f7" stroke-width="1.5" />
+      <polygon points="160,300 156,292 164,292" fill="#a855f7" />
+      <text x="180" y="320" font-size="11" fill="#b8b8b8" text-anchor="middle">cAMP · IP₃ · Ca²⁺</text>
+      <text x="180" y="338" font-size="10" fill="#666" text-anchor="middle" font-style="italic">second messengers</text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="400" y1="30" x2="400" y2="340" stroke="#222" stroke-dasharray="4 4" />
+
+    <!-- RIGHT: RTK -->
+    <g>
+      <text x="600" y="40" font-size="14" font-weight="600" fill="#f0f0f0" text-anchor="middle">RTK</text>
+      <text x="600" y="58" font-size="11" fill="#888" text-anchor="middle">Receptor tyrosine kinase · dimerizes on binding</text>
+
+      <!-- Two ligands -->
+      <circle cx="570" cy="100" r="11" fill="url(#purpG)" />
+      <circle cx="630" cy="100" r="11" fill="url(#purpG)" />
+      <text x="660" y="104" font-size="11" fill="#b8b8b8">e.g. insulin, IGF-1</text>
+
+      <!-- Two transmembrane domains -->
+      <rect x="555" y="120" width="30" height="100" rx="6" fill="#2a2a2a" stroke="#a855f7" stroke-opacity="0.6" />
+      <rect x="615" y="120" width="30" height="100" rx="6" fill="#2a2a2a" stroke="#a855f7" stroke-opacity="0.6" />
+
+      <!-- Phosphorylation dots -->
+      <circle cx="568" cy="225" r="4" fill="#f59e0b" />
+      <circle cx="578" cy="232" r="4" fill="#f59e0b" />
+      <circle cx="624" cy="225" r="4" fill="#f59e0b" />
+      <circle cx="634" cy="232" r="4" fill="#f59e0b" />
+      <text x="490" y="232" font-size="10" fill="#f59e0b" font-family="monospace">P</text>
+      <text x="555" y="248" font-size="9" fill="#888" text-anchor="end">autophosphorylation</text>
+
+      <!-- Output -->
+      <line x1="600" y1="260" x2="600" y2="295" stroke="#a855f7" stroke-width="1.5" />
+      <polygon points="600,300 596,292 604,292" fill="#a855f7" />
+      <text x="600" y="320" font-size="11" fill="#b8b8b8" text-anchor="middle">PI3K/Akt · MAPK</text>
+      <text x="600" y="338" font-size="10" fill="#666" text-anchor="middle" font-style="italic">growth · proliferation</text>
+    </g>
+  </svg>
+
+  {caption && <figcaption class="px-6 py-3 border-t border-border text-[12px] text-text-muted">{caption}</figcaption>}
+</figure>
