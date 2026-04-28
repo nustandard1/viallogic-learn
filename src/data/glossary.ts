@@ -7,8 +7,8 @@ export interface GlossaryEntry {
 export const glossary: Record<string, GlossaryEntry> = {
   peptide: {
     term: "Peptide",
-    short: "A short chain of amino acids (roughly 2–50) linked by peptide bonds.",
-    long: "Peptides are smaller than proteins, easier to manufacture chemically, and small enough to often escape immune detection — which is why most therapeutic peptides stay under ~40 amino acids.",
+    short: "A short chain of amino acids linked by peptide bonds. Biologically: ~2–50 AAs. FDA/pharma definition: ≤40 AAs.",
+    long: "The biological and regulatory definitions differ. In textbooks, proteins typically start above ~50 amino acids. The FDA draws the line at 40 — molecules at or below that threshold are regulated as peptides, above it as biologics. Most research peptides are well under that ceiling.",
   },
   "amino-acid": {
     term: "Amino acid",
