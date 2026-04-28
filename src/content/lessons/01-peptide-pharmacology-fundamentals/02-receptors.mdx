@@ -31,9 +31,9 @@ The peptide world is dominated by two architectures. Knowing which one a peptide
 
 <ReceptorDiagram />
 
-**GPCRs (G-protein coupled receptors)** — a single protein that snakes back and forth across the membrane seven times. Ligand binding on the outside causes a small twist; the inside end then activates a "G-protein," which kicks off a cascade. About a third of all FDA-approved drugs target GPCRs. Most appetite, GH-axis, and metabolic peptides — GLP-1, GHRH, GHRPs, somatostatin — work here.
+**<Term id="gpcr">GPCRs (G-protein coupled receptors)</Term>** — the largest family. When a peptide binds, the receptor changes shape slightly and activates an internal signaling cascade. About a third of all FDA-approved drugs target GPCRs. In the peptide world, this is where most of the action is: GLP-1, GHRH, GHRPs, somatostatin — most appetite, GH-axis, and metabolic peptides work here.
 
-**RTKs (receptor tyrosine kinases)** — different architecture. Two receptor copies sit in the membrane separately. When a ligand binds, it bridges them so they pair up (a process called *dimerization*), and each copy <Term id="phosphorylation">phosphorylates</Term> the other — meaning it tags specific spots on the partner with a phosphate group, the cell's most common on/off switch. The phosphorylated receptor is the activated one. Insulin and IGF-1 are the canonical ligands. This is the family that drives long-term growth and proliferation.
+**<Term id="rtk">RTKs (receptor tyrosine kinases)</Term>** — a different architecture. Two receptor copies sit in the membrane; when a ligand bridges them, they activate each other and kick off a growth-promoting cascade. Insulin and IGF-1 are the canonical examples. This is the family behind long-term tissue growth, protein synthesis, and cell proliferation — when people say a hormone is "anabolic," this receptor family is usually involved downstream.
 
 GPCRs and RTKs cover the vast majority of what you'll see in this course.
 
@@ -48,9 +48,9 @@ You'll hear these constantly. They are not synonyms.
 A drug can have high affinity for the wrong receptor (selective for trouble). A drug can have high potency without especially high affinity (a small amount triggers a strong cascade). When a manufacturer says a peptide is "more potent" than an alternative, the right question is: *for which receptor, and at what dose?*
 
 <Checkpoint number={1}>
-<span slot="question">Why can't peptide drugs target nuclear receptors the way steroids do?</span>
+<span slot="question">What is the practical difference between affinity, selectivity, and potency — and why are they three different words?</span>
 
-Nuclear receptors live *inside* the cell — many in the cytoplasm, some in the nucleus. The ligand has to physically get in there to bind them. Steroid hormones (testosterone, cortisol, estrogen) are small and fat-soluble, so they cross the cell membrane easily. Peptides cannot. This is why the entire peptide world is built around membrane receptors (GPCRs and RTKs) rather than nuclear ones — the architecture is forced by the molecule's chemistry, not by choice.
+They describe three different things that are easy to conflate. **Affinity** is how tightly a ligand grips its receptor — a high-affinity compound holds on longer and at lower concentrations. **Selectivity** is whether it grips *that* receptor specifically, or whether it also grips several related ones — a selective peptide has predictable effects; a non-selective one may trigger receptors you didn't intend. **Potency** is how little of the drug you need to produce an effect — it depends on both affinity and how efficiently the receptor signals once bound. A drug can be high-affinity but hit the wrong receptor (affinity without selectivity). A drug can be low-affinity but still potent if the downstream cascade amplifies strongly. When someone says "more potent," the right question is: potent at which receptor, and at what dose?
 </Checkpoint>
 
 So far we have a key, and a lock on the outside of the cell. Next: what actually happens *inside* the cell once the lock turns. This is the cascade — and it's where the real amplification happens.
