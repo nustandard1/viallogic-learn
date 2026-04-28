@@ -9,7 +9,7 @@ export const INTERVIEW_CONTENT: Record<number, ModuleInterviewContent> = {
     1: {
         title: "Peptide Pharmacology Fundamentals",
         keyConcepts: [
-            "Peptides are short amino acid chains (typically under ~50 AAs); the peptide/protein distinction is functional as much as size-based",
+            "Peptides are short amino acid chains — biologically defined as roughly 2–50 amino acids, but the FDA and pharmaceutical industry use ≤40 amino acids as the regulatory threshold. The distinction matters in this space because most research peptides are designed and classified under that pharma definition, not the textbook biology one.",
             "Peptides act on cell-surface receptors (GPCRs, ion channels, enzyme-linked) — they cannot enter cells directly",
             "Receptor binding triggers intracellular signaling cascades that amplify a tiny signal into large biological effects",
             "Half-life is short due to proteases (especially DPP-4), renal clearance, and peptide instability in plasma",
