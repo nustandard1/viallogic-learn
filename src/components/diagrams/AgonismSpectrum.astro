@@ -21,18 +21,18 @@ const { items, caption } = Astro.props;
       const startPct = fromZero ? 50 : 50 - widthPct / 2;
       const color = it.color ?? (fromZero ? "#00d4ff" : "#f43f5e");
       return (
-        <div class="grid grid-cols-[140px_1fr_auto] items-center gap-4">
-          <div class="text-[13px] font-medium text-text">{it.label}</div>
+        <div class="grid grid-cols-[100px_1fr_auto] sm:grid-cols-[140px_1fr_auto] items-center gap-3 sm:gap-4">
+          <div class="text-[12px] sm:text-[13px] font-medium text-text">{it.label}</div>
           <div class="relative h-7 rounded-md bg-bg/50 border border-border">
             <div class="absolute top-0 bottom-0 w-px bg-text-faint" style="left:50%"></div>
             <div class="absolute top-0 bottom-0 rounded-sm transition-all" style={`left:${fromZero ? 50 : startPct}%;width:${widthPct/2}%;background:${color};opacity:0.85`}></div>
           </div>
-          <div class="text-[11px] font-mono text-text-muted text-right w-16">{pct >= 0 ? "+" : ""}{pct}%</div>
-          {it.example && <div class="col-span-3 -mt-1 text-[12px] text-text-muted italic ml-[156px]">{it.example}</div>}
+          <div class="text-[11px] font-mono text-text-muted text-right w-12 sm:w-16">{pct >= 0 ? "+" : ""}{pct}%</div>
+          {it.example && <div class="col-span-3 -mt-1 text-[11px] sm:text-[12px] text-text-muted italic ml-[116px] sm:ml-[156px]">{it.example}</div>}
         </div>
       );
     })}
-    <div class="grid grid-cols-[140px_1fr_auto] gap-4 pt-2 border-t border-border">
+    <div class="grid grid-cols-[100px_1fr_auto] sm:grid-cols-[140px_1fr_auto] gap-3 sm:gap-4 pt-2 border-t border-border">
       <div></div>
       <div class="relative">
         <div class="flex justify-between text-[10px] font-mono text-text-faint">
@@ -41,7 +41,7 @@ const { items, caption } = Astro.props;
           <span>+100% (full)</span>
         </div>
       </div>
-      <div class="w-16"></div>
+      <div class="w-12 sm:w-16"></div>
     </div>
   </div>
 

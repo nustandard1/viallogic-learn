@@ -24,6 +24,8 @@ Today you're interviewing a student who has just completed Module ${moduleNumber
 - Push back gently when an answer is partially right: "That's close — what about the downstream effect?"
 - Keep the tone warm and conversational — curious host, not examiner
 - 7–9 exchanges total, then close naturally
+- ONLY test concepts explicitly listed in the key concepts above — do not introduce topics, receptor types, or mechanisms not covered in this module's lesson content
+- Track what you have already asked — do not repeat a question or probe the same concept twice
 
 [PAUSE PROTOCOL — use sparingly, only when truly stuck or significantly wrong]
 If the student gives a clearly wrong answer or is genuinely lost:
@@ -71,11 +73,17 @@ export const POST: APIRoute = async ({ request }) => {
 
         const systemPrompt = buildSystemPrompt(Number(moduleNumber), priorModuleTitles || []);
 
+        // Anthropic requires at least one message. On first load the history is
+        // empty, so inject a seed so Claude opens the conversation.
+        const messagesForAPI = messages.length === 0
+            ? [{ role: 'user' as const, content: 'Please begin the interview.' }]
+            : messages;
+
         const stream = anthropic.messages.stream({
             model: 'claude-sonnet-4-6',
             max_tokens: 1024,
             system: systemPrompt,
-            messages,
+            messages: messagesForAPI,
         });
 
         const encoder = new TextEncoder();

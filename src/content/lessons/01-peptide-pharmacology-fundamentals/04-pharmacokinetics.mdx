@@ -56,12 +56,10 @@ Each of these turns a 2-minute molecule into a 6-hour, 12-hour, or week-long mol
 ## The trade-off you should never forget
 
 <HalfLifeCurve compounds={[
-  { name: "Sermorelin (native GHRH analog)", halfLife: "~10 min", halfLifeMin: 10 },
+  { name: "Sermorelin", halfLife: "~10 min", halfLifeMin: 10 },
+  { name: "Tesamorelin", halfLife: "~30 min", halfLifeMin: 30 },
   { name: "Ipamorelin", halfLife: "~2 hr", halfLifeMin: 120 },
-  { name: "Tesamorelin", halfLife: "~30 min (acute) / longer functional", halfLifeMin: 30 },
-  { name: "Semaglutide", halfLife: "~7 days", halfLifeMin: 7*24*60 },
-  { name: "CJC-1295 with DAC", halfLife: "~7 days", halfLifeMin: 7*24*60 },
-]} caption="Five compounds, plotted on a normalized time scale. Notice how flat the long-half-life curves are — that's continuous receptor exposure, not pulsatile signaling." />
+]} caption="Three peptides on the same time axis (scale: 0→10 hours). Sermorelin clears in under an hour; ipamorelin persists for several hours. CJC-1295 with DAC and semaglutide (~7-day half-life each) would be nearly flat lines at this scale — their concentration barely moves over 10 hours. That flatness is the point: continuous receptor saturation instead of a natural pulse." />
 
 Engineering buys you half-life. But it costs you something subtle: the natural <Term id="pulsatility">pulsatility</Term> the body uses to talk to itself.
 

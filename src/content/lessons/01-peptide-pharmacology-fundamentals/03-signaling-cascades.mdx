@@ -13,6 +13,8 @@ import CascadeFlow from "../../../components/diagrams/CascadeFlow.astro";
 
 Receptor binding is step one. What happens *next* — the cascade inside the cell — is what determines the actual biological effect. And it's where the single most important fact about peptide pharmacology lives:
 
+A quick word on a term you'll see constantly: **downstream.** In biology, "downstream" means further along the signaling chain — closer to the final effect. "Upstream" is closer to the original trigger. When someone says "downstream effects," they mean what happens later in the cascade as a result of the initial binding event. It's a directional metaphor for cause-and-effect in a pathway.
+
 **One peptide molecule binding one receptor can trigger thousands of downstream events.**
 
 Think of it like pressing one button that starts a chain reaction. At each stage, one component activates many — which each activate many more. By the time the signal reaches the nucleus, a single binding event has been amplified roughly a million-fold. This is why peptides work at vanishingly small doses — micrograms or nanograms. You're not delivering a payload. You're flipping a switch, and the cell amplifies the rest.
@@ -71,9 +73,23 @@ GHRH and GHRPs both drive growth hormone release from the **same pituitary cells
 This is the entire pharmacological reason for combining a GHRH analog (CJC-1295, sermorelin) with a GHRP (ipamorelin). Not because more compounds equal more effect — because they push **different machinery in the same cell**. One tells the cell to prepare. The other tells it to release. The combination is multiplicative. We'll revisit this with the specific compounds in the GH Axis modules.
 </Callout>
 
+## How a cascade inside one cell becomes a whole-body effect
+
+The cascade itself stays inside the cell. So how does a peptide signal traveling through a single pituitary cell end up growing muscle tissue or healing a tendon?
+
+The cascade's *output* leaves the cell and enters circulation. When the calcium cascade fires in a pituitary cell, the outcome is exocytosis — stored GH is physically released into the bloodstream. GH then travels throughout the body, binds receptors on muscle, fat, and liver cells, and triggers *their* cascades. The liver responds by producing IGF-1, which travels further still, reaching bone and muscle to drive protein synthesis.
+
+The cascade doesn't move through the body — its **products** do. A peptide molecule triggers a local event in one cell type; that cell releases a hormone or growth factor that becomes systemic.
+
 ## The third pathway — for anabolism
 
 Insulin and IGF-1 don't use GPCRs at all — they use RTKs. Their downstream pathway (called <Term id="pi3k-akt">PI3K/Akt</Term>, which feeds into mTOR) is the one behind long-term tissue growth and protein synthesis. When people say a compound is "anabolic," they typically mean — eventually, downstream — this pathway is getting activated. You'll see these terms frequently in peptide and performance research; now you know what family they belong to.
+
+## What about BPC-157, GHK-Cu, and the others?
+
+GPCR and RTK cascades cover the majority of peptides — but not all of them. BPC-157 works primarily through the nitric oxide system and VEGF pathways (angiogenesis). GHK-Cu resets gene expression patterns in ways that are unusual for a tripeptide. MOTS-C works through mitochondrial and AMPK pathways.
+
+These compounds have dedicated modules in this course (Modules 6, 7, and 8) that cover their specific mechanisms. The GPCR/RTK framework in this lesson is the foundation — each subsequent module builds on it and adds what's unique to that peptide's biology.
 
 <Checkpoint number={1}>
 <span slot="question">If GHRH and GHRPs both cause GH release, why isn't one enough — why use both?</span>

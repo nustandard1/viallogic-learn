@@ -16,15 +16,15 @@ const max = Math.max(...items.map(i => i.aa), 200);
       const pct = (it.aa / max) * 100;
       const isProtein = it.aa >= 50;
       return (
-        <div class="grid grid-cols-[140px_1fr_72px] items-center gap-4">
-          <div class="text-[13px] font-medium text-text truncate">{it.name}</div>
+        <div class="grid grid-cols-[100px_1fr_56px] sm:grid-cols-[140px_1fr_72px] items-center gap-3 sm:gap-4">
+          <div class="text-[12px] sm:text-[13px] font-medium text-text truncate">{it.name}</div>
           <div class="relative h-6 rounded-md bg-bg/50 border border-border overflow-hidden">
             <!-- 50aa boundary marker -->
             <div class="absolute top-0 bottom-0 w-px bg-amber/60" style={`left:${(50/max)*100}%`} title="~50 aa boundary"></div>
             <div class="absolute top-0 bottom-0 rounded-sm" style={`left:0;width:${pct}%;background:${isProtein ? "rgba(168,85,247,0.5)" : "rgba(0,212,255,0.5)"};border-right:1px solid ${isProtein ? "#a855f7" : "#00d4ff"}`}></div>
           </div>
           <div class="text-[11px] font-mono text-text-muted text-right">{it.aa} aa</div>
-          {it.tag && <div class="col-span-3 -mt-1 ml-[156px] text-[11.5px] text-text-faint italic">{it.tag}</div>}
+          {it.tag && <div class="col-span-3 -mt-1 ml-[108px] sm:ml-[156px] text-[11px] sm:text-[11.5px] text-text-faint italic">{it.tag}</div>}
         </div>
       );
     })}
