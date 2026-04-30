@@ -1,0 +1,82 @@
+---
+module: "02-routes-reconstitution-dosing"
+order: 3
+title: Syringe math — from concentration to draw
+summary: U-100 insulin syringes, why units aren't micrograms, and a full worked example from vial to dose.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+Most peptide research uses **U-100 insulin syringes** — small-gauge, widely available at any pharmacy, and precise at the volumes peptides require. The only friction: they measure in **units**, not mL, not mcg.
+
+Understanding the conversion is the only arithmetic this field regularly requires.
+
+## What U-100 means
+
+**U-100 = 100 units per mL.** That's it. The number refers to the syringe's scale, not any biological activity.
+
+| Units | Volume |
+|-------|--------|
+| 100 | 1.0 mL |
+| 50 | 0.5 mL |
+| 20 | 0.2 mL |
+| 10 | 0.1 mL |
+| 5 | 0.05 mL |
+| 1 | 0.01 mL |
+
+<Callout type="caution" title="Units ≠ micrograms">
+Insulin users think of "units" as a dose of insulin. In peptide research, units are purely a volume marker — 10 units = 0.1mL, regardless of what's in the syringe. The mcg you're delivering depends entirely on your vial's concentration. Same units, different concentration = different dose. Always recalculate when you change how a vial was reconstituted.
+</Callout>
+
+## The three-step calculation
+
+**Step 1 — Concentration:** mcg/mL = total peptide (mcg) ÷ BAC water (mL)
+
+**Step 2 — Volume:** mL needed = desired dose (mcg) ÷ concentration (mcg/mL)
+
+**Step 3 — Units:** units to draw = mL × 100
+
+<Callout type="key" title="Worked example — 250mcg BPC-157">
+**Vial:** 5mg (5,000mcg), reconstituted with 2mL BAC water
+**Concentration:** 5,000 ÷ 2 = 2,500 mcg/mL
+
+**Desired dose:** 250mcg
+**Volume needed:** 250 ÷ 2,500 = 0.1mL
+**Units to draw:** 0.1 × 100 = **10 units**
+
+Draw to the **10-unit line** on a U-100 syringe.
+</Callout>
+
+## A shortcut for repeated dosing
+
+Once you know your concentration, calculate **mcg per unit** once and keep it handy:
+
+**mcg per unit = concentration (mcg/mL) ÷ 100**
+
+At 2,500 mcg/mL: 1 unit = 25mcg. So 250mcg = 10 units, 500mcg = 20 units. Simple mental math for the life of that vial.
+
+<Callout type="key" title="Second worked example — 200mcg ipamorelin">
+**Vial:** 10mg (10,000mcg), reconstituted with 2mL BAC water
+**Concentration:** 10,000 ÷ 2 = 5,000 mcg/mL
+**mcg per unit:** 5,000 ÷ 100 = 50mcg per unit
+
+**Desired dose:** 200mcg
+**Units to draw:** 200 ÷ 50 = **4 units**
+</Callout>
+
+## Putting the chain together
+
+Vial size → add BAC water → concentration → desired dose ÷ concentration → mL → × 100 → units on the syringe.
+
+That chain is the entire practical math of peptide dosing. The numbers change with every vial and every reconstitution volume, but the steps never do.
+
+<Checkpoint number={1}>
+<span slot="question">You have a 2mg vial reconstituted with 1mL of BAC water. You want a 100mcg dose. How many units do you draw?</span>
+
+Concentration: 2mg = 2,000mcg ÷ 1mL = 2,000 mcg/mL. Volume: 100 ÷ 2,000 = 0.05mL. Units: 0.05 × 100 = **5 units**. Shortcut: mcg per unit = 2,000 ÷ 100 = 20mcg/unit. 100mcg ÷ 20 = 5 units.
+</Checkpoint>
+
+That's the complete toolkit for Module 2. One lesson left: lock it in.

@@ -1,0 +1,111 @@
+---
+module: "02-routes-reconstitution-dosing"
+order: 4
+title: Recap & quick check
+summary: Lock in the framework — key formulas, vocabulary review, and a 6-question quiz before the Dr. Harmon interview.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import KeyTerms from "../../../components/KeyTerms.astro";
+import Quiz from "../../../components/Quiz.astro";
+
+Before you move on, take a few minutes to lock the module in. The terms and formulas below should feel familiar now.
+
+<KeyTerms ids={[
+  "bioavailability",
+  "pharmacokinetics",
+  "dpp-4",
+  "half-life",
+]} />
+
+## Key formulas
+
+<Callout type="key" title="The two calculations">
+**Concentration:** mcg/mL = total peptide (mcg) ÷ BAC water added (mL)
+
+**Units to draw:** desired dose (mcg) ÷ concentration (mcg/mL) × 100
+
+**Shortcut:** mcg per unit = concentration ÷ 100
+</Callout>
+
+## The whole module in two sentences
+
+Route determines how much of a dose reaches the target and how fast — sub-Q is the default, IM is faster, intranasal bypasses first-pass metabolism, and oral works for select peptides (BPC-157, KPV) when the target is GI tissue rather than systemic circulation. Reconstituting a vial creates a concentration, and every dose is just a division problem: desired dose ÷ concentration = volume in mL, times 100 = units on a U-100 syringe.
+
+## Quick check
+
+<Quiz questions={[
+  {
+    q: "Why is subcutaneous injection the default route for most research peptides rather than intramuscular?",
+    options: [
+      "Sub-Q produces higher bioavailability than IM for all peptides.",
+      "Sub-Q provides slower, more consistent absorption — the fat depot acts as a small reservoir — and is easier to self-administer.",
+      "IM injections destroy peptides on contact with muscle tissue.",
+      "Sub-Q bypasses first-pass liver metabolism in a way IM does not.",
+    ],
+    answer: 1,
+    explain: "Sub-Q and IM both achieve high bioavailability for most peptides — the difference is kinetics. Sub-Q is slower and more consistent (useful for sustained release), IM is faster (useful when onset speed matters). Neither bypasses first-pass in a meaningful way for injectable peptides. The default preference for sub-Q is practical: easier self-administration and predictable absorption.",
+  },
+  {
+    q: "BPC-157 is being used for a gastrointestinal healing application. Why might oral delivery make sense here even though oral bioavailability for peptides is typically near zero?",
+    options: [
+      "BPC-157 is uniquely acid-resistant and reaches systemic circulation intact when swallowed.",
+      "The target tissue is the GI lining itself — oral delivery achieves high local concentrations exactly where the peptide needs to act.",
+      "Oral delivery activates a different receptor than injection for BPC-157.",
+      "Oral BPC-157 is absorbed through the tongue before reaching the stomach.",
+    ],
+    answer: 1,
+    explain: "For a peptide targeting the gut, systemic bioavailability is beside the point. Oral BPC-157 is in direct contact with GI tissue during transit, achieving high local concentrations at the target site. Whether it survives to enter circulation in meaningful amounts is debated — but for GI applications, local action is what matters. KPV works on the same principle.",
+  },
+  {
+    q: "Why should BAC water be used instead of sterile water when reconstituting a peptide vial you'll draw from multiple times?",
+    options: [
+      "BAC water dissolves peptide powder faster.",
+      "Sterile water reacts chemically with peptides and degrades them.",
+      "BAC water contains benzyl alcohol, a preservative that inhibits bacterial growth after repeated needle entries.",
+      "Sterile water raises the pH of the solution, inactivating most peptides.",
+    ],
+    answer: 2,
+    explain: "Sterile water is sterile at manufacture but has no preservative — repeated needle entries introduce contamination risk that accumulates over days. BAC water's 0.9% benzyl alcohol is a bacteriostatic agent that keeps the solution safe across multiple draws. 'Sterile' and 'safe to reuse' are not the same thing.",
+  },
+  {
+    q: "You add more BAC water to a vial than originally intended, doubling the total volume. What happens?",
+    options: [
+      "The peptide is diluted and partially denatured by the additional water.",
+      "Concentration halves, but total peptide in the vial is unchanged — you just need to draw twice the volume for the same dose.",
+      "The extra BAC water's benzyl alcohol degrades the peptide.",
+      "Nothing changes — peptide concentration is fixed regardless of volume.",
+    ],
+    answer: 1,
+    explain: "Concentration = peptide ÷ volume. Doubling volume halves concentration. The total amount of peptide is unchanged — still however many mcg were in the vial. The practical effect: every dose now requires double the volume to draw. As long as you recalculate, nothing is lost. The error is forgetting to recalculate and dosing based on old unit numbers.",
+  },
+  {
+    q: "A 5mg vial is reconstituted with 2mL of BAC water. You want a 250mcg dose. How many units do you draw on a U-100 syringe?",
+    options: [
+      "5 units",
+      "25 units",
+      "10 units",
+      "2.5 units",
+    ],
+    answer: 2,
+    explain: "Concentration: 5mg = 5,000mcg ÷ 2mL = 2,500 mcg/mL. Volume needed: 250 ÷ 2,500 = 0.1mL. Units: 0.1 × 100 = 10 units. Shortcut: mcg per unit = 2,500 ÷ 100 = 25mcg/unit. 250 ÷ 25 = 10 units.",
+  },
+  {
+    q: "A 10mg vial is reconstituted with 2mL of BAC water. You want a 500mcg dose. How many units do you draw?",
+    options: [
+      "5 units",
+      "20 units",
+      "10 units",
+      "50 units",
+    ],
+    answer: 2,
+    explain: "Concentration: 10,000mcg ÷ 2mL = 5,000 mcg/mL. mcg per unit: 5,000 ÷ 100 = 50mcg/unit. 500mcg ÷ 50 = 10 units. Alternatively: volume = 500 ÷ 5,000 = 0.1mL. Units = 0.1 × 100 = 10.",
+  },
+]} />
+
+## Up next
+
+Module 3 shifts from the how to the *why it works* — the cellular cascade of tissue repair. You'll meet the growth factors and healing pathways that sit behind BPC-157, TB-500, and the regenerative peptide category.
+
+When you're ready, take the Dr. Harmon interview below. Passing it unlocks Module 3.

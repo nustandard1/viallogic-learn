@@ -1,0 +1,61 @@
+---
+module: "02-routes-reconstitution-dosing"
+order: 2
+title: BAC water and reconstitution
+summary: What you're doing when you dissolve a peptide vial — and the concentration math every dose calculation starts from.
+duration: "4 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+Research peptides are shipped as **lyophilized powder** — freeze-dried to maximize shelf life and stability. Before you can use one, you dissolve it in a liquid. That process is reconstitution, and the liquid you choose determines how long the vial stays usable.
+
+## BAC water vs. sterile water
+
+Two options. One right answer for any vial you'll draw from more than once.
+
+**BAC water (bacteriostatic water)** contains 0.9% benzyl alcohol — a preservative that inhibits bacterial growth. Every time you puncture the septum and draw from a vial, there's a small contamination risk. Benzyl alcohol suppresses it. BAC water is what you want for any multi-draw vial.
+
+**Sterile water** contains no preservative. Appropriate for single-use situations — one draw, then discard the rest. Using sterile water in a vial you'll return to over days or weeks risks bacterial growth by the third or fourth draw.
+
+<Callout type="caution" title="The common mistake">
+People sometimes reach for sterile water because it sounds safer, or because it was what was available. "Sterile" means no organisms *at manufacture* — once you've introduced a needle, it won't stay that way without a preservative. For any multi-draw vial, use BAC water.
+</Callout>
+
+## Reconstitution technique
+
+1. Wipe the septum of both vials with an alcohol swab
+2. Draw the desired volume of BAC water into a syringe
+3. Insert the needle into the peptide vial and inject slowly — aim at the glass wall, not directly onto the powder
+4. **Do not shake.** Swirl gently until dissolved. Shaking can mechanically denature fragile peptides.
+5. Refrigerate after reconstitution. Do not freeze. Use within 30 days (check compound-specific guidance — some are shorter).
+
+## The concentration formula
+
+This is the one calculation everything else builds on:
+
+**Concentration (mcg/mL) = total peptide (mcg) ÷ BAC water added (mL)**
+
+<Callout type="key" title="Worked example — 5mg BPC-157">
+**Vial:** 5mg = 5,000 mcg
+**BAC water added:** 2 mL
+**Concentration:** 5,000 ÷ 2 = **2,500 mcg/mL**
+
+If you used 5mL instead: 5,000 ÷ 5 = 1,000 mcg/mL. Lower concentration — but the **total amount of peptide in the vial hasn't changed.** You just need to draw a larger volume for the same dose.
+</Callout>
+
+This leads to the most important misconception to eliminate early: **adding more BAC water doesn't weaken the peptide.** It dilutes the concentration, which means you draw a larger volume per dose — and nothing else changes.
+
+## Why concentration matters
+
+Concentration is the bridge between "I want 250 mcg" and "I draw X on the syringe." Without knowing concentration, the dose number is meaningless. Reconstituting consistently — same vial size, same BAC water volume, every time — keeps your math simple and your doses accurate.
+
+<Checkpoint number={1}>
+<span slot="question">Someone reconstitutes a 10mg vial with 2mL of BAC water, then decides to add another 3mL "to make it easier to draw small doses." What changes, and what doesn't?</span>
+
+Starting concentration: 10mg = 10,000mcg ÷ 2mL = 5,000 mcg/mL. After adding 3mL more (total 5mL): 10,000 ÷ 5 = 2,000 mcg/mL. The concentration drops by 60%. The total peptide in the vial is unchanged at 10,000mcg. They'll now draw 2.5× the volume for the same dose. Not a problem if they recalculate — but if they keep using the old dose in units without adjusting, they'll significantly underdose.
+</Checkpoint>
+
+You have a peptide in solution and a concentration you trust. The last step is translating that into a number you can actually read off a syringe.

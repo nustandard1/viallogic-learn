@@ -1,0 +1,47 @@
+---
+module: "02-routes-reconstitution-dosing"
+order: 1
+title: Routes of administration
+summary: Sub-Q, IM, intranasal, oral — why the route you choose changes more than just where you put the needle.
+duration: "3 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+Route isn't just logistics. It determines how much of your dose reaches circulation, how fast, and sometimes whether it reaches a specific tissue *before* the bloodstream at all. Two peptides with identical half-lives can behave completely differently based on how they're delivered.
+
+## The four routes
+
+**Subcutaneous (sub-Q)** — injected into the fat layer just under the skin. This is the default for most peptides. Absorption is slower and more consistent than IM — the fat depot acts as a small reservoir, releasing the peptide gradually into circulation. Easy to self-administer, minimal tissue disruption, predictable <Term id="bioavailability">bioavailability</Term>.
+
+**Intramuscular (IM)** — injected directly into muscle tissue. Faster absorption than sub-Q because muscle is more vascular. Not always better — for peptides that benefit from gradual, sustained release, sub-Q is often preferred. IM is most useful when faster onset matters and the peptide handles the faster absorption well.
+
+**Intranasal** — works for select small, reasonably stable peptides. Bypasses first-pass liver metabolism, reaches systemic circulation quickly, and for some peptides achieves faster CNS access than injection. PT-141 (bremelanotide) and oxytocin are commonly delivered this way. Bioavailability is lower than injection for most peptides, but for the right compound, speed and CNS targeting offset this.
+
+**Oral** — generally doesn't work, for reasons covered in Module 1 (stomach acid, proteases, first-pass metabolism). But there are real exceptions worth knowing:
+
+<Callout type="key" title="When oral actually works">
+**BPC-157** has demonstrated efficacy via oral administration, particularly for GI applications. The key insight: high systemic bioavailability isn't the goal when the target tissue *is* the gut. Oral BPC-157 achieves high local concentrations in the GI lining as it passes through — exactly where it's needed for gut healing applications. Whether significant amounts survive to enter systemic circulation is debated, but local GI effects via oral delivery appear real and are well-supported in animal research.
+
+**KPV** (Lys-Pro-Val, a tripeptide derived from alpha-MSH) is small and stable enough to survive GI transit in standard formulations. Used primarily for gut inflammation, oral delivery is arguably the preferred route for the same reason as BPC-157 — the target is local.
+
+These are exceptions to the rule, not the rule itself. For any peptide with a systemic target, injection remains the reliable choice.
+</Callout>
+
+## What actually changes by route
+
+Three variables shift when you change route:
+
+- **Bioavailability** — fraction of the dose reaching systemic circulation intact. Sub-Q and IM are both high (>90% for most peptides). Intranasal varies considerably. Oral is near zero for most, but *locally* high for peptides targeting GI tissue.
+- **Onset speed** — IM is fastest, sub-Q slightly slower, intranasal depends on the peptide, oral is slowest for anything that reaches circulation at all.
+- **Tissue targeting** — for peptides acting locally (BPC-157 in gut, PT-141 in CNS), route choice can maximize tissue concentration rather than systemic exposure.
+
+<Checkpoint number={1}>
+<span slot="question">Someone says "oral doesn't work for peptides — you have to inject." You're evaluating a peptide being used for gut inflammation. Why might they be wrong in this specific case?</span>
+
+For a peptide targeting gut tissue, high systemic bioavailability isn't the goal — high *local* concentration in the GI lining is. Oral delivery achieves exactly that, even if systemic levels are minimal. BPC-157 and KPV are both examples: they may be substantially broken down before reaching the bloodstream, but they act on gut tissue during transit. For systemic effects, the objection would be valid. For gut-localized effects, oral may actually be the more rational route.
+</Checkpoint>
+
+Next: your peptide arrived as a white powder in a vial. Before it goes anywhere, it needs to be dissolved — and the math behind that step determines every dose you'll ever calculate.
