@@ -192,4 +192,41 @@ export const glossary: Record<string, GlossaryEntry> = {
     term: "Endogenous",
     short: "Made naturally by the body. The opposite is exogenous — introduced from outside (e.g., an injection).",
   },
+  angiogenesis: {
+    term: "Angiogenesis",
+    short: "The formation of new blood vessels. The process that restores blood supply to injured tissue.",
+    long: "Injured tissue has compromised blood supply — angiogenesis is how the body rebuilds it. New capillaries deliver oxygen, nutrients, and growth factors to the repair site. Many regenerative peptides (BPC-157, GHK-Cu) work partly by upregulating angiogenesis.",
+  },
+  vegf: {
+    term: "VEGF",
+    short: "Vascular Endothelial Growth Factor. The primary signaling protein that triggers angiogenesis — tells cells to grow new blood vessels.",
+    long: "VEGF is released at injury sites and by hypoxic (oxygen-starved) tissue. It binds receptors on endothelial cells and instructs them to proliferate and form new capillaries. When you read that a peptide 'upregulates VEGF,' it means the peptide is accelerating this vessel-formation process.",
+  },
+  fibroblast: {
+    term: "Fibroblast",
+    short: "The cell type that produces collagen and other structural proteins. The primary construction worker of tissue repair.",
+    long: "Fibroblasts are activated by growth factors (TGF-β, FGF) during the proliferative phase of healing. They synthesize collagen, elastin, and the extracellular matrix that forms the physical scaffold of repaired tissue.",
+  },
+  collagen: {
+    term: "Collagen",
+    short: "The structural protein that forms the scaffolding of tendons, ligaments, skin, and most connective tissue.",
+    long: "Collagen is produced by fibroblasts and goes through a maturation process over weeks to months. Early repair produces Type III collagen (faster but weaker), which is gradually remodeled into Type I collagen (stronger, more organized). This is why structural strength returns long after pain and swelling resolve.",
+  },
+  "tgf-b": {
+    term: "TGF-β",
+    short: "Transforming Growth Factor-beta. A key signaling protein that activates fibroblasts and drives collagen synthesis during repair.",
+  },
+  "fgf": {
+    term: "FGF",
+    short: "Fibroblast Growth Factor. Promotes fibroblast proliferation and angiogenesis — one of the key growth factors released at injury sites.",
+  },
+  cytokine: {
+    term: "Cytokine",
+    short: "A small signaling protein released by immune cells to coordinate the inflammatory and repair response.",
+    long: "Cytokines are how immune cells talk to each other and to structural cells like fibroblasts. Pro-inflammatory cytokines (IL-1, TNF-α) initiate the acute response; anti-inflammatory cytokines help resolve it. Chronic inflammation is characterized by persistently elevated pro-inflammatory cytokines with no resolution.",
+  },
+  "extracellular-matrix": {
+    term: "Extracellular matrix (ECM)",
+    short: "The structural scaffold between cells — made of collagen, elastin, and other proteins. What repair peptides are ultimately rebuilding.",
+  },
 };

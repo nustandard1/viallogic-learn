@@ -1,0 +1,103 @@
+---
+module: "03-healing-and-repair-pathways"
+order: 5
+title: Recap & quick check
+summary: Lock in the healing framework — key terms, a module summary, and 6 questions before the Dr. Harmon interview.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import KeyTerms from "../../../components/KeyTerms.astro";
+import Quiz from "../../../components/Quiz.astro";
+
+<KeyTerms ids={[
+  "angiogenesis",
+  "vegf",
+  "fibroblast",
+  "collagen",
+  "tgf-b",
+  "fgf",
+  "cytokine",
+  "extracellular-matrix",
+]} />
+
+## The whole module in one paragraph
+
+Every injury progresses through three phases: inflammatory (0–72h, necessary, coordinates repair signals), proliferative (days–weeks, angiogenesis and fibroblast activity rebuild the tissue), and remodeling (weeks–months, collagen matures from weak Type III to strong Type I). Angiogenesis — driven by VEGF — restores the blood supply that delivers everything repair requires; it's the rate-limiting step in how fast Phase 2 can run. Fibroblasts produce collagen, but collagen maturation takes far longer than pain resolution, which is why re-injury rates stay high even after symptoms clear. Acute inflammation is a necessary phase and shouldn't be aggressively suppressed early; chronic inflammation is the stuck, destructive version that repair peptides are most effective against. BPC-157, TB-500, and GHK-Cu each plug into specific parts of this cascade — the next three compound modules will show exactly where.
+
+## Quick check
+
+<Quiz questions={[
+  {
+    q: "What are the three phases of healing in order, and what is the primary activity of each?",
+    options: [
+      "Remodeling → Proliferative → Inflammatory: strength first, then building, then cleanup.",
+      "Inflammatory → Proliferative → Remodeling: debris clearance and signaling, then angiogenesis and fibroblast activity, then collagen maturation.",
+      "Proliferative → Inflammatory → Remodeling: building first, immune response second, cleanup third.",
+      "Inflammatory → Remodeling → Proliferative: immune response, collagen maturation, then new tissue.",
+    ],
+    answer: 1,
+    explain: "The order is fixed: Inflammatory (0–72h) clears debris and releases growth factor signals. Proliferative (days–weeks) is when angiogenesis restores blood supply and fibroblasts build new tissue. Remodeling (weeks–months) is when preliminary Type III collagen matures into stronger Type I collagen. Each phase depends on the one before it.",
+  },
+  {
+    q: "Why is angiogenesis considered a rate-limiting step in tissue repair?",
+    options: [
+      "Because it removes scar tissue that blocks fibroblast access.",
+      "Because injured tissue loses blood supply, and repair requires oxygen, nutrients, growth factors, and immune cells — all delivered by blood. No restored blood supply, no efficient repair.",
+      "Because angiogenesis triggers the inflammatory phase.",
+      "Because VEGF directly synthesizes collagen at the injury site.",
+    ],
+    answer: 1,
+    explain: "Damaged tissue has compromised vasculature. Repair requires a constant supply chain — oxygen, nutrients, growth factors, and immune cells in, waste products out. This supply chain is blood. Until new vessels grow into the injury site (angiogenesis), the proliferative phase is severely bottlenecked. Peptides like BPC-157 that upregulate VEGF and accelerate angiogenesis are removing this specific bottleneck.",
+  },
+  {
+    q: "A peptide is described as 'activating fibroblasts and upregulating TGF-β.' In plain terms, what is it doing for tissue repair?",
+    options: [
+      "It is suppressing the inflammatory phase to allow fibroblasts to work without interference.",
+      "It is triggering the cells that produce collagen and structural proteins, and amplifying the growth factor signal that tells them to proliferate and migrate to the injury site.",
+      "It is building new blood vessels by stimulating endothelial cells.",
+      "It is promoting the conversion of Type I collagen to Type III during remodeling.",
+    ],
+    answer: 1,
+    explain: "Fibroblasts are the cells that produce collagen and connective tissue scaffolding. TGF-β is the primary growth factor signal that activates them. A peptide that upregulates TGF-β and activates fibroblasts is amplifying the core signaling that drives the structural rebuild in Phase 2. This is the primary mechanism of several repair peptides including GHK-Cu.",
+  },
+  {
+    q: "Pain and swelling from a tendon injury resolved 3 weeks ago. Why might the tissue still be structurally vulnerable?",
+    options: [
+      "Because inflammation returns in cycles and may flare again.",
+      "Because pain resolution happens during Phase 2 when Type III collagen fills the gap, but tensile strength only returns during Phase 3 as Type III is replaced by mature Type I collagen — a process taking weeks to months.",
+      "Because fibroblasts stop producing collagen once pain resolves.",
+      "Because the inflammatory phase restarts after symptoms clear.",
+    ],
+    answer: 1,
+    explain: "Pain and swelling resolve when Type III collagen bridges the structural gap — fast but weak. The remodeling phase, where Type III is replaced by cross-linked, aligned Type I collagen with real tensile strength, takes weeks to months and proceeds silently. The gap between 'feels healed' and 'is structurally healed' is exactly where re-injury occurs.",
+  },
+  {
+    q: "What distinguishes acute inflammation from chronic inflammation in terms of effect on healing?",
+    options: [
+      "Acute inflammation is always harmful; chronic inflammation is the body's necessary repair mode.",
+      "Acute inflammation is time-limited and pro-healing — it initiates repair signals. Chronic inflammation is persistent, unresolved, and destructive — it degrades tissue rather than rebuilding it.",
+      "There is no meaningful difference — both types suppress fibroblast activity.",
+      "Chronic inflammation drives angiogenesis; acute inflammation blocks it.",
+    ],
+    answer: 1,
+    explain: "Acute inflammation is Phase 1 — it's supposed to happen, it clears debris, releases growth factors, and initiates repair. Chronic inflammation is what happens when the resolution process fails or the triggering stimulus never stops. Persistently elevated inflammatory mediators break down collagen, impair fibroblast function, and block healing. Anti-inflammatory peptides are most effective against the chronic type — that's why they support repair rather than impair it.",
+  },
+  {
+    q: "Why might aggressively suppressing inflammation with NSAIDs in the first 48 hours after an injury slow overall healing?",
+    options: [
+      "NSAIDs interfere directly with collagen synthesis by blocking fibroblast receptors.",
+      "The acute inflammatory phase releases growth factors (VEGF, TGF-β, FGF) that trigger Phase 2. Suppressing inflammatory signaling early can reduce these signals, delaying the proliferative phase.",
+      "NSAIDs destroy the Type III collagen already being produced.",
+      "NSAIDs prevent angiogenesis by blocking endothelial cell division.",
+    ],
+    answer: 1,
+    explain: "The inflammatory phase does more than cause pain — immune cells at the injury site release VEGF, TGF-β, FGF, and other growth factors that serve as the triggers for Phase 2 (angiogenesis and fibroblast activation). NSAIDs suppress prostaglandin production, which reduces pain but can also dampen the inflammatory signaling that those growth factors depend on. Early aggressive use trades short-term comfort for potentially slower Phase 2 onset.",
+  },
+]} />
+
+## Up next
+
+Module 4 shifts from repair to growth — the hypothalamic-pituitary axis that governs GH release, and the cascade from brain signal to anabolic effect. You now have the cellular context to understand *why* GH and IGF-1 drive tissue changes — the fibroblasts, collagen synthesis, and angiogenesis from this module are all downstream targets.
+
+When you're ready, take the Dr. Harmon interview below. Passing it unlocks Module 4.
