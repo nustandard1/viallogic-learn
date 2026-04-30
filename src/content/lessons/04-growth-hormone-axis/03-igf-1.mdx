@@ -1,0 +1,80 @@
+---
+module: "04-growth-hormone-axis"
+order: 3
+title: IGF-1 — the anabolic messenger
+summary: Most of what gets attributed to GH is actually IGF-1 acting downstream. Here's what IGF-1 does, how it differs from GH, and why serum IGF-1 is the practical proxy for axis activity.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+"GH builds muscle." This is technically incomplete in a way that matters. GH does drive body composition changes — but most of the anabolic effects attributed to it are not GH acting on muscle. They are <Term id="igf-1">IGF-1</Term> acting on muscle after GH told the liver to produce it.
+
+The distinction isn't academic. It changes how you interpret blood markers, how you evaluate protocol claims, and what you understand is happening when the axis is working or broken.
+
+## Where IGF-1 comes from
+
+The liver is the primary source of circulating IGF-1. When GH binds its receptor on hepatocytes (liver cells), it triggers a signaling cascade that upregulates IGF-1 gene expression and releases IGF-1 into the bloodstream. This is the hepatic GH → IGF-1 conversion step.
+
+The GH receptor is a cytokine-type receptor (not a GPCR — the GH receptor has its own distinct family). When GH binds, the receptor dimerizes and activates the JAK/STAT signaling pathway, which leads to STAT5b (a transcription factor) entering the nucleus and driving IGF-1 gene expression. The result: sustained GH stimulus → sustained IGF-1 production from the liver.
+
+There is also *local* IGF-1 production — muscle, bone, and other tissues produce IGF-1 in response to mechanical load and local GH signaling. But the dominant source of serum IGF-1, and the primary driver of systemic anabolic effects, is the liver.
+
+## The IGF-1 receptor — and why it matters
+
+<Term id="igf-1">IGF-1</Term> binds the IGF-1 receptor (IGF-1R), which is a <Term id="rtk">receptor tyrosine kinase</Term> — the same RTK family introduced in Module 1, the same family as the insulin receptor. This is not a coincidence: IGF-1 and insulin share structural similarity, which is why IGF-1 has modest insulin-like activity at high concentrations.
+
+When IGF-1 binds its RTK:
+- The receptor autophosphorylates (phosphorylates itself — the same mechanism from Module 1)
+- This activates the <Term id="pi3k-akt">PI3K/Akt</Term> pathway → mTOR → protein synthesis
+- It also activates MAPK → ERK → cell proliferation and differentiation
+
+These are the exact pathways that drive muscle protein synthesis, collagen production (connecting back to Module 3's fibroblast/collagen mechanism), and cell growth throughout the body.
+
+## What GH does vs. what IGF-1 does
+
+This is the most important conceptual split in the module:
+
+**GH does directly:**
+- <Term id="lipolysis">Lipolysis</Term> — breaks down stored fat in adipocytes. Direct GH receptor binding on fat cells; does not require IGF-1.
+- Counter-insulin effects — GH raises blood glucose by opposing insulin's action in muscle and fat. This is a direct GH effect and is one reason chronically elevated GH raises diabetes risk.
+- Some local tissue growth effects through local IGF-1 production
+
+**IGF-1 does (downstream of GH):**
+- Muscle protein synthesis and hypertrophy — the primary driver of what people mean by "GH builds muscle"
+- Collagen and extracellular matrix synthesis — fibroblast activation, connecting this axis to Module 3 healing pathways
+- Cell proliferation across multiple tissue types
+- Anti-apoptotic effects — keeps cells alive longer
+- Bone growth (length and density) — the mechanism behind the gigantism of untreated childhood GH excess
+
+<Callout type="key" title="You can have high GH and low IGF-1 — and vice versa">
+GH and IGF-1 are not interchangeable markers. A patient with liver dysfunction may have high GH but low IGF-1 because the liver can't convert the signal. A patient with GH receptor defects (Laron syndrome) has very high GH but essentially no IGF-1. In both cases, the anabolic effects attributed to "GH" are absent — which proves those effects depend on IGF-1, not GH itself.
+
+Conversely, direct IGF-1 supplementation produces anabolic effects without raising GH. The two are distinct molecules with overlapping but not identical roles.
+</Callout>
+
+## Why serum IGF-1 is the clinical proxy
+
+Measuring GH directly is impractical for tracking axis activity because GH pulses last 30–90 minutes and then fall back to near-zero. A single blood draw is almost meaningless — it may catch a peak or a trough depending on timing.
+
+IGF-1 is different. Because the liver produces it steadily in response to cumulative GH pulse exposure, serum IGF-1 levels are relatively stable throughout the day. A single fasted morning IGF-1 level integrates GH axis activity over the preceding days and is the standard clinical tool for:
+
+- Diagnosing GH deficiency or excess
+- Monitoring GH replacement therapy
+- Tracking GH-axis peptide protocol effects
+
+When someone "checks their labs" to see if a GHRH protocol is working, they're almost always checking IGF-1. That number is the downstream readout of whether the hypothalamus → pituitary → liver cascade ran properly.
+
+<Callout type="info" title="IGF-1 age norms matter">
+IGF-1 reference ranges are age-dependent and fall substantially across adult life. A 25-year-old and a 55-year-old have very different normal ranges. Using a general adult range without age-adjusting is a common interpretation error. Labs report age-specific reference intervals; always read IGF-1 results against the age-matched range.
+</Callout>
+
+<Checkpoint number={1}>
+<span slot="question">A researcher has high serum GH levels but very low IGF-1 and is seeing minimal anabolic response. What is the most likely explanation — and what does this tell you about which molecule actually drives the anabolic effects?</span>
+
+High GH with low IGF-1 and absent anabolic effects points to a failure in the GH → liver → IGF-1 conversion step. The most likely cause is liver dysfunction (reduced hepatocyte capacity to respond to GH) or GH receptor defects (the liver isn't receiving the GH signal properly). This is precisely the logic that proves anabolic effects require IGF-1, not just GH: the GH is present, the receptors downstream are presumably intact, but without the liver producing IGF-1, no muscle protein synthesis, collagen production, or cell proliferation occurs. GH drives lipolysis directly — but the growth and repair effects attributed to "GH" are actually IGF-1 acting via its RTK receptor on target tissues.
+</Checkpoint>
+
+GH and IGF-1 are the two legs of the axis. But the story of how GH release is triggered isn't complete — because there's a second set of signals that can pull the trigger through a completely different mechanism.
