@@ -9,15 +9,18 @@ const modules = (await getCollection("modules"))
 // Curriculum outline — modules that don't exist yet are listed as "coming soon"
 const curriculum = [
   { number: 1, title: "Peptide Pharmacology Fundamentals", subtitle: "Receptors, half-lives, signaling cascades — the foundational vocabulary every peptide discussion uses.", category: "Foundations", duration: "20 min" },
-  { number: 2, title: "Routes, Reconstitution & Dosing", subtitle: "How peptides actually reach the bloodstream, why route changes everything, and the math behind every injection.", category: "Foundations", duration: "18 min" },
+  { number: 2, title: "Routes, Reconstitution & Dosing", subtitle: "How peptides actually reach the bloodstream, why route changes everything, and the math behind every injection.", category: "Foundations", duration: "15 min" },
   { number: 3, title: "Healing & Repair Pathways", subtitle: "Angiogenesis, fibroblast biology, and the cellular cascade that connects most regenerative peptides.", category: "Foundations", duration: "22 min" },
   { number: 4, title: "The Growth Hormone Axis", subtitle: "GHRH, GHRP, IGF-1 — the hypothalamic-pituitary system that governs an entire peptide category.", category: "Foundations", duration: "25 min" },
-  { number: 5, title: "Reading Peptide Research", subtitle: "Distinguishing real evidence from marketing — how to evaluate studies, doses, and claims like an expert.", category: "Foundations", duration: "15 min" },
-  { number: 6, title: "BPC-157 — Body Protection Compound", subtitle: "Mechanisms, tissue specificity, and why it works the way it does. Module begins the deep-dive series.", category: "Tissue Repair", duration: "25 min" },
+  { number: 5, title: "Evaluating Evidence & Quality", subtitle: "Reading research like an expert, spotting fraudulent claims, and understanding what a real COA actually tells you.", category: "Foundations", duration: "15 min" },
+  { number: 6, title: "BPC-157 — Body Protection Compound", subtitle: "Mechanisms, tissue specificity, and why it works the way it does.", category: "Tissue Repair", duration: "25 min" },
   { number: 7, title: "TB-500 (Thymosin Beta-4 Fragment)", subtitle: "Systemic healing, actin sequestration, and stem cell mobilization — the complementary pair to BPC-157.", category: "Tissue Repair", duration: "22 min" },
   { number: 8, title: "GHK-Cu — The Copper Peptide", subtitle: "Gene expression, collagen synthesis, and connective tissue. The most studied skin and tissue peptide.", category: "Tissue Repair", duration: "20 min" },
-  { number: 9, title: "CJC-1295 & Sermorelin — GHRH Analogs", subtitle: "Two GHRH peptides, one mechanism, very different durations — and why DAC changes everything.", category: "GH Axis", duration: "22 min" },
-  { number: 10, title: "Ipamorelin & GHRP Selectivity", subtitle: "What makes a GHRP 'clean'? Receptor binding, cortisol spillover, and selectivity.", category: "GH Axis", duration: "20 min" },
+  { number: 9, title: "GHRH Analogs — CJC-1295, Sermorelin & Tesamorelin", subtitle: "Three GHRH peptides, one mechanism — why duration and DAC technology change everything.", category: "GH Axis", duration: "22 min" },
+  { number: 10, title: "GHRPs — Ipamorelin, GHRP-2, GHRP-6 & Hexarelin", subtitle: "The ghrelin receptor agonist family — what separates a clean pulse from a dirty spike.", category: "GH Axis", duration: "22 min" },
+  { number: 11, title: "GLP-1 Analogs — Semaglutide, Tirzepatide & Retatrutide", subtitle: "The most prescribed peptides in history — mechanisms, clinical applications, and why retatrutide changes everything.", category: "Metabolic", duration: "25 min" },
+  { number: 12, title: "Cognitive Peptides — Semax & Selank", subtitle: "Brain-targeted peptides, BDNF signaling, and the emerging nootropic category.", category: "Cognitive", duration: "20 min" },
+  { number: 13, title: "Mitochondrial & Metabolic Peptides — MOTS-C & SS-31", subtitle: "Cellular energy, mitochondrial function, and the frontier of metabolic peptide research.", category: "Metabolic", duration: "20 min" },
 ];
 
 const publishedNumbers = new Set(modules.filter(m => m.data.published).map(m => m.data.number));
