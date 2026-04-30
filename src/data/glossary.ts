@@ -148,6 +148,39 @@ export const glossary: Record<string, GlossaryEntry> = {
     term: "GHRP",
     short: "Growth hormone-releasing peptide. Synthetic ghrelin-mimetic that triggers GH release via Gq-coupled GPCRs.",
   },
+  somatostatin: {
+    term: "Somatostatin",
+    short: "Hypothalamic inhibitory peptide that suppresses GH release. The counter-regulatory brake opposing GHRH.",
+    long: "Somatostatin is released from the hypothalamus and acts on the same somatotroph cells that GHRH stimulates — but it blocks GH secretion instead of triggering it. When GH and IGF-1 rise, negative feedback increases somatostatin tone, reducing subsequent GH pulses. Some GHRPs partially overcome somatostatin inhibition, adding to their synergy with GHRH analogs.",
+  },
+  "igf-1": {
+    term: "IGF-1",
+    short: "Insulin-like Growth Factor 1. Produced by the liver in response to GH. The primary anabolic mediator of most GH effects.",
+    long: "Most of what is attributed to 'GH' in terms of muscle growth, collagen synthesis, and cell proliferation is actually mediated by IGF-1 downstream. GH itself drives lipolysis and some direct effects, but the anabolic cascade goes GH → liver → IGF-1 → IGF-1 receptor (an RTK) → PI3K/Akt/mTOR → protein synthesis. Serum IGF-1 is the standard clinical proxy for GH axis activity because it integrates multiple GH pulses over days.",
+  },
+  ghrelin: {
+    term: "Ghrelin",
+    short: "The endogenous 'hunger hormone' produced by the stomach. Also the natural ligand for the GHS-R1a receptor that GHRPs mimic.",
+    long: "Ghrelin is the endogenous agonist of the GHS-R1a (growth hormone secretagogue receptor). Its primary known role is appetite regulation, but it also triggers GH release via the Gq/calcium pathway — which is why GHRPs (synthetic ghrelin mimetics) produce both GH release and, in less selective compounds like GHRP-6, appetite stimulation.",
+  },
+  somatotroph: {
+    term: "Somatotroph",
+    short: "The anterior pituitary cell type that synthesizes and secretes growth hormone. The target cell of GHRH and GHRPs.",
+  },
+  "negative-feedback": {
+    term: "Negative feedback",
+    short: "The mechanism by which elevated GH and IGF-1 suppress further GHRH release and increase somatostatin tone — keeping the axis in balance.",
+    long: "Negative feedback is how the GH axis prevents runaway secretion. Elevated GH acts directly on the hypothalamus to reduce GHRH release. Elevated IGF-1 does the same, and also increases somatostatin tone. This is why continuous exogenous GH or very long-acting GHRH analogs can suppress the body's own axis signaling over time.",
+  },
+  lipolysis: {
+    term: "Lipolysis",
+    short: "The breakdown of stored fat (triglycerides) into free fatty acids. A direct GH effect that does not require IGF-1 as an intermediary.",
+    long: "GH has two broad categories of action: IGF-1-mediated anabolic effects (protein synthesis, cell growth) and direct metabolic effects (lipolysis, insulin antagonism). Lipolysis is direct — GH binds its receptor on fat cells and activates hormone-sensitive lipase, releasing free fatty acids into circulation. This is why GH has a reputation for body-composition effects beyond just muscle: it actively mobilizes fat stores.",
+  },
+  "anterior-pituitary": {
+    term: "Anterior pituitary",
+    short: "The glandular lobe of the pituitary, located at the base of the brain. Produces GH, LH, FSH, TSH, ACTH, and prolactin in response to hypothalamic signals.",
+  },
   ligand: {
     term: "Ligand",
     short: "Any molecule that binds a receptor. The peptide is the ligand; the receptor is the target.",

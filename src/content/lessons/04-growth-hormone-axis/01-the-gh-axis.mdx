@@ -1,0 +1,72 @@
+---
+module: "04-growth-hormone-axis"
+order: 1
+title: The GH axis — from brain to bloodstream
+summary: Three organs, four hormones, one feedback loop — the full cascade from hypothalamic signal to anabolic effect.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+Growth hormone doesn't come from one place and act on another. It's the output of a regulatory system — a cascade that starts in the brain, runs through the pituitary, and reaches every tissue in the body through two separate messengers: GH itself and, more importantly, <Term id="igf-1">IGF-1</Term>.
+
+Understanding that system is understanding what every compound in Modules 9 and 10 actually does. None of them introduce GH into your body. They work on the signals upstream of GH — stimulating your own pituitary to release its own GH. That distinction matters.
+
+## The axis, step by step
+
+**Step 1 — The hypothalamus sends the signal**
+
+The hypothalamus, a small structure at the base of the brain, governs the GH axis through two opposing peptides:
+
+- <Term id="ghrh">GHRH</Term> (Growth Hormone-Releasing Hormone) — the stimulatory signal. GHRH is released in pulses and tells the pituitary to release GH.
+- <Term id="somatostatin">Somatostatin</Term> — the inhibitory brake. Released when GH or IGF-1 rises too high, somatostatin blocks further GH secretion.
+
+The balance between GHRH and somatostatin tone at any given moment determines how much GH the pituitary releases. This isn't a binary on/off switch — it's a continuous push and pull.
+
+**Step 2 — The anterior pituitary responds**
+
+GHRH travels a short distance to the <Term id="anterior-pituitary">anterior pituitary</Term>, where it binds receptors on specialized cells called <Term id="somatotroph">somatotrophs</Term>. These are the only cells in the body that produce growth hormone.
+
+The GHRH receptor is a Gs-coupled GPCR — the same receptor type from Module 1. Binding GHRH activates adenylyl cyclase → <Term id="camp">cAMP</Term> rises → PKA activates → CREB is phosphorylated → the GH gene is switched on and stored GH vesicles are released by exocytosis. This is the cAMP pathway from Module 1 doing real work in a specific cell type.
+
+**Step 3 — GH enters circulation**
+
+GH (growth hormone itself) is a 191-amino-acid protein — too large to be called a peptide by FDA standards. It enters the bloodstream and acts on two types of targets:
+
+- **Fat cells (adipocytes)** — directly, producing <Term id="lipolysis">lipolysis</Term> (breakdown of stored fat into free fatty acids). This is a direct GH effect; it does not require IGF-1 as an intermediary.
+- **The liver** — GH binds receptors on liver cells and signals them to produce and secrete IGF-1.
+
+**Step 4 — The liver produces IGF-1**
+
+This is the step most people skip, and it's the most important one. The liver responds to GH by producing <Term id="igf-1">IGF-1</Term> (Insulin-like Growth Factor 1) and releasing it into circulation. IGF-1 then acts on virtually every tissue in the body.
+
+Most of what gets attributed to "GH" — muscle growth, collagen synthesis, cell proliferation — is actually IGF-1 driving those effects downstream. GH is the signal to the liver. IGF-1 is the molecule that does most of the building.
+
+**Step 5 — Negative feedback closes the loop**
+
+As GH and IGF-1 rise, they feed back to the hypothalamus:
+
+- Elevated GH and IGF-1 reduce GHRH release
+- Elevated IGF-1 increases somatostatin tone
+
+This <Term id="negative-feedback">negative feedback</Term> is what keeps the axis in balance. It's also why continuously elevated GH — from exogenous injections or very long-acting GHRH analogs — can suppress the body's own signaling over time. The axis interprets the elevated GH/IGF-1 as a signal that it doesn't need to fire.
+
+<Callout type="key" title="GHRH analogs don't replace GH — they stimulate your pituitary to release its own">
+Sermorelin, CJC-1295, and tesamorelin are all GHRH analogs. When you use them, you're not putting GH into your body — you're sending a signal to your pituitary that mimics what the hypothalamus does naturally. The pituitary then releases your own endogenous GH in a pulse. The anabolic and lipolytic effects come from that endogenous GH and the IGF-1 it triggers. This is a fundamentally different pharmacological approach from exogenous recombinant GH, which bypasses the pituitary entirely.
+</Callout>
+
+## Why the axis exists
+
+The GH axis isn't just a delivery mechanism. It's a regulatory one. The hypothalamus adjusts GHRH and somatostatin based on inputs like sleep, fasting, exercise, blood glucose, and circulating IGF-1. The result is that GH output is tuned to the body's metabolic state — high during growth phases, sleep, and caloric deficit; suppressed after meals (especially carbohydrate-rich ones) and during states of high IGF-1.
+
+Peptides that work at Step 1 (GHRH analogs) or add a second signal (GHRPs — covered in Lesson 4) are working with this regulatory logic. Exogenous GH bypasses it. That distinction shapes everything about the safety profile, the feedback behavior, and the long-term axis health of each approach.
+
+<Checkpoint number={1}>
+<span slot="question">Trace the GH axis from the hypothalamus to one downstream anabolic effect. Name the hormones at each step and the organ that produces them.</span>
+
+The hypothalamus releases GHRH → GHRH travels to the anterior pituitary and binds Gs-coupled receptors on somatotroph cells → somatotrophs respond via cAMP/PKA/CREB signaling by releasing stored GH → GH enters circulation and signals the liver → the liver produces IGF-1 → IGF-1 acts on muscle cells via its RTK receptor, activating PI3K/Akt/mTOR, driving protein synthesis and muscle growth. Somatostatin (also hypothalamic) is the counter-signal: it rises when GH and IGF-1 are elevated, suppressing further GH release and closing the feedback loop.
+</Checkpoint>
+
+The axis governs *whether* GH is released. The next question — one that turns out to matter as much as total output — is *how* it's released.

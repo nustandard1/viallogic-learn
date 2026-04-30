@@ -1,0 +1,76 @@
+---
+module: "04-growth-hormone-axis"
+order: 4
+title: GHRPs and the ghrelin receptor — the second signal
+summary: GHRPs bind a completely different receptor than GHRH analogs, fire a different signaling cascade, and are synergistic rather than redundant. Here's the mechanism.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+There is a second pathway into the pituitary somatotroph — one that <Term id="ghrh">GHRH</Term> doesn't use. It runs through the ghrelin receptor, produces a completely different intracellular signal, and has a different effect on GH release. Understanding this pathway is what makes the GHRH analog + GHRP combination rational rather than arbitrary.
+
+## Ghrelin — the endogenous signal
+
+<Term id="ghrelin">Ghrelin</Term> is produced primarily by the stomach and is best known as the "hunger hormone" — it rises before meals and signals the brain to initiate feeding. But it has a second, less appreciated role: ghrelin also acts on somatotroph cells in the pituitary to stimulate GH release.
+
+It does this through the **GHS-R1a** — the growth hormone secretagogue receptor type 1a. This receptor is a Gq-coupled GPCR, which means its signaling pathway is completely different from the Gs-coupled GHRH receptor.
+
+<Term id="ghrp">GHRPs</Term> (growth hormone-releasing peptides) — ipamorelin, GHRP-2, GHRP-6, hexarelin — are synthetic ghrelin mimetics. They bind GHS-R1a and trigger the same response ghrelin does.
+
+## Two receptors, two cascades
+
+On the same somatotroph cell, there are now two different inputs that both produce GH release:
+
+**GHRH receptor (Gs-coupled GPCR):**
+- GHRH binds → Gs activates adenylyl cyclase → <Term id="camp">cAMP</Term> rises → PKA activates → CREB phosphorylated
+- Effect: GH gene transcription upregulated (more GH synthesized), plus gradual, sustained GH secretion from existing stores
+- Timescale: slower onset, longer duration
+
+**GHS-R1a / ghrelin receptor (Gq-coupled GPCR):**
+- Ghrelin or GHRP binds → Gq activates phospholipase C → IP3 + DAG produced → calcium released from intracellular stores
+- Effect: rapid calcium spike → exocytosis — vesicles containing already-stored GH fuse with the membrane and dump their contents
+- Timescale: fast onset, sharp peak
+
+These are the same two pathways introduced in Module 1 (Gs/cAMP and Gq/calcium). They're now doing different jobs on the same cell.
+
+<Callout type="key" title="Why the combination is multiplicative, not additive">
+GHRH primes the somatotroph: it synthesizes new GH, increases the cell's GH stockpile, and produces slow sustained secretion via the cAMP pathway. GHRPs fire the trigger: the calcium spike causes the cell to rapidly dump whatever GH it has stored via exocytosis.
+
+Combine them: the cell has more stored GH (GHRH primed it) and a stronger exocytotic signal (GHRP fired it). The amount of GH released in a pulse is multiplicative — not just the sum of each compound alone. This is the mechanistic justification for the classic GHRH analog + GHRP stack. It's not redundancy; it's convergence on the same output via complementary inputs.
+</Callout>
+
+## Somatostatin — and how GHRPs partially circumvent it
+
+Recall that <Term id="somatostatin">somatostatin</Term> is the hypothalamic brake. One of its mechanisms is inhibiting cAMP production in somatotrophs — directly opposing the GHRH/Gs pathway.
+
+GHRPs use the calcium pathway instead. Somatostatin's inhibitory effect on the calcium/Gq pathway is weaker. This means that in states of elevated somatostatin tone — where GHRH would be significantly blunted — a GHRP can still trigger meaningful GH release. Adding a GHRP to a GHRH analog not only adds a second signal; it partially overcomes the somatostatin block that would otherwise reduce the GHRH response.
+
+## What "selectivity" means in the GHRP context
+
+The ghrelin receptor (GHS-R1a) has multiple downstream signaling branches. Ghrelin — and less selective GHRPs like GHRP-6 and hexarelin — activate not just the GH-release calcium pathway but also pathways that drive:
+- Appetite and food intake (via hypothalamic ghrelin signaling)
+- Cortisol secretion from the adrenal glands
+- Prolactin release
+
+Ipamorelin is the most selective synthetic ligand at GHS-R1a. It preferentially activates the calcium cascade that produces GH release while leaving the cortisol, prolactin, and appetite pathways relatively quiet. This is <Term id="biased-agonism">biased agonism</Term> — the same concept that explained why ipamorelin was introduced in Module 1 as the canonical "clean" GHRP. Same receptor, different downstream signature.
+
+<Callout type="info" title="The GHRP selectivity spectrum">
+From cleanest to least selective: ipamorelin → GHRP-2 → GHRP-6 → hexarelin. Ipamorelin: minimal cortisol, prolactin, or appetite effect. GHRP-2: moderate cortisol and prolactin elevation. GHRP-6: significant appetite stimulation via ghrelin-like hypothalamic activity. Hexarelin: most potent GH release of the group, but also notable cortisol, prolactin, and some cardiac receptor activity. Module 10 covers each compound in detail — but the selectivity spectrum follows directly from this receptor biology.
+</Callout>
+
+## Negative feedback — completing the loop
+
+Both GHRH analogs and GHRPs ultimately produce elevated GH and then elevated IGF-1. That IGF-1 rises and feeds back to the hypothalamus: GHRH release decreases, somatostatin tone increases, and the next pulse is suppressed or blunted.
+
+This is why exogenous GH injections can be more axis-suppressive than GHRH analogs or GHRPs. Exogenous GH raises GH and IGF-1 acutely without going through the hypothalamic-pituitary pathway — the feedback signal is present, but the stimulus for the pituitary's own signaling was bypassed. Over time, the axis learns that GH is being provided externally and reduces its own output. GHRH analogs and GHRPs work upstream of the pituitary's own GH production, so the natural pulsatile logic is preserved to a greater degree.
+
+<Checkpoint number={1}>
+<span slot="question">A researcher is using a GHRH analog alone and sees modest GH pulses. They add a GHRP. Explain mechanistically — in terms of receptor types, signaling pathways, and their effects on the somatotroph — why this combination should produce larger GH pulses than either compound alone.</span>
+
+The GHRH analog binds the Gs-coupled GHRH receptor → cAMP rises → PKA/CREB pathway activates → the somatotroph synthesizes more GH and releases it gradually. This is the slow, priming signal. Adding the GHRP binds the separate Gq-coupled GHS-R1a receptor → phospholipase C → IP3 → calcium spike from intracellular stores → rapid exocytosis of stored GH vesicles. The GHRH primed the cell with a larger GH stockpile; the GHRP fires the trigger for immediate release. Additionally, the GHRP's calcium pathway is less sensitive to somatostatin inhibition than the GHRH/cAMP pathway, so the GHRP partially overcomes any somatostatin-mediated blunting of the pulse. The result is a larger, sharper GH pulse than either signal produces independently — multiplicative, not additive.
+</Checkpoint>
+
+One lesson left — lock the axis framework in before the interview.

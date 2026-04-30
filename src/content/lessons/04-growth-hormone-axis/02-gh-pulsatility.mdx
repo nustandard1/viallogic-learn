@@ -1,0 +1,66 @@
+---
+module: "04-growth-hormone-axis"
+order: 2
+title: GH pulsatility — why pattern matters as much as total output
+summary: GH is released in bursts, not continuously. The rhythm is physiologically meaningful — and disrupting it has real consequences.
+duration: "4 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+If you measured GH in the bloodstream every 15 minutes over 24 hours, you'd see a striking picture: near-zero for long stretches, punctuated by sharp spikes. The largest spike reliably appears within the first hour of slow-wave sleep. Other spikes follow fasting, exercise, and certain metabolic states.
+
+This is not a malfunction. <Term id="pulsatility">Pulsatility</Term> is how the GH axis is supposed to work — and understanding it changes how you evaluate every GH-axis compound.
+
+## What produces GH pulses
+
+The pulse pattern is driven by the oscillating relationship between GHRH and <Term id="somatostatin">somatostatin</Term> at the hypothalamic level. When GHRH tone is high and somatostatin is quiet, a pulse fires. When somatostatin rises (after a pulse, after a meal, after elevated IGF-1), the next pulse is suppressed.
+
+The result is a natural oscillation: fire, suppress, recover, fire again. The largest pulses occur during slow-wave sleep because somatostatin tone drops to its lowest point overnight — giving GHRH a clean window.
+
+Key triggers for GH pulses:
+- **Slow-wave sleep** — the dominant physiologic stimulus; disrupted sleep significantly blunts GH output
+- **Fasting and caloric deficit** — low insulin and low blood glucose reduce somatostatin tone
+- **Intense exercise** — especially resistance training; the pulse typically appears 15–30 minutes post-exercise
+- **Low IGF-1 levels** — reduced negative feedback means somatostatin tone stays lower
+
+Factors that suppress pulses:
+- **Elevated blood glucose / insulin** — insulin raises somatostatin tone and blunts GH release
+- **Elevated IGF-1** — negative feedback signal; tells the hypothalamus the system is already running hot
+- **Obesity** — chronic metabolic state characterized by blunted GH pulsatility and reduced pulse amplitude
+
+## Why pulsatility matters biologically
+
+The pulse pattern isn't just a delivery schedule — it's information. Different GH exposure patterns produce different downstream effects:
+
+**Pulse amplitude drives anabolic effects.** High peak concentrations are what trigger the strongest IGF-1 response from the liver. A high pulse tells the liver "significant GH activity right now — produce IGF-1." A flat continuous low level tells the liver something different.
+
+**Troughs are required for receptor sensitivity.** <Term id="somatotroph">Somatotrophs</Term> and target tissues downregulate their GH receptors under chronic exposure. The trough between pulses is a recovery window — receptors recycle to the surface, downstream machinery resets. Without it, the same total amount of GH produces progressively less response. This is the receptor <Term id="desensitization">desensitization</Term> mechanism from Module 1 operating in the GH axis specifically.
+
+**Pulsatile vs. continuous exposure drives different tissue effects.** In animal models, pulsatile GH exposure produces more anabolic effect than the same total dose delivered continuously. This is not a pharmacokinetics quirk — it reflects the biology of how the GH receptor and its downstream signaling behave under different temporal patterns.
+
+<Callout type="caution" title="The flat-line problem with long-acting GHRH analogs">
+CJC-1295 with DAC has a half-life of roughly 7 days. A single injection maintains detectable plasma levels — and continuous GHRH receptor stimulation — for most of the week. The convenience is real. But the consequence is that GH output becomes flatter: instead of discrete high-amplitude pulses with deep troughs, you get a more continuous, lower-amplitude elevation.
+
+Whether this trade-off is acceptable depends on the goal. For body composition purposes, some researchers find that sermorelin — with its ~10–20 minute half-life and genuinely pulsatile behavior — produces better long-term axis responsiveness than CJC-1295 with DAC, despite the inconvenience of more frequent dosing. This is the same pulsatility trade-off introduced in Module 1 — playing out concretely in the GH axis.
+</Callout>
+
+## The sleep connection you can't ignore
+
+The largest GH pulse of the day occurs in the first 90 minutes of slow-wave sleep. For most people, this single pulse accounts for a substantial fraction of their total daily GH output.
+
+The practical implication: any protocol designed to optimize GH-axis activity needs to account for sleep quality. Poor sleep architecture (fragmented sleep, inadequate slow-wave stages, sleep apnea) doesn't just affect recovery — it directly blunts GH pulsatility. No compound corrects for that. The protocol is doing 10% of the work if the sleep isn't there.
+
+<Callout type="info" title="Timing injections relative to sleep">
+Short-acting GHRH analogs and GHRPs are typically dosed before bed specifically to leverage the pre-existing sleep pulse — adding an exogenous signal on top of the natural physiologic window when somatostatin tone is already lowest. It amplifies a pulse that was going to happen anyway. This is why the pre-sleep injection timing is protocol consensus rather than arbitrary convention.
+</Callout>
+
+<Checkpoint number={1}>
+<span slot="question">A GHRH analog with a 7-day half-life and one with a 15-minute half-life both stimulate GH release. Why might the short-acting version produce better long-term GH axis responsiveness, even though the long-acting version is present in the body far more consistently?</span>
+
+The 7-day half-life analog maintains continuous GHRH receptor stimulation, producing a flatter GH profile — more sustained but lower-amplitude, with minimal troughs. Without troughs, GH receptors on somatotrophs and target tissues don't get the recovery window needed to maintain sensitivity. Receptor desensitization develops over weeks: internalization, reduced synthesis, blunted downstream response. The result is that the same GHRH signal produces less GH output over time. The 15-minute half-life analog fires a true pulse and then clears, giving receptors a recovery window. Pulsatile exposure preserves receptor sensitivity, maintains higher-amplitude peaks, and produces better long-term axis responsiveness — at the cost of more frequent dosing.
+</Checkpoint>
+
+Total GH output is driven by pulse amplitude and frequency. What that GH actually *does* in tissue — the anabolic effects — largely depends on the molecule it triggers downstream.

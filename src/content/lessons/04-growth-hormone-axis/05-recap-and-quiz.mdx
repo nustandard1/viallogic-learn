@@ -1,0 +1,108 @@
+---
+module: "04-growth-hormone-axis"
+order: 5
+title: Recap & quick check
+summary: Lock in the GH axis — key terms, a module summary, and 6 questions before the Dr. Harmon interview.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import KeyTerms from "../../../components/KeyTerms.astro";
+import Quiz from "../../../components/Quiz.astro";
+
+<KeyTerms ids={[
+  "ghrh",
+  "somatostatin",
+  "anterior-pituitary",
+  "somatotroph",
+  "camp",
+  "ghrelin",
+  "ghrp",
+  "igf-1",
+  "pulsatility",
+  "lipolysis",
+  "negative-feedback",
+  "biased-agonism",
+  "desensitization",
+]} />
+
+## The whole module in one paragraph
+
+The GH axis runs from the hypothalamus (GHRH stimulates; somatostatin inhibits) to the anterior pituitary somatotrophs (which release GH in pulses via cAMP-mediated GHRH receptor signaling) to the liver (which produces IGF-1 in response to GH) to every anabolic target in the body (muscle, bone, connective tissue — driven by IGF-1's RTK/PI3K/Akt/mTOR cascade). GH itself drives lipolysis directly; most of its growth effects require IGF-1 as an intermediary, which is why serum IGF-1 is the practical proxy for axis activity. GH is released in pulses — not continuously — and that pattern matters: pulse amplitude drives IGF-1 response, troughs preserve receptor sensitivity, and disrupting pulsatility with long-acting analogs trades convenience for blunted long-term axis responsiveness. GHRPs are ghrelin mimetics that bind a completely separate receptor (GHS-R1a, Gq-coupled) from GHRH analogs (Gs-coupled GHRH receptor) — the two signals are complementary, producing multiplicative GH release when combined. Negative feedback closes the loop: elevated GH and IGF-1 reduce GHRH and increase somatostatin, which is why exogenous GH can suppress endogenous axis activity over time.
+
+## Quick check
+
+<Quiz questions={[
+  {
+    q: "Trace the GH axis in order. Starting from the hypothalamus, what are the key signals and organs on the way to an anabolic effect in muscle?",
+    options: [
+      "Hypothalamus → GH → liver → GHRH → IGF-1 → muscle protein synthesis.",
+      "Hypothalamus releases GHRH → anterior pituitary somatotrophs release GH → liver produces IGF-1 → IGF-1 acts on muscle via RTK/PI3K/Akt → protein synthesis.",
+      "Anterior pituitary → GHRH → hypothalamus → IGF-1 → liver → muscle.",
+      "Hypothalamus → somatostatin → pituitary → IGF-1 → muscle.",
+    ],
+    answer: 1,
+    explain: "The sequence is: hypothalamus releases GHRH → GHRH binds Gs-coupled receptors on somatotroph cells in the anterior pituitary → cAMP rises → GH is synthesized and released → GH travels to the liver and triggers IGF-1 production → IGF-1 enters circulation and binds its RTK on muscle cells → PI3K/Akt/mTOR drives protein synthesis. Somatostatin is the opposing signal (the brake), not part of the stimulatory pathway.",
+  },
+  {
+    q: "What is somatostatin's role in the GH axis, and what triggers its release?",
+    options: [
+      "Somatostatin is released from the liver to convert GH into IGF-1.",
+      "Somatostatin is a growth-stimulating signal that works alongside GHRH to amplify GH pulses.",
+      "Somatostatin is the hypothalamic brake on GH secretion. Elevated GH and IGF-1 increase somatostatin tone, suppressing the next GH pulse — a core part of the negative feedback loop.",
+      "Somatostatin is produced by somatotrophs in response to high GHRH levels.",
+    ],
+    answer: 2,
+    explain: "Somatostatin is released from the hypothalamus and acts directly on somatotroph cells to block GH secretion. It's the counter-signal to GHRH — the brake to GHRH's accelerator. Elevated GH and IGF-1 feed back to increase somatostatin tone, which suppresses subsequent GH pulses. This is the core negative feedback mechanism that keeps the axis from running continuously at maximum output.",
+  },
+  {
+    q: "Someone says they want to 'maximize GH levels' for muscle growth. What is missing from this statement?",
+    options: [
+      "Nothing — GH directly drives muscle protein synthesis, so maximizing GH is the right goal.",
+      "Most of GH's anabolic effects are mediated by IGF-1, not GH itself. Maximizing GH without considering whether the liver is converting it to IGF-1 — and whether continuous elevation undermines pulsatility and receptor sensitivity — misses the actual mechanism.",
+      "GH only affects fat metabolism; it has no relevance to muscle growth.",
+      "IGF-1 and GH are the same molecule; the statement is correct as written.",
+    ],
+    answer: 1,
+    explain: "GH is not the anabolic effector — IGF-1 is. GH signals the liver to produce IGF-1; IGF-1 then drives protein synthesis, cell proliferation, and growth via its RTK receptor. You can have high GH with minimal anabolic effect if liver function is impaired. Additionally, continuously maximizing GH (through long-acting analogs or exogenous GH) blunts pulsatility and triggers receptor desensitization, reducing long-term axis responsiveness. The goal isn't maximum GH — it's physiologically appropriate pulsatile GH that produces adequate IGF-1.",
+  },
+  {
+    q: "A GHRH analog and a GHRP both trigger GH release from the pituitary. Why is combining them more effective than using more of either one alone?",
+    options: [
+      "They activate the same receptor with the same downstream cascade — more of both simply saturates the same pathway faster.",
+      "GHRPs block GHRH breakdown, extending its half-life and increasing the GHRH signal.",
+      "They bind completely different receptors with different signaling cascades — GHRH uses Gs/cAMP to prime the somatotroph and upregulate GH synthesis, while GHRPs use Gq/calcium to trigger rapid exocytosis of stored GH. The combination produces multiplicative output: a bigger stored GH pool plus a stronger release trigger.",
+      "Higher doses of GHRH analogs stop working after a few weeks, so GHRPs are required as a replacement.",
+    ],
+    answer: 2,
+    explain: "GHRH analogs bind the Gs-coupled GHRH receptor → cAMP → PKA/CREB → GH gene expression and slow, sustained GH secretion. GHRPs bind the separate Gq-coupled GHS-R1a (ghrelin receptor) → phospholipase C → IP3 → intracellular calcium spike → rapid exocytosis of stored GH. GHRH primes the cell (more GH synthesized and ready), GHRPs fire the trigger (immediate release). The result is more GH released per pulse than either pathway alone could produce. This is genuine synergy through complementary mechanisms — not addition.",
+  },
+  {
+    q: "Why might a long-acting GHRH analog that is active 24 hours a day produce less GH output over weeks compared to a short-acting analog dosed pre-sleep?",
+    options: [
+      "Long-acting analogs are chemically less potent than short-acting ones.",
+      "Continuous GHRH receptor stimulation causes somatotroph desensitization: GHRH receptors get internalized, downstream cAMP signaling dampens, and GH pulse amplitude falls over time. Short-acting analogs fire a pulse and then clear — the receptor recovery window preserves sensitivity and maintains higher-amplitude pulsatile output.",
+      "Long-acting analogs have lower IGF-1 production because they only reach the pituitary once.",
+      "GH release only happens during the first injection; subsequent doses produce no response regardless of half-life.",
+    ],
+    answer: 1,
+    explain: "This is the desensitization mechanism from Module 1 playing out specifically in the GHRH receptor system. Continuous receptor occupancy → receptor phosphorylation → internalization (the cell removes the receptor from the surface) → receptor downregulation (fewer receptors produced over time) → diminished cAMP response to the same GHRH signal. The receptor needs troughs — periods without GHRH stimulation — to recycle to the surface and maintain sensitivity. Short-acting analogs provide those troughs naturally. Long-acting analogs eliminate them for convenience, at the cost of blunted receptor sensitivity over weeks.",
+  },
+  {
+    q: "A researcher has high serum GH but low serum IGF-1, and sees minimal anabolic effects. What does this pattern tell you — and what would a blood test showing the opposite pattern (low GH but normal IGF-1) imply?",
+    options: [
+      "High GH / low IGF-1 means the GH is working correctly; IGF-1 just hasn't caught up yet. Low GH / normal IGF-1 means the liver is overproducing IGF-1 independently.",
+      "High GH / low IGF-1 points to a failure at the GH → liver → IGF-1 conversion step (liver dysfunction or GH receptor defect). Anabolic effects require IGF-1, not just GH — the GH signal is present but not being converted. Low GH / normal IGF-1 suggests endogenous GH is suppressed (possibly by exogenous GH or another suppressive input) while IGF-1 is still being maintained — or that IGF-1 is being measured at a time lag after a prior GH stimulus.",
+      "Both patterns indicate the same problem: insufficient GH receptor activation.",
+      "There is no meaningful distinction between GH and IGF-1 in clinical interpretation.",
+    ],
+    answer: 1,
+    explain: "High GH / low IGF-1 = failure at the liver conversion step. Liver dysfunction (hepatic insufficiency, cirrhosis) or GH receptor defects (as in Laron syndrome) prevent the liver from responding to GH with IGF-1 production. Without IGF-1, most anabolic effects don't occur — proving that anabolic effects are IGF-1 mediated, not GH-direct. Low GH / normal IGF-1 can occur when exogenous GH has suppressed endogenous GH secretion via negative feedback, but IGF-1 remains elevated because it was produced in response to recent GH activity (IGF-1 has a longer circulating half-life than GH) — or because GH was measured in a trough between pulses. Serum IGF-1 is a better integrated marker of axis activity for exactly this reason.",
+  },
+]} />
+
+## Up next
+
+Module 5 shifts to a skill that's more immediately practical than anything covered so far: reading peptide research critically. You now have the biological context to evaluate what a study is actually claiming — and what it isn't. That context only matters if you can identify whether the evidence supporting a claim is from a cell culture, a rat, or a controlled human trial.
+
+When you're ready, take the Dr. Harmon interview below. Passing it unlocks Module 5.
