@@ -1,0 +1,80 @@
+---
+module: "05-evaluating-evidence-and-quality"
+order: 1
+title: The evidence hierarchy — from cell culture to clinical trial
+summary: Not all evidence is the same. Here's the framework for locating exactly where a peptide claim sits on the spectrum — and what that means for how much confidence it deserves.
+duration: "7 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+When someone says "studies show this peptide works," the most important follow-up question isn't about the study's conclusions. It's about the type of study. A cell culture experiment and a randomized controlled trial are both "studies." The amount of confidence each one earns is completely different.
+
+The peptide space is almost entirely pre-clinical. Most of the compounds you'll encounter in Modules 6 through 13 have strong in vitro and animal data, limited or no human trial data, and near-zero Phase III RCT evidence. That doesn't automatically make them ineffective — it means the evidence base is early, and claims should be calibrated accordingly.
+
+## The hierarchy, bottom to top
+
+**In vitro (cell culture)**
+
+A compound is added to isolated cells in a dish and a response is measured. This is the starting point for mechanism discovery — it tells you whether a compound can produce a biological effect at the cellular level under controlled conditions.
+
+What it doesn't tell you: whether the compound survives the trip from injection to target tissue, whether the dose used in the culture is achievable in a living organism, or whether the response observed in isolated cells happens the same way inside a complex biological system. In vitro is mechanistic proof of concept, not clinical evidence.
+
+**In vivo — animal models**
+
+The compound is tested in a living organism, usually rodents. This adds pharmacokinetics (how the compound is absorbed, distributed, metabolized, and excreted), immune responses, systemic effects, and dose-response relationships that don't exist in a dish.
+
+Animal models are a significant step up from in vitro — but they are not humans. Rodents metabolize compounds differently, have different immune systems, and are often used at doses that don't scale proportionally to human doses. Most peptide research stops here.
+
+**Human observational / case reports**
+
+A compound is used in a human and an outcome is recorded. No control group, no randomization, no blinding. Useful for identifying that an effect is plausible in humans and generating hypotheses. Not useful for establishing that the compound caused the outcome — correlation is not causation, and there are countless confounds in any individual case.
+
+**Human RCT (randomized controlled trial)**
+
+The gold standard. Participants are randomly assigned to treatment or placebo, neither they nor the researchers know who got what (double blind), and outcomes are measured against a control. This design removes most sources of bias and allows causal claims. An adequately powered, well-designed RCT with pre-registered endpoints is the strongest single piece of evidence.
+
+**Systematic review / meta-analysis**
+
+Multiple RCTs combined and analyzed together. Increases statistical power, identifies consistency of effects across populations, and surfaces heterogeneity. The top of the hierarchy when the underlying studies are high quality.
+
+<Callout type="key" title="Where most peptides live">
+BPC-157, TB-500, GHK-Cu, ipamorelin, and most peptides covered in this course have strong in vitro evidence and substantial rodent data. Human clinical trials, if they exist at all, are small, uncontrolled, or industry-funded. Tesamorelin is the outlier — it has FDA approval, which required controlled human trials. GLP-1 analogs (semaglutide, tirzepatide) have large Phase III trial data because they went through the full drug approval pipeline.
+
+This doesn't mean the others don't work. It means the confidence level is lower and claims should be proportionally careful.
+</Callout>
+
+## The translation problem
+
+Animal studies fail to predict human effects at an alarming rate — more than 90% of drugs that succeed in animal trials fail in human trials. There are a few reasons this matters specifically for peptides:
+
+**Dose scaling is not linear.** A rat study uses a dose per kilogram of body weight, but simple multiplication to a human dose is wrong. Surface area scaling, metabolic rate differences, and species-specific receptor affinity all change the effective dose. When a rodent study uses "10mg/kg," the human equivalent is not 700mg for a 70kg person — it's typically much lower, and still uncertain.
+
+**Species-specific physiology.** Rodents have different GH secretion patterns, different inflammatory responses, and different tissue repair kinetics. A compound that drives dramatic tendon healing in a rat may do less in a human because the baseline healing rate in rodents is already much faster.
+
+**Half-life differences.** Many peptides are metabolized faster in rats than in humans, or vice versa. Extrapolating half-life and dosing intervals from animal data to humans is an approximation at best.
+
+## Mechanistic plausibility is not clinical evidence
+
+One of the most common rhetorical moves in the peptide space is the mechanistic argument: "This peptide upregulates VEGF. VEGF drives angiogenesis. Angiogenesis accelerates healing. Therefore this peptide accelerates healing."
+
+Each step in that chain may be true. The chain as a whole may be true. But "may be true" and "is supported by controlled human data" are different claims. Mechanistic plausibility is a reason to take a compound seriously — it's not a reason to assert efficacy as fact.
+
+The biology of how something could work is not the same as evidence that it does work in the way and at the dose being discussed.
+
+<Callout type="info" title="How to talk about this accurately">
+Good phrasing: "In animal models, BPC-157 has consistently shown accelerated tendon repair — the evidence is pre-clinical but mechanistically coherent."
+
+Overstatement: "BPC-157 heals tendons."
+
+The distinction matters when evaluating both vendor claims and practitioner advice. The stronger the claim, the more skeptical you should be about the evidence behind it.
+</Callout>
+
+<Checkpoint number={1}>
+<span slot="question">A vendor's website cites two studies showing a peptide promotes wound healing. Study A was conducted in a cell culture. Study B used rats with surgically induced wounds. What is the appropriate level of confidence these studies provide for human wound healing — and what type of study would be needed to establish human efficacy?</span>
+
+Study A (in vitro) establishes that the compound can produce a healing-relevant cellular response under controlled laboratory conditions — useful for understanding mechanism, not for predicting human outcomes. Study B (animal model) adds pharmacokinetic and systemic context, and demonstrates the effect in a living organism. Rodent wound models do translate reasonably to human biology in some respects, but dose scaling, metabolic differences, and the rodent's naturally faster healing rate all limit direct extrapolation. Neither study establishes human efficacy. To do that, you would need a controlled human trial — ideally randomized and blinded — with pre-specified endpoints. A Phase II or III RCT would be the appropriate evidence tier.
+</Checkpoint>
+
+The hierarchy tells you what kind of evidence exists. The next step is learning to read that evidence without being misled by how it's framed.
