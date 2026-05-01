@@ -10,56 +10,61 @@ import Callout from "../../../components/Callout.astro";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Term from "../../../components/Term.astro";
 
-<Term id="nitric-oxide">Nitric oxide</Term> is a gaseous signaling molecule — small enough to diffuse freely across cell membranes without needing a receptor, reactive enough to have a half-life measured in seconds in biological tissue. It sounds like a footnote. It isn't. NO is the primary downstream mediator of BPC-157's healing effects, and understanding it is the difference between knowing what BPC-157 does and knowing why it does it.
+BPC-157's primary mechanism comes down to one enzyme: <Term id="enos">eNOS</Term> — endothelial nitric oxide synthase. BPC-157 upregulates it. Understanding what eNOS does is what the rest of this lesson is about.
 
-## Three NOS isoforms, one that matters here
+## The isoform distinction that actually matters
 
-Nitric oxide is produced from the amino acid arginine by a family of enzymes called nitric oxide synthases (NOS). Three isoforms:
+<Term id="nitric-oxide">Nitric oxide</Term> is produced by a family of enzymes called nitric oxide synthases (NOS). There are three, and they don't do the same thing. The two that matter here:
 
-- **nNOS** (neuronal) — expressed in nerve cells, involved in neurotransmission and neuroprotection
-- **iNOS** (inducible) — expressed by immune cells during inflammation; high-output, short-lived, pro-inflammatory at excess levels
-- **<Term id="enos">eNOS</Term>** (endothelial) — expressed in the cells lining blood vessel walls; produces regulated, lower-volume NO; the primary source of vascular NO and the isoform BPC-157 targets
+- **iNOS** (inducible) — the inflammatory version. Immune cells express it during acute inflammation, producing high-output NO as part of the immune response.
+- **eNOS** (endothelial) — the vascular version. Expressed in the cells lining blood vessel walls, it produces lower-volume, regulated NO that drives blood vessel function and repair.
 
-This distinction matters immediately: a compound that suppresses iNOS (reducing inflammatory NO production) is doing something categorically different from a compound that upregulates eNOS (increasing vascular protective NO production). Both touch "the nitric oxide system." Their effects are opposite in character.
+This distinction is why "works through the nitric oxide system" is almost meaningless without knowing which isoform. Suppressing iNOS is anti-inflammatory — you're reducing the inflammatory signal. Upregulating eNOS is pro-vascular and pro-repair — you're increasing the blood vessels' capacity to do their job.
 
-BPC-157 upregulates eNOS expression in endothelial cells — increasing their capacity to produce NO from arginine. This is the primary mechanism documented across the BPC-157 animal literature.
+BPC-157 targets eNOS. It is not an anti-inflammatory compound.
 
-## What eNOS-derived NO does
+## What eNOS-derived NO actually does
 
-**Vasodilation.** NO diffuses from endothelial cells into the smooth muscle cells surrounding blood vessel walls. There it activates guanylyl cyclase → cGMP accumulates → protein kinase G activates → smooth muscle relaxes → the vessel dilates. More luminal diameter means more blood flow. This effect is immediate, local, and familiar — it's the same mechanism nitroglycerin uses to relieve angina, and what PDE5 inhibitors amplify for a different application.
+**Vasodilation.** NO produced by endothelial cells diffuses into the surrounding smooth muscle, which causes it to relax — the vessel widens and more blood flows through.
 
-For injured tissue, this matters directly: vasodilation increases blood flow to the site, improving delivery of oxygen, nutrients, and immune cells without waiting for new vessels to form.
+If you've ever taken an L-citrulline-based preworkout and noticed a pump during training, you've felt this mechanism. L-citrulline converts to arginine in the body; arginine is what eNOS uses to make NO; NO relaxes smooth muscle; blood vessels dilate. BPC-157 drives the same process — but instead of supplying more substrate (arginine), it upregulates eNOS itself, increasing the endothelial cells' capacity to produce NO in the first place.
 
-**Angiogenesis — the more structurally significant effect.** NO is not just a downstream product of VEGF signaling; it is a functional co-mediator of angiogenesis. The pathway runs: VEGF binds its receptor on endothelial cells → PI3K activates → Akt phosphorylates eNOS → increased NO production → endothelial cell proliferation and migration → new capillary formation.
+For injured tissue, this matters immediately: more blood flow means more oxygen, nutrients, and repair cells delivered to the site — without waiting for new vessels to form.
 
-A compound that upregulates eNOS expression amplifies this entire cascade. The endothelial cells are primed to produce more NO when VEGF calls for it, and more NO means more robust angiogenic signaling. This is why BPC-157's effects on angiogenesis and its effects on the NO system are not two separate mechanisms — they are the same mechanism at different levels of the cascade.
+**Angiogenesis — new blood vessel growth.** Your body has a dedicated signal for when tissue is damaged or oxygen-starved and needs new blood vessels: VEGF (vascular endothelial growth factor). When VEGF is released at an injury site, it tells nearby endothelial cells to multiply and migrate toward the oxygen-starved zone, forming new capillaries.
 
-**Cytoprotection.** NO at physiological concentrations (eNOS-range, not iNOS-range) directly inhibits apoptosis — programmed cell death. It blocks cytochrome c release from mitochondria, preventing the caspase cascade that executes apoptosis. Cells under ischemic stress or mechanical trauma survive longer when local NO is elevated. This is one mechanism for BPC-157's documented effects in CNS injury models and gut epithelial damage.
+NO is how VEGF carries out that instruction. VEGF binds endothelial cells and triggers a cascade that ends with eNOS activation and NO production — which then drives endothelial cell proliferation and the formation of new capillaries.
+
+When BPC-157 upregulates eNOS, it's priming that cascade. The endothelial cells can produce more NO when VEGF calls for it, which produces a stronger angiogenic response — more new vessels, faster.
+
+Vasodilation and angiogenesis aren't two separate effects. They're the same mechanism at different timescales: NO improves blood flow through existing vessels immediately, and NO is also the signal that grows new ones.
+
+**Cell survival under stress.** At the concentrations eNOS produces, NO also protects cells from dying during ischemia (oxygen deprivation) and mechanical trauma. This is one reason BPC-157 shows up in CNS injury and gut damage research — wherever the eNOS/NO pathway operates, cells under stress survive longer.
 
 <Callout type="key" title="The L-NAME proof">
-L-NAME (N(ω)-nitro-L-arginine methyl ester) is a pan-NOS inhibitor — it blocks all three isoforms and eliminates NO production throughout the system. A key series of experiments co-administered L-NAME with BPC-157 in injury models.
+L-NAME is a compound that blocks all NOS isoforms — it shuts down NO production throughout the system. Researchers co-administered L-NAME with BPC-157 in injury models.
 
 BPC-157's healing acceleration largely disappeared.
 
-This is the pharmacological proof that NO is a primary downstream mediator. The experiment follows the standard mechanistic logic: demonstrate the effect → block the proposed pathway → confirm the effect is abolished. When blocking NO production removes the compound's healing benefit, that's strong evidence NO is carrying the signal. This kind of rescue experiment is among the highest-quality mechanistic evidence available in animal model research.
+This is the pharmacological proof that NO is the primary downstream signal. The logic is clean: demonstrate the effect → block the proposed pathway → confirm the effect is gone. When eliminating NO production eliminates the compound's benefit, that's strong evidence NO is carrying the signal, not just correlating with it. This kind of blockade experiment is among the best mechanistic evidence available in animal research.
 </Callout>
 
 ## Why this is not "anti-inflammatory"
 
-The confusion arises because iNOS-derived NO — the high-output inflammatory variety — is sometimes discussed as harmful. Compounds that suppress iNOS reduce inflammatory NO and can be labeled "anti-inflammatory." BPC-157 does not work this way.
+BPC-157 is often described as anti-inflammatory. The confusion comes from iNOS: because high-output inflammatory NO can be harmful in excess, compounds that suppress iNOS get labeled anti-inflammatory. BPC-157 doesn't work that way.
 
-eNOS upregulation is not anti-inflammatory in the classical sense. It is pro-vascular, pro-angiogenic, and cytoprotective. It doesn't suppress the immune response — it accelerates the repair processes that resolve the conditions driving inflammation. Reduced inflammation in BPC-157-treated tissue is a downstream consequence of faster healing, not the primary action.
+eNOS upregulation doesn't suppress the immune response. It accelerates the repair processes that resolve the conditions causing inflammation in the first place. When tissue heals faster, inflammation resolves faster — but the reduced inflammation is a downstream consequence, not the mechanism.
 
-This distinction changes how you think about timing and application. An anti-inflammatory agent used immediately after injury may blunt the Phase 1 signaling that triggers repair (the NSAID problem from Module 3). A pro-repair agent working through eNOS and angiogenesis is doing something different — it's accelerating Phase 2, not suppressing Phase 1.
+This matters for timing. Anti-inflammatory agents used immediately after injury can blunt the Phase 1 signaling that kicks off repair — the NSAID problem from Module 3. A compound working through eNOS isn't interfering with Phase 1 at all. It's accelerating Phase 2.
 
-<Callout type="info" title="One mechanism, multiple tissues">
-eNOS is expressed in the endothelial cells that line every blood vessel in the body. When BPC-157 upregulates eNOS, it's not targeting a specific organ — it's targeting the endothelial cell population present wherever vasculature exists. This is part of the explanation for BPC-157's breadth: tendons, gut, CNS, and muscle all have blood supply. All of them have endothelial cells. A compound acting on eNOS works wherever those cells are.
+<Callout type="info" title="Why BPC-157 shows effects across so many tissues">
+eNOS is expressed in the endothelial cells lining every blood vessel in the body — tendons, gut, brain, muscle, everywhere. When BPC-157 upregulates eNOS, it's not targeting a specific organ. It's targeting the cell type that's universally present wherever vasculature exists. This is the most coherent explanation for why one mechanism produces effects across such different tissues.
 </Callout>
 
 <Checkpoint number={1}>
-<span slot="question">A compound is described as "working through the nitric oxide system to reduce inflammation." Why isn't this enough information to know what it's actually doing — and which NOS isoform would you want to know about before drawing any conclusions?</span>
+<span slot="question">A compound is described as "working through the nitric oxide system to reduce inflammation." Why isn't this enough information to know what it's actually doing — and what does knowing BPC-157 targets eNOS specifically tell you?</span>
 
-The nitric oxide system has three functionally distinct isoforms, and "the NO system" without isoform specificity is nearly meaningless. iNOS is the inflammatory, high-output isoform produced by immune cells — suppressing iNOS reduces inflammatory NO production and is genuinely anti-inflammatory. eNOS is the vascular, protective isoform — upregulating eNOS increases vasodilatory and pro-angiogenic NO, which is pro-repair rather than anti-inflammatory. A compound that works through iNOS suppression and one that works through eNOS upregulation both "work through the nitric oxide system" but have opposite mechanistic characters. For BPC-157, the relevant isoform is eNOS — the mechanism is upregulation of vascular protective NO, not suppression of inflammatory NO. Knowing which isoform is the difference between understanding the mechanism and just repeating a category label.
+"The nitric oxide system" covers at least two functionally opposite things. iNOS suppression reduces inflammatory NO output — that's genuinely anti-inflammatory. eNOS upregulation increases vascular protective NO — that's pro-repair. Both descriptions fit "works through the nitric oxide system," but the mechanisms point in opposite directions. For BPC-157, the relevant isoform is eNOS. The mechanism isn't suppressing inflammation — it's increasing endothelial cells' capacity to produce NO, driving vasodilation and angiogenesis. Inflammation resolves faster as a downstream consequence of faster healing, not because the immune response was blunted. Knowing the isoform is the difference between understanding the mechanism and just repeating a label.
 </Checkpoint>
 
-Now the mechanism has a tissue target — and tendons are the one that matters most.
+The mechanism is clear — but what does it look like in actual tissue? Tendons are the test case, and the fit between BPC-157's mechanism and tendon's specific vulnerabilities is unusually precise.
