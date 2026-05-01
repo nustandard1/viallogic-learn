@@ -1,8 +1,8 @@
 ---
 module: "05-evaluating-evidence-and-quality"
-order: 4
+order: 5
 title: Recap & quick check
-summary: Evidence hierarchy and COA verification — key concepts and 6 questions before the Dr. Harmon interview.
+summary: Evidence hierarchy, claim decoding, and COA verification — key concepts and 7 questions before the Dr. Harmon interview.
 duration: "5 min"
 ---
 
@@ -11,7 +11,7 @@ import Quiz from "../../../components/Quiz.astro";
 
 ## The module in one paragraph
 
-Most peptide evidence lives at the in vitro or animal model level. That doesn't mean the compounds are ineffective — it means the confidence level is proportionally lower, and claims should be framed accordingly. The hierarchy runs from cell culture (mechanism only) through animal models (in vivo but not human) to human observational data (uncontrolled) to RCTs (controlled, blinded, randomized). Study quality markers — sample size, blinding, control groups, pre-registration, funding source — determine how much confidence a particular study earns. Statistical significance (p < 0.05) does not equal clinical significance, and publication bias means the visible literature is skewed toward positive findings. On the product side, a legitimate Certificate of Analysis is produced by an ISO 17025–accredited independent laboratory, contains a lot number matching the vial, specifies the analytical methodology (HPLC for purity, MS for identity), and can be independently verified through the accrediting body's database. A document with no methodology, no lot number, and no verifiable lab is not a COA.
+Most peptide evidence lives at the in vitro or animal model level — but most people encounter it as a confident claim on social media, several distortion steps removed from the original source. The hierarchy runs from cell culture (mechanism only) through animal models (in vivo but not human) to human observational data (uncontrolled) to RCTs (controlled, blinded, randomized). Study quality markers — sample size, blinding, control groups, pre-registration, funding source — determine how much confidence a particular study earns. Statistical significance (p < 0.05) does not equal clinical significance, and publication bias means the visible literature is skewed toward positive findings. When evaluating a claim online, the key questions are: Is a source cited? What type of study is it? Does the claim match what the source actually says? What was the dose? Does this person have a financial incentive? Phrases like "studies show," "clinically proven," and "doctors don't want you to know" are red flags that signal overclaiming. On the product side, a legitimate Certificate of Analysis is produced by an ISO 17025–accredited independent laboratory, contains a lot number matching the vial, specifies the analytical methodology (HPLC for purity, MS for identity), and can be independently verified through the accrediting body's database.
 
 ## Quick check
 
@@ -81,6 +81,17 @@ Most peptide evidence lives at the in vitro or animal model level. That doesn't 
     ],
     answer: 1,
     explain: "A COA without a third-party lab is the seller grading their own homework. A COA without a lot number cannot be matched to the specific product batch received — it could be a test from a different production run. A COA without methodology provides a number with no evidence of how it was obtained. All three elements are required for a document to function as an independent quality verification. The presence of a high purity number and professional formatting is not a substitute for these requirements — fraudulent or vendor-produced documents often look polished by design.",
+  },
+  {
+    q: "A TikTok claims: 'BPC-157 is clinically proven to regenerate cartilage — studies show it works better than any pharmaceutical option.' Walk through this claim using the five-question evaluation framework.",
+    options: [
+      "The claim is credible because BPC-157 has extensive research support and the video has high engagement.",
+      "The claim overclaims on multiple levels. (1) No source is cited — immediately suspicious. (2) BPC-157's best evidence is animal models, not human clinical trials — 'clinically proven' is false. (3) 'Works better than any pharmaceutical option' implies a comparative study that doesn't exist. (4) The dose in rodent studies doesn't translate directly to human use. (5) If the creator has affiliate links to a vendor, there's a direct financial incentive to make confident claims.",
+      "The claim is probably accurate because BPC-157 has been used widely in the research community for years.",
+      "The claim is partially valid — 'clinically proven' is an exaggeration but the rest is supported by research.",
+    ],
+    answer: 1,
+    explain: "Five-question walkthrough: (1) Source cited? No — red flag from the start. (2) Type of study? Unknown because no study is linked — but BPC-157's actual evidence base is rodent models, not human trials. (3) Does the claim match the source? 'Clinically proven' cannot be supported by pre-clinical rodent data; 'better than any pharmaceutical' requires a head-to-head RCT that doesn't exist. (4) Dose mentioned? No. (5) Financial incentive? Likely if they sell or promote a vendor. Correct approach: search PubMed for 'BPC-157 cartilage', find the actual studies, check their design, and note the gap between what the data says (rodent evidence of cartilage-protective effects) and what the caption claims (clinical proof of superiority). The compound may have genuine utility — the claim is still dishonest.",
   },
 ]} />
 
