@@ -262,4 +262,29 @@ export const glossary: Record<string, GlossaryEntry> = {
     term: "Extracellular matrix (ECM)",
     short: "The structural scaffold between cells — made of collagen, elastin, and other proteins. What repair peptides are ultimately rebuilding.",
   },
+  enos: {
+    term: "eNOS",
+    short: "Endothelial nitric oxide synthase. The enzyme in blood vessel lining cells that produces vascular NO — BPC-157's primary documented target.",
+    long: "eNOS is one of three nitric oxide synthase isoforms. Unlike iNOS (the inflammatory, high-output form), eNOS produces regulated, lower-volume NO in endothelial cells that drives vasodilation and is a co-mediator of VEGF-driven angiogenesis. BPC-157's healing effects are substantially blocked by NOS inhibitors like L-NAME, which is the pharmacological evidence that eNOS upregulation is the primary mechanism.",
+  },
+  "nitric-oxide": {
+    term: "Nitric oxide (NO)",
+    short: "A gaseous signaling molecule produced by NOS enzymes from arginine. Diffuses freely across membranes, drives vasodilation, supports angiogenesis, and has cytoprotective effects.",
+    long: "Nitric oxide has a half-life measured in seconds in tissue, but its downstream effects (via cGMP and other mediators) can persist far longer. It relaxes smooth muscle in blood vessel walls (vasodilation), acts as a co-mediator of VEGF-driven angiogenesis, inhibits apoptosis under ischemic stress, and reduces platelet aggregation. The specific NOS isoform matters: eNOS-derived NO is generally protective and pro-vascular; iNOS-derived NO from immune cells can be damaging in excess.",
+  },
+  tenocyte: {
+    term: "Tenocyte",
+    short: "The fibroblast of tendon tissue. Produces Type I collagen and other ECM components that give tendons their tensile strength.",
+    long: "Tenocytes are the primary resident cell of tendons and are responsible for producing and maintaining the dense Type I collagen matrix that defines tendon mechanical properties. They are sparse relative to cells in muscle or bone, and slow to activate — a core reason tendon healing is slow. Growth factors (TGF-β, VEGF, FGF) and compounds that directly promote tenocyte migration and proliferation are the targets in tendon repair research.",
+  },
+  gaba: {
+    term: "GABA",
+    short: "Gamma-aminobutyric acid. The primary inhibitory neurotransmitter in the CNS. BPC-157 shows normalizing effects on GABAergic signaling in animal withdrawal models.",
+    long: "GABA binds GABA-A and GABA-B receptors to inhibit neuronal firing. Chronic exposure to alcohol, benzodiazepines, and other GABAergic drugs causes receptor downregulation (the same desensitization seen with peptide receptors). Withdrawal produces hyperexcitability as that suppressed baseline is suddenly removed. BPC-157 in animal models attenuates this hyperexcitability — not through direct GABA-A agonism, but through mechanisms that may involve NO signaling or gut-brain pathways.",
+  },
+  dopamine: {
+    term: "Dopamine",
+    short: "A catecholamine neurotransmitter central to reward, motivation, and motor control. BPC-157 shows normalizing effects on dopaminergic signaling in animal models of both excess and deficit.",
+    long: "Dopamine is released from neurons in the ventral tegmental area and substantia nigra. Disruptions in dopaminergic tone are implicated in addiction, Parkinson's disease, and psychiatric conditions. BPC-157 in animal models shows a bidirectional normalizing effect — reducing dopamine excess in amphetamine-induced dysregulation and attenuating motor deficits in models of dopamine deficiency. The mechanism is not a direct receptor agonist/antagonist effect and is not yet fully characterized.",
+  },
 };
