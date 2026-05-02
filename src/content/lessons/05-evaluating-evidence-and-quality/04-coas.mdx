@@ -1,0 +1,110 @@
+---
+module: "05-evaluating-evidence-and-quality"
+order: 4
+title: Certificates of Analysis — what's real and what's not
+summary: A COA is the document that proves a compound is what it claims to be. Here's what a legitimate one contains, how to verify the lab that issued it, and the red flags that signal a vendor-produced fake.
+duration: "6 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+Understanding the evidence behind a peptide tells you whether there's reason to think it works. A Certificate of Analysis tells you whether the compound you received is actually the compound you think you have. Both matter. Most people in this space focus on the first and ignore the second.
+
+## What a COA is
+
+A Certificate of Analysis (COA) is a document issued by an independent analytical laboratory that has tested a specific batch of a compound and reported the results. It is not a general certification of a company or a product line — it is a test result for a specific lot.
+
+The operative word is *independent*. A COA produced by the vendor about their own product is not a COA — it's a product spec sheet. Legitimate COAs come from third-party testing labs that have no financial relationship with the outcome of the test.
+
+## What a legitimate COA contains
+
+**Compound identification**
+The name or structure of the compound being tested. For peptides, this usually includes the sequence or trade name, along with the molecular formula and molecular weight for confirmation.
+
+**Lot number**
+Every legitimate COA is tied to a specific production lot. The lot number on the COA should match the lot number on the vial. If a vendor provides a COA with no lot number, or a lot number that doesn't match what you received, you cannot confirm you're looking at a test result for your product.
+
+**Testing date**
+When the sample was tested. COAs can be reused — a test result from two years ago doesn't tell you anything about the compound you have today, especially if the vial was produced recently.
+
+**Purity percentage**
+The result of the analysis — what percentage of the measured compound is actually the target peptide vs. impurities. For research-grade peptides, purity above 98% is common in legitimate sources; 95%+ is typically the minimum acceptable threshold.
+
+**Analytical methodology**
+The method used to test the compound. Two standard methods:
+
+- **HPLC (High-Performance Liquid Chromatography):** separates the components of a sample by pushing it through a column under pressure. Impurities and target compounds separate at different rates, producing a chromatogram. HPLC confirms purity and can quantify the amount of the compound present.
+- **MS (Mass Spectrometry):** identifies compounds by their molecular mass. When combined with HPLC (HPLC-MS or LC-MS/MS), it provides both purity data and definitive molecular identity confirmation. MS is the gold standard for "this is actually the compound it claims to be" verification.
+
+A COA reporting only purity via HPLC without MS confirmation tells you the compound is a certain purity but doesn't prove it's the right compound. A high-purity batch of the wrong peptide will still look clean on HPLC. MS confirms identity.
+
+**Lab name, contact, and accreditation**
+A legitimate COA lists the testing laboratory, its contact information, and its accreditation status. The lab's name should be searchable and verifiable.
+
+## ISO 17025 — what accreditation actually means
+
+ISO/IEC 17025 is the international standard for testing and calibration laboratories. Accreditation to this standard means the lab has been independently audited and confirmed to have:
+
+- A documented quality management system
+- Technically competent staff
+- Validated methods and equipment
+- Traceable calibration standards
+- Procedures for handling and reporting uncertainties
+
+Accreditation is issued by nationally recognized accrediting bodies — in the United States, that's typically ANAB (ANSI National Accreditation Board) or A2LA (American Association for Laboratory Accreditation). The lab's accreditation certificate should reference one of these bodies, and you can verify a lab's current accreditation status on ANAB's or A2LA's publicly searchable database.
+
+<Callout type="info" title="ISO 17025 in the US peptide testing context">
+Several US-based independent labs have offered peptide testing services under ISO 17025 accreditation. Colmaric Analyticals (Colorado) is one of the most frequently referenced in the research community. Other labs appear and change accreditation status over time — the right practice is to verify current accreditation directly on the ANAB or A2LA database rather than assuming a lab's status is unchanged from when you last checked.
+
+For reference, Janoshik Analytical (Czech Republic) is ISO 17025 accredited and widely used internationally for compound verification — not US-based but commonly referenced in this space.
+</Callout>
+
+## Red flags for fraudulent or vendor-produced COAs
+
+**No lot number, or lot doesn't match the vial.**
+If the lot number is missing or doesn't correspond to what you received, the document is not a test of your product.
+
+**No methodology listed.**
+"Purity: 99.4%" with no explanation of how that was determined is not a COA — it's a number on a page.
+
+**No lab name or an unverifiable lab.**
+Search the lab name. If it doesn't have an independent web presence, doesn't appear in accreditation databases, or can't be contacted separately from the vendor, treat it as vendor-produced.
+
+**Generic PDF design.**
+Legitimate lab COAs look like lab documents — they reference equipment, calibration standards, method numbers, and chromatogram data. A clean, brand-matching PDF that looks like it was designed by a marketing team is suspicious.
+
+**"In-house testing" language.**
+Vendors sometimes test their own products and call the results a COA. This is not independent verification — it's the seller grading their own homework.
+
+**COA dated before the product lot was manufactured.**
+If the test date precedes the lot production date, something is wrong.
+
+**No raw data or chromatogram.**
+HPLC testing produces a chromatogram — a graph showing the separation of compounds. Legitimate labs often include this as an attachment. Its absence doesn't automatically disqualify a COA, but its presence is a positive signal.
+
+<Callout type="warning" title="A COA doesn't test everything">
+A COA tests what it's designed to test. Most peptide COAs confirm identity and purity of the target compound. They typically do not test for:
+- Heavy metals or solvent residuals
+- Bacterial endotoxins (pyrogens)
+- Sterility
+
+Endotoxin testing is particularly relevant for injectable peptides — bacterial contamination can cause a serious systemic response even if the peptide itself is correctly identified and pure. This is why sterile preparation and proper BAC water usage (from Module 2) matters: even a clean compound can be rendered unsafe by contaminated handling.
+</Callout>
+
+## How to verify a COA you've received
+
+1. **Find the lab name on the document.**
+2. **Search ANAB's database** (anab.org) or **A2LA's directory** (a2la.org) for that lab by name. Confirm current accreditation status.
+3. **Match the lot number** on the COA to the lot number on the vial label.
+4. **Confirm the test date** is recent relative to the product's manufacturing date.
+5. **Verify methodology** — HPLC minimum, HPLC-MS preferred.
+6. **Contact the lab directly** if anything is unclear. Legitimate labs can confirm whether a given COA number corresponds to a test they actually ran.
+
+<Checkpoint number={1}>
+<span slot="question">A vendor provides a COA showing 98.7% purity for a BPC-157 vial. The document lists the compound, purity percentage, and the vendor's logo, but shows no lot number, no analytical methodology, and no third-party lab name. What can and cannot be concluded from this document?</span>
+
+This document cannot be treated as a legitimate Certificate of Analysis. A COA is meaningful only when it comes from an independent third-party lab — without a lab name, there is no way to verify that anyone other than the vendor produced this document. Without a methodology, the 98.7% figure is meaningless — it's an unsupported assertion, not an analytical result. Without a lot number, even if the lab were legitimate, this document cannot be confirmed to correspond to the specific vial received. The appropriate conclusion is: this document provides no verified information about product identity or purity. A real COA from an accredited third-party lab with methodology, lot number, and verifiable lab identity would be needed to assess product quality.
+</Checkpoint>
+
+You now have the two tools that matter most for navigating the peptide space: evidence evaluation and product quality verification. The recap locks both in.

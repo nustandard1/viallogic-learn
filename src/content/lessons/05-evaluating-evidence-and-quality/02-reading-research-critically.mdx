@@ -1,0 +1,85 @@
+---
+module: "05-evaluating-evidence-and-quality"
+order: 2
+title: Reading research critically — what to look for
+summary: Study quality markers, publication bias, statistical significance vs clinical significance, and how to read an abstract without being misled by it.
+duration: "7 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+Knowing the evidence hierarchy tells you what type of study you're looking at. Knowing how to read a study tells you whether the study is actually good. These are different skills. A large, well-publicized study can still be deeply flawed. A small study can still be rigorous. The details matter.
+
+## The first questions to ask about any study
+
+**Who funded it?**
+
+Industry-funded research consistently overrepresents positive findings compared to independently funded research. This doesn't mean industry-funded studies are fabricated — it means the design choices, endpoint selection, statistical approaches, and publication decisions tend to favor outcomes that support the funder's interest. If a peptide compound manufacturer funded the trial, that's relevant context, not disqualifying evidence.
+
+**What was the sample size?**
+
+Small samples produce noisy results. A study with n=12 that shows a statistically significant effect may simply have gotten lucky — the statistical noise in a tiny group is large enough that random chance can produce apparent effects. Larger studies produce more stable estimates, but "large" is relative to the effect size being measured. A study detecting a 50% outcome difference needs fewer participants than one detecting a 3% difference.
+
+**Was there a control group?**
+
+Without a comparison group, you cannot separate the compound's effect from the placebo effect, natural recovery, regression to the mean, or the participant's behavioral changes during the study period. "Participants improved after taking the compound" tells you nothing by itself.
+
+**Were participants and researchers blinded?**
+
+In a single-blind study, participants don't know if they received treatment or placebo. In a double-blind study, neither participants nor the researchers measuring outcomes know — this removes the unconscious bias of both parties. If a researcher knows who got the real treatment, subtle differences in how they assess outcomes can skew results even without intent to deceive.
+
+**Were the endpoints pre-registered?**
+
+Pre-registration means the researchers publicly stated their primary outcome before the study began. Without it, researchers can analyze multiple outcomes after the fact and report only the one that was statistically significant — a practice called p-hacking or HARKing (Hypothesizing After Results Known). Pre-registered endpoints are a meaningful quality signal.
+
+## Statistical significance ≠ clinical significance
+
+A result is statistically significant when it's unlikely to have occurred by chance alone (typically p < 0.05). That means there's less than a 5% probability the effect is random noise — not zero probability, and not a guarantee the effect is meaningful.
+
+Statistical significance tells you the effect is real. It doesn't tell you whether the effect is large enough to matter clinically.
+
+A peptide might produce a statistically significant increase in IGF-1 of 12 ng/mL. If the normal range spans 200+ ng/mL, a 12-point increase may be well within noise. It's real — but is it meaningful? That's clinical significance, and it requires judgment about the effect size relative to the outcome you care about.
+
+<Callout type="key" title="The p-value tells you less than people think">
+p < 0.05 is an arbitrary threshold that became a standard. It means roughly: if the null hypothesis (no effect) were true, you'd see results this extreme only 5% of the time by chance. It doesn't mean the effect is large, clinically important, or will replicate. Effect size (how big the difference is) and confidence intervals (how precise the estimate is) are at least as important as p-values.
+</Callout>
+
+## Publication bias
+
+Negative results don't get published. Null results — studies where the compound did nothing — rarely end up in journals, because journals prefer novel, interesting findings. Researchers sometimes don't even submit negative results because they assume rejection.
+
+The consequence is that the published literature on almost any compound is systematically skewed toward positive findings. If 10 labs ran the same peptide study and three of them found an effect while seven found nothing, you might see three published papers and seven filing cabinets. From the outside, it looks like the evidence is positive.
+
+This is not fraud — it's a structural problem with how science is communicated. The solution is pre-registration (which records that studies were conducted even if unpublished), systematic reviews that actively search for unpublished data, and skepticism toward any compound that has only positive published results without any null findings.
+
+## The replication crisis — and what it means practically
+
+In the 2010s, researchers systematically attempted to replicate high-profile findings across psychology, nutrition, medicine, and other fields. The replication rates were sobering: many well-known results couldn't be reproduced under the same conditions.
+
+This isn't specific to one field. It reflects widespread use of small samples, flexible statistical approaches, publication bias, and selective reporting across research generally. In the peptide space, where many studies are small, industry-adjacent, or conducted without pre-registration, replication rates are essentially unknown — there simply isn't enough independent replication effort to know what holds up.
+
+Practical implication: single studies are hypotheses, not facts. A finding that has been independently replicated across different labs, populations, and methods carries substantially more weight than a single well-designed study.
+
+## How to read an abstract quickly
+
+Most people read the abstract and stop. Here's what to extract efficiently:
+
+1. **Study type** — Is this a randomized trial, cohort, case series, or in vitro? (If the abstract doesn't say, the methods section will.)
+2. **Population** — Healthy humans? Patients with a specific condition? Rodents? The conclusion only applies to the studied population.
+3. **Intervention and dose** — What exactly was given, at what dose, for how long?
+4. **Primary outcome** — What were they measuring? Is that what you care about?
+5. **Effect size** — Not just "significant improvement" but how much of an improvement?
+6. **Funding source** — Usually at the end of the paper, not the abstract. Worth checking.
+
+<Callout type="info" title="The gap between abstracts and conclusions">
+Abstracts are written to be compelling. They're marketing documents for the paper. The conclusion sentence in an abstract frequently overstates what the data supports. Read the results section of the actual paper to see what the numbers say — then read the conclusion to see how the authors characterized it. The gap between those two things is often instructive.
+</Callout>
+
+<Checkpoint number={1}>
+<span slot="question">A study reports that a peptide produced "statistically significant improvements in tendon strength (p=0.03, n=18) compared to placebo." What questions should you ask before drawing conclusions, and what are the limitations of this finding as stated?</span>
+
+With n=18, the sample is small — even a statistically significant result can reflect chance variation in a group this size. p=0.03 clears the conventional threshold but barely, and with a small sample the effect estimate may be imprecise (wide confidence intervals). Key questions: Was the study pre-registered? Who funded it? What was the actual effect size — how much did tendon strength improve in absolute and percentage terms? Were participants and assessors blinded? Was this a primary endpoint or one of many outcomes measured? A single small study with a borderline p-value is hypothesis-generating, not definitive. You'd want to see independent replication with a larger sample before treating this as established evidence.
+</Checkpoint>
+
+Evidence quality is one half of the evaluation. The other half is product quality — which requires a completely different kind of verification.

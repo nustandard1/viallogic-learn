@@ -29,7 +29,7 @@ const priorModuleTitles = priorModules.map((m) => m.data.title);
   <!-- Module hero -->
   <section class="relative overflow-hidden border-b border-border">
     <div class="absolute inset-0 gradient-mesh pointer-events-none"></div>
-    <div class="relative max-w-[var(--container-wide)] mx-auto px-6 pt-14 pb-12">
+    <div class="relative max-w-[var(--container-wide)] mx-auto px-6 pt-10 sm:pt-14 pb-10 sm:pb-12">
       <div class="flex items-center gap-2 text-[12px] text-text-muted mb-4">
         <a href="/" class="hover:text-text transition-colors">Course</a>
         <span class="text-text-faint">/</span>
@@ -43,7 +43,7 @@ const priorModuleTitles = priorModules.map((m) => m.data.title);
       <h1 class="text-[clamp(2rem,4.5vw,3.25rem)] font-bold tracking-[-0.035em] leading-[1.05] text-text max-w-3xl">
         {module.data.title}
       </h1>
-      <p class="mt-4 text-[18px] text-text-muted leading-relaxed max-w-2xl">
+      <p class="mt-4 text-[16px] sm:text-[18px] text-text-muted leading-relaxed max-w-2xl">
         {module.data.subtitle}
       </p>
 
@@ -62,14 +62,14 @@ const priorModuleTitles = priorModules.map((m) => m.data.title);
 
   <div class="max-w-[var(--container-wide)] mx-auto px-6 py-12 grid lg:grid-cols-[1fr_320px] gap-12">
 
-    <!-- Module summary / overview MDX -->
-    <article class="prose">
+    <!-- Module summary / overview MDX — second on mobile, first on desktop -->
+    <article class="prose order-2 lg:order-1">
       <Content />
     </article>
 
-    <!-- Lesson list -->
-    <aside>
-      <div class="sticky top-24">
+    <!-- Lesson list — first on mobile, second on desktop -->
+    <aside class="order-1 lg:order-2">
+      <div class="lg:sticky lg:top-24">
         <div class="text-[10px] uppercase tracking-[0.14em] font-bold text-text-muted mb-3">Module Contents</div>
         <ol class="space-y-2">
           {lessons.map((l, i) => (

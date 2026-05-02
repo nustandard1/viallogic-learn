@@ -1,0 +1,102 @@
+---
+module: "05-evaluating-evidence-and-quality"
+order: 5
+title: Recap & quick check
+summary: Evidence hierarchy, claim decoding, and COA verification — key concepts and 7 questions before the Dr. Harmon interview.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Quiz from "../../../components/Quiz.astro";
+
+## The module in one paragraph
+
+Most peptide evidence lives at the in vitro or animal model level — but most people encounter it as a confident claim on social media, several distortion steps removed from the original source. The hierarchy runs from cell culture (mechanism only) through animal models (in vivo but not human) to human observational data (uncontrolled) to RCTs (controlled, blinded, randomized). Study quality markers — sample size, blinding, control groups, pre-registration, funding source — determine how much confidence a particular study earns. Statistical significance (p < 0.05) does not equal clinical significance, and publication bias means the visible literature is skewed toward positive findings. When evaluating a claim online, the key questions are: Is a source cited? What type of study is it? Does the claim match what the source actually says? What was the dose? Does this person have a financial incentive? Phrases like "studies show," "clinically proven," and "doctors don't want you to know" are red flags that signal overclaiming. On the product side, a legitimate Certificate of Analysis is produced by an ISO 17025–accredited independent laboratory, contains a lot number matching the vial, specifies the analytical methodology (HPLC for purity, MS for identity), and can be independently verified through the accrediting body's database.
+
+## Quick check
+
+<Quiz questions={[
+  {
+    q: "A researcher cites a study showing that a peptide doubled wound healing speed in rats. What is the appropriate interpretation of this finding — and what would be needed to establish human efficacy?",
+    options: [
+      "A rat study is sufficient to establish efficacy — rodent physiology is close enough to human physiology for wound healing.",
+      "Rodent wound healing data is pre-clinical evidence. It establishes that the compound can produce a healing-relevant effect in a living organism, which is meaningful for mechanistic understanding. But dose scaling, metabolic differences, and rodents' naturally faster baseline healing rate all limit direct extrapolation. Establishing human efficacy would require a controlled human trial — ideally randomized and double-blinded — with clinically meaningful endpoints.",
+      "Rat studies prove the mechanism but also definitively prove the human clinical effect.",
+      "Pre-clinical evidence is irrelevant and should be ignored entirely.",
+    ],
+    answer: 1,
+    explain: "Animal studies are in vivo evidence — more informative than cell culture, but not interchangeable with human evidence. Rats have faster healing rates, different metabolic profiles, and different immune responses. Dose extrapolation from rodent studies is not linear (surface area scaling and metabolic differences apply). The finding is real and relevant, but the appropriate framing is 'pre-clinical data supports a plausible mechanism' — not 'this peptide heals wounds in humans.' A human RCT with appropriate blinding, sample size, and pre-registered endpoints would be required for a human efficacy claim.",
+  },
+  {
+    q: "What is publication bias, and how does it affect your interpretation of the peptide research landscape?",
+    options: [
+      "Publication bias means peer-reviewed journals only accept studies from universities, excluding industry research.",
+      "Publication bias is the tendency for journals and researchers to publish positive, novel findings while null and negative results go unpublished. In the peptide space, if multiple labs run the same study and only the ones with positive results publish, the visible literature appears more supportive than the full body of evidence warrants. This skews apparent consensus toward efficacy.",
+      "Publication bias only affects large pharmaceutical studies, not research peptide literature.",
+      "Publication bias means the same study gets published in multiple journals, inflating the apparent evidence base.",
+    ],
+    answer: 1,
+    explain: "Publication bias is a structural problem in research communication: studies that find an effect are far more likely to be submitted to journals, and journals are far more likely to accept them, than studies that find nothing. If seven labs run the same peptide study and three show a positive result while four show no effect, you might see three published papers and none of the null results. The literature then appears to show consistent positive findings when the actual picture is mixed. Pre-registration (declaring the study before running it) and systematic reviews that search for unpublished data are partial solutions — but in the peptide space, pre-registration is rare.",
+  },
+  {
+    q: "A study reports a 'statistically significant' improvement in a marker with p=0.04. What does this tell you — and what does it not tell you?",
+    options: [
+      "p=0.04 means the treatment definitely works and the effect size is clinically meaningful.",
+      "p=0.04 means there is a less than 4% probability the observed result is due to chance — the effect is unlikely to be random noise. It does not tell you how large the effect is, whether the effect size is clinically meaningful, or whether the study was adequately powered or well-designed. Statistical significance is a threshold for ruling out chance, not a measure of importance.",
+      "p=0.04 means the study failed — the threshold for significance is p<0.01.",
+      "p=0.04 means the study found no real effect, just a statistical artifact.",
+    ],
+    answer: 1,
+    explain: "p=0.04 clears the conventional threshold (p<0.05) for statistical significance, meaning the result is unlikely to have occurred by chance. But 'statistically significant' and 'clinically significant' are different things. A compound might produce a statistically significant change in IGF-1 of 8 ng/mL — that's probably real, but whether an 8 ng/mL change is clinically meaningful in context requires separate judgment. Effect size and confidence intervals matter as much as p-values. Additionally, a borderline p-value (0.04 rather than 0.001) in a small study is weaker evidence than a borderline p-value in a well-powered study.",
+  },
+  {
+    q: "What are the two essential analytical methods a legitimate peptide COA should reference, and what does each confirm?",
+    options: [
+      "GC-MS and UV spectroscopy — GC-MS identifies impurities, UV spectroscopy confirms solubility.",
+      "HPLC and MS (mass spectrometry). HPLC (high-performance liquid chromatography) separates components and quantifies purity — it tells you what percentage of the sample is the target compound vs. impurities. MS (mass spectrometry) confirms molecular identity by mass — it verifies this is actually the compound it claims to be, not just a pure sample of something else. Together, HPLC-MS provides both purity and identity confirmation.",
+      "Western blot and ELISA — both confirm compound identity through antibody binding.",
+      "Titration and chromatography — titration confirms purity, chromatography confirms molecular weight.",
+    ],
+    answer: 1,
+    explain: "HPLC separates a sample into its components and quantifies the ratio — it produces a chromatogram showing purity percentage. A compound can show 99% purity on HPLC and still be the wrong compound at 99% purity. Mass spectrometry solves this: it identifies compounds by molecular mass, confirming the peak on the HPLC chromatogram corresponds to the correct peptide. The combination (LC-MS or HPLC-MS) is the standard for research-grade compound verification — purity plus identity.",
+  },
+  {
+    q: "What does ISO/IEC 17025 accreditation signify for a testing laboratory, and how can you verify a lab's current status?",
+    options: [
+      "ISO 17025 is a marketing certification that labs purchase annually — it guarantees quality but doesn't require third-party auditing.",
+      "ISO 17025 is the international standard for testing and calibration laboratories. Accreditation means the lab has been independently audited by a nationally recognized body and confirmed to have validated methods, calibrated equipment, competent staff, and a documented quality system. In the US, accrediting bodies include ANAB and A2LA. Current accreditation status can be verified directly on their publicly searchable databases — anab.org or a2la.org.",
+      "ISO 17025 only applies to food safety testing labs, not analytical chemistry.",
+      "ISO 17025 accreditation is self-certified — labs issue their own accreditation documents.",
+    ],
+    answer: 1,
+    explain: "ISO/IEC 17025 is not self-certification — it requires an external audit by an accreditation body that reviews the lab's methods, equipment, staff qualifications, and quality management system. In the US, ANAB (ANSI National Accreditation Board) and A2LA (American Association for Laboratory Accreditation) are the primary bodies. Both maintain publicly searchable directories where you can look up any lab by name and confirm whether their accreditation is current. This is the verification step: not trusting a COA header that says 'ISO 17025 accredited' but actually confirming the lab's status in the database.",
+  },
+  {
+    q: "A vendor provides a COA that shows 99.1% purity, lists the compound name and molecular weight, and is formatted with the vendor's branding. There is no third-party lab name, no lot number, and no analytical method listed. Is this a legitimate COA?",
+    options: [
+      "Yes — a purity percentage above 99% is the main thing that matters.",
+      "No. A legitimate COA requires three things this document lacks: an independent third-party laboratory (not the vendor), a lot number that can be matched to the specific vial received, and the analytical methodology used to determine purity. Without an independent lab, the purity figure is an unsupported claim. Without a lot number, even a legitimate lab result can't be tied to your specific product. Without a methodology, the number is unverifiable. This document is a product spec sheet formatted to resemble a COA.",
+      "Partially — the purity data is valid but the formatting needs improvement.",
+      "Yes — the compound name and molecular weight confirm it was tested by a real laboratory.",
+    ],
+    answer: 1,
+    explain: "A COA without a third-party lab is the seller grading their own homework. A COA without a lot number cannot be matched to the specific product batch received — it could be a test from a different production run. A COA without methodology provides a number with no evidence of how it was obtained. All three elements are required for a document to function as an independent quality verification. The presence of a high purity number and professional formatting is not a substitute for these requirements — fraudulent or vendor-produced documents often look polished by design.",
+  },
+  {
+    q: "A TikTok claims: 'BPC-157 is clinically proven to regenerate cartilage — studies show it works better than any pharmaceutical option.' Walk through this claim using the five-question evaluation framework.",
+    options: [
+      "The claim is credible because BPC-157 has extensive research support and the video has high engagement.",
+      "The claim overclaims on multiple levels. (1) No source is cited — immediately suspicious. (2) BPC-157's best evidence is animal models, not human clinical trials — 'clinically proven' is false. (3) 'Works better than any pharmaceutical option' implies a comparative study that doesn't exist. (4) The dose in rodent studies doesn't translate directly to human use. (5) If the creator has affiliate links to a vendor, there's a direct financial incentive to make confident claims.",
+      "The claim is probably accurate because BPC-157 has been used widely in the research community for years.",
+      "The claim is partially valid — 'clinically proven' is an exaggeration but the rest is supported by research.",
+    ],
+    answer: 1,
+    explain: "Five-question walkthrough: (1) Source cited? No — red flag from the start. (2) Type of study? Unknown because no study is linked — but BPC-157's actual evidence base is rodent models, not human trials. (3) Does the claim match the source? 'Clinically proven' cannot be supported by pre-clinical rodent data; 'better than any pharmaceutical' requires a head-to-head RCT that doesn't exist. (4) Dose mentioned? No. (5) Financial incentive? Likely if they sell or promote a vendor. Correct approach: search PubMed for 'BPC-157 cartilage', find the actual studies, check their design, and note the gap between what the data says (rodent evidence of cartilage-protective effects) and what the caption claims (clinical proof of superiority). The compound may have genuine utility — the claim is still dishonest.",
+  },
+]} />
+
+## Up next
+
+Module 6 goes from frameworks to specifics: BPC-157 — what the research actually says, what the mechanism is, and what the evidence base looks like when you apply everything from this module to read it critically.
+
+When you're ready, take the Dr. Harmon interview below. Passing it unlocks Module 6.
