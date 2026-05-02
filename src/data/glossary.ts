@@ -287,4 +287,9 @@ export const glossary: Record<string, GlossaryEntry> = {
     short: "A catecholamine neurotransmitter central to reward, motivation, and motor control. BPC-157 shows normalizing effects on dopaminergic signaling in animal models of both excess and deficit.",
     long: "Dopamine is released from neurons in the ventral tegmental area and substantia nigra. Disruptions in dopaminergic tone are implicated in addiction, Parkinson's disease, and psychiatric conditions. BPC-157 in animal models shows a bidirectional normalizing effect — reducing dopamine excess in amphetamine-induced dysregulation and attenuating motor deficits in models of dopamine deficiency. The mechanism is not a direct receptor agonist/antagonist effect and is not yet fully characterized.",
   },
+  cytoprotection: {
+    term: "Cytoprotection",
+    short: "The ability of a compound to help cells survive stress — particularly ischemia (oxygen deprivation) and mechanical trauma — by blocking the cellular signals that trigger programmed cell death.",
+    long: "At the concentrations produced by eNOS, nitric oxide acts as a cytoprotective signal: it inhibits the apoptotic cascade that would otherwise execute damaged or oxygen-starved cells. This is one mechanism behind BPC-157's documented effects in CNS injury models and gut epithelial damage — the same eNOS/NO pathway that drives vascular repair also extends cell survival in stressed tissue.",
+  },
 };
