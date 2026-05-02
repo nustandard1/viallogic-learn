@@ -146,9 +146,9 @@ export const INTERVIEW_CONTENT: Record<number, ModuleInterviewContent> = {
             "That the cancer question has been resolved — it has not; the absence of evidence of harm is not evidence of safety given no long-term human data",
         ],
         openingQuestions: [
-            "Walk me through how BPC-157 works mechanistically — starting from the fact that it has no confirmed receptor.",
-            "Why is tendon tissue a particularly meaningful test case for BPC-157's mechanisms — and what does the GHR upregulation finding add to that picture?",
-            "What is the L-NAME experiment and why does it matter as evidence?",
+            "Let's step back from the pathway detail for a moment — what's the core picture here? In plain terms, what does BPC-157 actually do, and why does it make sense that it keeps coming up in the context of injury recovery?",
+            "Here's something worth making sure you've really internalized: BPC-157 clears the body in under 30 minutes, but its effects on tissue seem to last much longer. How do you explain that gap — and what does it tell you about how you'd think about dosing?",
+            "Say someone comes to you with a stubborn tendon injury — months of physio, not much progress. They're asking about BPC-157. What do you tell them? Walk me through both what's realistic and where the evidence actually gets thin.",
         ],
     },
     7: {
