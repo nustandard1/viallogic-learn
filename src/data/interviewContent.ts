@@ -1,6 +1,18 @@
 export interface ModuleInterviewContent {
     title: string;
+    /**
+     * Concepts Dr. Harmon should actively probe — test understanding of the
+     * "what" and "why", not molecular-level recall.  Keep these at the level
+     * a sharp student can reason through in conversation.
+     */
     keyConcepts: string[];
+    /**
+     * Granular details Harmon knows as background but should NOT quiz on —
+     * pathway step sequences, specific gene/protein names mentioned in passing,
+     * secondary findings that aren't the module's focus.  Feed to the model as
+     * reference, not as probe targets.
+     */
+    contextOnlyConcepts?: string[];
     misconceptions: string[];
     openingQuestions: string[];
 }
@@ -127,17 +139,23 @@ export const INTERVIEW_CONTENT: Record<number, ModuleInterviewContent> = {
     6: {
         title: "BPC-157 — Body Protection Compound",
         keyConcepts: [
-            "15-amino acid synthetic peptide derived from a human gastric protein sequence — not endogenous in the meaningful sense; not produced by the body as a free peptide",
-            "No confirmed receptor — BPC-157 does not have an identified GPCR, RTK, or cytokine receptor. It appears to interact with Src kinase family members, initiating downstream signaling without classical receptor binding",
-            "Three parallel downstream pathways: (1) eNOS/NO via VEGFR2→PI3K→Akt AND via Src→Caveolin-1 release (VEGF-independent route); (2) VEGF upregulation driving angiogenesis; (3) FAK-paxillin pathway driving fibroblast/tenocyte migration and proliferation",
-            "L-NAME proof: blocking all NOS isoforms largely abolishes BPC-157's healing effects in animal models — pharmacological confirmation that NO is a primary downstream mediator",
-            "eNOS (beneficial, vascular) vs iNOS (inflammatory excess) — BPC-157 targets eNOS; the distinction matters but iNOS is not the featured mechanism",
-            "Tendon-specific: VEGF/angiogenesis addresses poor vascularity; FAK + growth factors addresses sparse tenocyte population. GHR (growth hormone receptor) upregulation up to 7-fold in tendon fibroblasts — amplifies local anabolic response to circulating GH",
-            "GHR upregulation × GH secretagogue synergy: if a person is running a GHRH analog or GHRP alongside BPC-157, the upregulated GH receptors mean the same amount of circulating GH now has more binding targets → more JAK2/STAT5 signaling → more IGF-1 produced downstream. IGF-1 (not GH itself) is the primary anabolic mediator — this was Module 4's key point. BPC-157 could therefore amplify the anabolic output of a GH stack without releasing any additional GH. Mechanistically coherent given what both modules established, but this specific combination has not been tested in controlled studies — the honest caveat is that it's plausible, not proven",
-            "Plasma half-life under 30 minutes (2022 ADME study). Lasting effects explained by biological switch model — BPC-157 triggers self-sustaining gene expression programs (via ERK1/2 → transcription factors c-Fos, c-Jun, Egr-1) that continue after the peptide clears",
-            "Phase 2 IBD trials not progressed to Phase 3 — most likely due to Pliva acquisition by Barr/Teva, not trial failure. Details never publicly disclosed",
-            "Cancer/angiogenesis question: theoretical risk is biologically rational (VEGF-driven angiogenesis also feeds tumors); no long-term human safety data exists; one unreplicated in vitro melanoma inhibition study does not resolve the question",
-            "CNS effects documented in animal models: GABAergic normalization, bidirectional dopaminergic modulation, neuroprotection — proposed mechanism is eNOS/NO in cerebral vasculature",
+            "Not endogenous in the meaningful sense — BPC-157 is derived from a human gastric protein sequence but is not produced by the body as a free peptide; the 'endogenous' claim in some sources refers only to sequence origin",
+            "No confirmed receptor — BPC-157 doesn't follow the standard peptide→receptor template. The initial molecular interaction is uncharacterized. What's documented is what happens downstream",
+            "Three parallel downstream systems: (1) nitric oxide via eNOS — drives vasodilation and angiogenesis; (2) VEGF upregulation — amplifies the angiogenic signal; (3) fibroblast and tenocyte activation — drives cell migration, proliferation, and collagen synthesis. These run simultaneously, not in a linear sequence",
+            "The L-NAME proof: blocking NO production largely abolishes BPC-157's healing effects in animal models. This is the strongest mechanistic evidence — the logic is: demonstrate the effect, block the proposed pathway, confirm the effect disappears. That's not correlation, it's a rescue experiment",
+            "eNOS (beneficial, vascular vasodilation) vs iNOS (inflammatory excess) — BPC-157 drives eNOS; understanding the distinction explains why NO promotion is a good thing in this context",
+            "Why tendons specifically: tendons have two documented repair bottlenecks — poor vascularity and a sparse tenocyte population. BPC-157's mechanisms (VEGF/angiogenesis and fibroblast/tenocyte activation) are direct matches to those bottlenecks, not generic healing effects",
+            "Short half-life, lasting effects — the biological switch model: BPC-157 clears in under 30 minutes but triggers gene expression programs that sustain themselves after the peptide is gone. The dosing frequency doesn't need to track with half-life because the switch, once flipped, keeps running",
+            "GHR upregulation: BPC-157 increases GH receptor expression in tendon fibroblasts — the same circulating GH produces a stronger anabolic signal in local tissue",
+            "GH secretagogue synergy: upregulated GH receptors → same amount of circulating GH hits more targets → more IGF-1 downstream (IGF-1, not GH itself, is the anabolic mediator — Module 4). BPC-157 could amplify a GH stack's output without releasing more GH. Mechanistically coherent, not yet tested in combination studies",
+            "The cancer question: VEGF-driven angiogenesis also feeds tumor growth — the theoretical risk is biologically rational. No long-term human safety data exists. This is an unresolved question, not a resolved one in either direction",
+        ],
+        contextOnlyConcepts: [
+            "Sub-pathway detail for eNOS activation — Route A: VEGFR2→PI3K→Akt→eNOS phosphorylation; Route B: Src kinase→Caveolin-1 release→eNOS (VEGF-independent). Students saw these steps in Lesson 2; do not probe for the sequence",
+            "FAK-paxillin cascade detail — FAK phosphorylation → Akt, ERK1/2, Rho GTPases → cytoskeletal reorganization. The concept (BPC-157 drives fibroblast migration through FAK activation) is fair to probe; the downstream molecule list is not",
+            "Biological switch molecules — ERK1/2 drives expression of transcription factors c-Fos, c-Jun, Egr-1 that maintain gene programs after the peptide clears. Students encountered these names in passing only; do not ask them to recall or explain these",
+            "IBD trial history — Phase 2 trials not progressed to Phase 3, most likely due to Pliva acquisition by Barr/Teva, not trial failure. Interesting context; not worth probing",
+            "CNS effects detail — GABAergic normalization, bidirectional dopaminergic modulation, proposed eNOS/NO mechanism in cerebral vasculature. Covered briefly in Lesson 4 as a secondary finding; not core to this module's focus",
         ],
         misconceptions: [
             "That it's primarily anti-inflammatory — it actively drives vascular and cellular repair; reduced inflammation is downstream of faster healing, not the primary action",
