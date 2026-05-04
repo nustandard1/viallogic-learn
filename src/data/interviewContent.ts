@@ -192,7 +192,7 @@ export const INTERVIEW_CONTENT: Record<number, ModuleInterviewContent> = {
         misconceptions: [
             "That TB-500 and BPC-157 are redundant — they have distinct mechanisms, distribution, and cellular targets; the combination is mechanistically non-redundant",
             "That TB-500 is primarily useful for musculoskeletal injury — this is where it's most often used, but it's actually where the evidence is thinnest; cardiac and wound healing have stronger evidence",
-            "That 'endogenous' means the same thing for TB-500 as for BPC-157 — Tβ4 is genuinely produced and regulated by the body; BPC-157's 'endogenous' label refers only to sequence derivation",
+            "That TB-500 is endogenous — Tβ4 is endogenous; TB-500 is a synthetic product modeled on Tβ4. The endogeneity of Tβ4 informs the risk profile but doesn't transfer to the synthetic product itself",
             "That systemic distribution is always better than local action — it's different, not better; systemic distribution enables stem cell mobilization but BPC-157's local action is precisely what drives angiogenesis and fibroblast activation at the injury site",
         ],
         openingQuestions: [
