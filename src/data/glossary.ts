@@ -292,4 +292,24 @@ export const glossary: Record<string, GlossaryEntry> = {
     short: "The ability of a compound to help cells survive stress — particularly ischemia (oxygen deprivation) and mechanical trauma — by blocking the cellular signals that trigger programmed cell death.",
     long: "At the concentrations produced by eNOS, nitric oxide acts as a cytoprotective signal: it inhibits the apoptotic cascade that would otherwise execute damaged or oxygen-starved cells. This is one mechanism behind BPC-157's documented effects in CNS injury models and gut epithelial damage — the same eNOS/NO pathway that drives vascular repair also extends cell survival in stressed tissue.",
   },
+  "g-actin": {
+    term: "G-actin",
+    short: "Globular (monomeric, unpolymerized) actin — the free-floating form that polymerizes into filaments. TB-500/Tβ4 sequesters G-actin to maintain a ready pool for rapid filament formation.",
+    long: "The balance between G-actin (free monomers) and F-actin (polymerized filaments) determines what a cell can do with its cytoskeleton. Tβ4 holds G-actin in reserve in a 1:1 complex — not blocking it permanently, but buffering it for rapid deployment when the cell needs to migrate or reshape.",
+  },
+  "f-actin": {
+    term: "F-actin",
+    short: "Filamentous (polymerized) actin — the structural form that makes up the cytoskeleton and powers cell movement. Built from G-actin monomers.",
+    long: "F-actin filaments form the cell's internal scaffold and, when assembled at the leading edge, push cell membranes forward during migration. The continuous polymerization (at the front) and depolymerization (at the rear) of F-actin is what physically moves a cell through tissue.",
+  },
+  "nf-kb": {
+    term: "NF-κB",
+    short: "Nuclear factor kappa B — the master transcription factor for inflammatory gene expression. TB-500 downregulates NF-κB signaling, reducing pro-inflammatory cytokine production.",
+    long: "When NF-κB is activated, it enters the nucleus and drives expression of dozens of inflammatory genes: IL-1β, IL-6, TNF-α, and others. Chronic inflammation involves persistent NF-κB activation. Compounds that reduce NF-κB activity reduce the inflammatory load without necessarily targeting any single cytokine — a broader anti-inflammatory action.",
+  },
+  "progenitor-cell": {
+    term: "Progenitor cell",
+    short: "An early-stage cell capable of differentiating into specific cell types. TB-500 mobilizes progenitor cells from bone marrow into circulation, where they can home to injury sites.",
+    long: "Progenitor cells (also called stem cells or precursor cells depending on context) are held in reserve in bone marrow and other niches. Injury signals — and certain compounds like Tβ4 — trigger their release into peripheral circulation. Once circulating, they respond to chemokines and growth factors produced at injury sites and migrate there to support repair. This mobilization mechanism is distinct from activating cells already present at an injury.",
+  },
 };

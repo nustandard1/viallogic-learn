@@ -1,0 +1,89 @@
+---
+module: "07-tb-500"
+order: 5
+title: Recap & quick check
+summary: TB-500 consolidated — mechanism, distribution, evidence, and the BPC-157 pairing in 5 questions before the Dr. Harmon interview.
+duration: "5 min"
+---
+
+import KeyTerms from "../../../components/KeyTerms.astro";
+import Quiz from "../../../components/Quiz.astro";
+
+<KeyTerms ids={[
+  "g-actin",
+  "f-actin",
+  "nf-kb",
+  "progenitor-cell",
+  "angiogenesis",
+  "fibroblast",
+]} />
+
+## The module in one paragraph
+
+TB-500 is the research peptide name for a synthetic version of Thymosin Beta-4 (Tβ4) — a 43-amino acid peptide that is genuinely endogenous, unlike BPC-157. Tβ4 is one of the most abundant intracellular peptides in mammalian cells, produced and regulated by the body with characterized functions. Its primary mechanism is actin sequestration: Tβ4 binds free G-actin monomers, maintaining a buffered pool that enables rapid, coordinated actin polymerization and cell migration. This drives faster wound closure and tissue repair through enhanced cell motility, and supports progenitor cell mobilization from bone marrow into peripheral circulation where those cells can home to injury sites. Tβ4 also downregulates NF-κB signaling, reducing pro-inflammatory cytokine production. Unlike BPC-157, which acts primarily at and near the injection site, TB-500 distributes systemically — consistent with its stem cell mobilization function, which requires systemic reach by definition. The strongest evidence is in cardiac protection (Phase 2 trials were conducted) and wound healing; musculoskeletal evidence is positive in animal models but less extensively replicated. The BPC-157 + TB-500 combination is mechanistically non-redundant: BPC-157 builds the local vascular and cellular repair environment; TB-500 mobilizes the systemic repair cell supply. Human evidence for the combination specifically does not yet exist.
+
+## Quick check
+
+<Quiz questions={[
+  {
+    q: "TB-500 is sometimes described as 'endogenous' just like BPC-157. Is this accurate, and does it mean the same thing in both cases?",
+    options: [
+      "Both compounds are endogenous in the same sense — both are derived from sequences found in human proteins, which is the standard scientific definition of 'endogenous peptide.' The relevant distinction between them is structural stability and receptor availability, not endogenous status.",
+      "The claim is accurate for TB-500 but not for BPC-157. Thymosin Beta-4 is genuinely produced by the body, regulated, and used as a normal signaling molecule — the endogenous label reflects actual biological production, not just sequence origin. For BPC-157, 'endogenous' refers only to the sequence derivation, since the specific pentadecapeptide is not produced or circulated by the body as a free compound.",
+      "Neither compound is accurately described as endogenous — both are synthetic peptides produced in a laboratory, and the fact that their sequences resemble human proteins does not make them endogenous any more than a synthetic version of insulin would be considered endogenous before administration.",
+      "The claim is accurate for both, but it matters more for BPC-157 because the 'endogenous' label is the primary regulatory argument for its use. TB-500's endogenous status is less relevant because Tβ4 is not typically regulated as a pharmaceutical compound in most jurisdictions.",
+    ],
+    answer: 1,
+    explain: "TB-500/Tβ4 and BPC-157 are in genuinely different positions on the endogenous question. Tβ4 is produced by cells throughout the body, circulates at physiologically active concentrations, and has identified biological functions — it is endogenous in the biologically meaningful sense. BPC-157 is derived from a sequence found in a gastric protein but is not itself produced as a free peptide by the body and does not circulate naturally. The 'endogenous' label for BPC-157 refers only to sequence origin — a useful marketing fact, but not the same claim as being a naturally produced and regulated signaling molecule.",
+  },
+  {
+    q: "What does actin sequestration mean, and why does it enhance cell migration rather than inhibit it?",
+    options: [
+      "Actin sequestration means Tβ4 locks F-actin filaments in a stable polymerized state, preventing depolymerization. This maintains the structural scaffolding cells need to migrate without having to rebuild it. The enhancement comes from structural stability — a cell with preserved F-actin can sustain directed movement without pausing to reform its cytoskeleton.",
+      "Actin sequestration means Tβ4 binds G-actin monomers, keeping a large buffered pool of unpolymerized actin ready for rapid deployment. When a cell needs to extend a migratory projection, it polymerizes F-actin from this pool. Sequestration enhances migration because it maintains a readily available monomer supply — faster, more coordinated polymerization means faster leading-edge extension and faster overall cell movement.",
+      "Actin sequestration is a competitive inhibition mechanism — Tβ4 competes with myosin for G-actin binding sites, reducing the contractile force at the cell's trailing edge. This allows the leading edge to advance more easily and reduces energy expenditure per unit of forward progress, enhancing net migration speed.",
+      "Actin sequestration means Tβ4 crosslinks G-actin into pre-filament complexes that polymerize faster than individual monomers. The enhancement comes from polymerization kinetics — pre-assembled complexes reduce the nucleation time for new F-actin filaments, which is the rate-limiting step in actin polymerization and therefore the bottleneck for rapid cytoskeletal reorganization.",
+    ],
+    answer: 1,
+    explain: "Actin sequestration refers to Tβ4 binding free G-actin monomers in a 1:1 complex, holding them in reserve. The pool of Tβ4-sequestered G-actin is immediately available for polymerization when the cell needs it — no new monomers need to be produced or recruited. When a cell receives a migration signal, it builds F-actin filaments at its leading edge by polymerizing monomers from this pool, extending projections and advancing. A larger, more readily available G-actin pool means faster, more coordinated filament formation and faster cell migration. TB-500 doesn't lock filaments in place (wrong) or use competitive inhibition of myosin (wrong) or pre-assemble complexes (wrong).",
+  },
+  {
+    q: "Why is TB-500's systemic distribution particularly important for the stem cell mobilization mechanism specifically?",
+    options: [
+      "Systemic distribution ensures TB-500 reaches the bone marrow where progenitor cells are stored, allowing it to directly activate their release. A locally acting compound would degrade before reaching bone marrow, making stem cell mobilization impossible regardless of the mechanism.",
+      "Systemic distribution doesn't specifically matter for stem cell mobilization — it matters because tendon and muscle have poor blood supply and a locally injected compound wouldn't reach them. The stem cell mechanism works the same way whether the compound is local or systemic.",
+      "Stem cell mobilization involves releasing progenitor cells from bone marrow into peripheral circulation so they can home to injury signals anywhere in the body. This is inherently a systemic process — the cells travel via the bloodstream to wherever injury signals are present. A compound that acts only locally at the injection site can't drive a mechanism that depends on circulating cells reaching distant injury locations.",
+      "Systemic distribution is important for stem cell mobilization because progenitor cells express the Tβ4 receptor primarily in the bloodstream, not in bone marrow. Without systemic distribution, TB-500 would never encounter the cells it needs to activate, so the mobilization effect would be absent regardless of dose.",
+    ],
+    answer: 2,
+    explain: "Stem cell mobilization releases progenitor cells from bone marrow into peripheral circulation, from which they home to injury signals anywhere in the body. This is inherently a systemic mechanism: the cells are mobilized into circulation (not to one specific site), travel through the bloodstream, and respond to injury signals wherever those signals are generated. A compound confined to a local injection site environment can't drive this. The circulation is the distribution medium for both the mobilizing signal and the cells being mobilized. Option A misunderstands the mechanism (TB-500 doesn't need to physically reach bone marrow itself in high concentration — it signals systemically); option B is incorrect (systemic distribution matters specifically for the mobilization mechanism); option D invents a receptor interaction not established in the literature.",
+  },
+  {
+    q: "What is the honest evidence position on using TB-500 for musculoskeletal injury specifically?",
+    options: [
+      "The evidence is stronger for musculoskeletal applications than for other Tβ4 applications — the majority of published Tβ4 research uses tendon and muscle injury models, making this the best-supported use case in the literature.",
+      "The evidence for musculoskeletal use is positive in animal models, but this is actually the area with the least evidence relative to the other well-studied Tβ4 applications. Cardiac protection and wound healing have more extensive animal evidence, Phase 2 human trial data, and regulatory attention. Musculoskeletal use extrapolates from those stronger evidence bases plus more limited direct data in tendon and muscle models. No completed human RCTs exist for musculoskeletal applications.",
+      "There is essentially no evidence supporting TB-500 for musculoskeletal use — the existing Tβ4 literature is entirely focused on cardiac and wound healing applications, and musculoskeletal claims are entirely extrapolated without any direct supporting data.",
+      "The evidence is considered equivalent across all TB-500 application areas because actin sequestration and cell motility effects are tissue-nonspecific. Since the mechanism works identically in any tissue type, evidence from cardiac and wound healing studies fully validates musculoskeletal use without requiring separate musculoskeletal data.",
+    ],
+    answer: 1,
+    explain: "This is an important calibration question. TB-500 is primarily used in the research peptide community for musculoskeletal applications, but that happens to be where the evidence is weakest relative to other Tβ4 applications. Cardiac protection (with Phase 2 trial data) and wound/corneal healing (with strong controlled animal studies and regulatory interest) are better evidenced than musculoskeletal repair. Animal model evidence in tendon and muscle is positive — it exists and points in the expected direction — but it's less replicated and less characterized than the cardiac and wound data. No human RCTs for musculoskeletal endpoints exist. This doesn't mean the use is irrational — the mechanism applies to musculoskeletal tissue — but the evidence hierarchy here runs opposite to what users typically assume.",
+  },
+  {
+    q: "Why is the BPC-157 + TB-500 combination mechanistically non-redundant? What specifically does each compound contribute that the other doesn't?",
+    options: [
+      "The combination is non-redundant because BPC-157 and TB-500 target different receptor families — BPC-157 operates through Src kinase and VEGFR2 signaling; TB-500 operates through actin-binding that bypasses receptors entirely. Different receptor pharmacology means additive effects without cross-tolerance, which is the pharmacological definition of non-redundancy.",
+      "The combination is non-redundant because BPC-157 primarily reduces inflammation while TB-500 primarily promotes angiogenesis. Since inflammation suppression and angiogenesis are opposing processes that need to be balanced during healing, using one compound for each process allows precise control over the healing timeline.",
+      "BPC-157 builds the local repair environment: angiogenesis, fibroblast and tenocyte activation, eNOS-driven vasodilation — all operating at and near the injection site. TB-500 provides systemic progenitor cell mobilization, getting circulating repair cells into the bloodstream where they can home to injury signals, and enhances the motility of all cells present through actin regulation. BPC-157 activates what's already there; TB-500 brings in reinforcements from elsewhere. Different distribution, different cellular targets, different mechanisms — not redundant.",
+      "The combination isn't non-redundant in a strict sense — both compounds ultimately support collagen synthesis and tissue remodeling. The practical reason to combine them is dose stacking: using both allows lower individual doses of each, reducing side effect risk while maintaining combined efficacy. The mechanistic diversity is secondary to this pharmacokinetic rationale.",
+    ],
+    answer: 2,
+    explain: "Non-redundancy requires genuinely different mechanisms addressing different limiting factors — and BPC-157 + TB-500 has that. BPC-157 acts locally: eNOS/NO, VEGF, FAK-paxillin — driving angiogenesis, resident fibroblast activation, and local repair infrastructure at the injection site. TB-500 acts systemically: actin sequestration enhancing all cells' motility, and progenitor cell mobilization recruiting circulating cells to the injury. BPC-157 cannot mobilize progenitor cells from bone marrow; TB-500 cannot drive local angiogenesis through eNOS. The cellular targets (resident fibroblasts vs. circulating progenitors), distribution (local vs. systemic), and primary mechanisms (signaling cascades vs. actin pool regulation) are all distinct. Option A gets the receptor logic right but framing it as 'the pharmacological definition of non-redundancy' is an overstatement. Option B has BPC-157 as anti-inflammatory and TB-500 as angiogenic — that's backwards for both. Option D is pure invention.",
+  },
+]} />
+
+## Up next
+
+Module 8 covers GHK-Cu — the copper peptide. A completely different mechanism from the repair compounds you've covered so far: gene expression reset via copper delivery, with strong evidence in skin aging and broader regenerative interest.
+
+When you're ready, take the Dr. Harmon interview below. Passing it unlocks Module 8.

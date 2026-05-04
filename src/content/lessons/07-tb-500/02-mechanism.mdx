@@ -1,0 +1,80 @@
+---
+module: "07-tb-500"
+order: 2
+title: How TB-500 works — actin, cell motility, and repair
+summary: Actin sequestration explained from the ground up — what G-actin and F-actin are, how Tβ4 regulates the balance between them, and why that regulation drives cell migration, wound healing, and stem cell mobilization.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+Actin is the most abundant protein in most animal cells — so abundant that understanding what it does and how it's regulated is foundational to understanding cell behavior. TB-500's primary mechanism runs entirely through actin biology.
+
+## G-actin and F-actin: the two states of actin
+
+Actin exists in two interconvertible forms:
+
+**<Term id="g-actin">G-actin</Term>** (globular actin) is the monomer — a single folded protein unit, roughly spherical, floating free in the cell's cytoplasm. G-actin is the unpolymerized form: not yet assembled into anything structural. It's the raw material.
+
+**<Term id="f-actin">F-actin</Term>** (filamentous actin) is the polymer — G-actin monomers assembled end-to-end into long, stiff filaments. F-actin filaments are structural. They form networks that give cells their shape, provide mechanical resistance, and — critically for repair — power cell movement.
+
+The ratio of G-actin to F-actin in a cell is tightly regulated because it determines what the cell can do:
+
+- **High F-actin:** cell is making structural scaffolding, extending projections, actively moving
+- **High G-actin pool (more free monomers):** potential energy for rapid polymerization on demand
+
+The conversion goes in both directions constantly. Cells build new F-actin at the leading edge when they move and tear it down at the trailing edge. The actin cytoskeleton is not a static structure — it's a dynamic system being continuously remodeled.
+
+## How Tβ4 regulates this system
+
+Tβ4 binds to <Term id="g-actin">G-actin</Term> monomers in a 1:1 complex. This is called **actin sequestration** — Tβ4 holds G-actin monomers in reserve, preventing them from spontaneously polymerizing into filaments.
+
+This sounds like it would inhibit actin function, but the biology is more nuanced. Tβ4 acts as a buffer:
+
+- It maintains a large, rapidly available pool of sequestered G-actin
+- When the cell needs to build F-actin quickly — for example, to extend a migratory projection — Tβ4 releases G-actin monomers on demand
+- The size of the sequestered pool determines how fast and how aggressively a cell can reorganize its cytoskeleton
+
+Think of it as a ready reserve. A cell with a large Tβ4-sequestered G-actin pool can mount a faster, more coordinated migratory response than one without it — because the monomers are right there, buffered and available, rather than having to be generated from scratch.
+
+<Callout type="info" title="Why Tβ4 is found in such high concentrations">
+Tβ4 exists at roughly 0.4 mM in platelets — one of the highest concentrations of any intracellular peptide. This makes sense given the function: platelets are among the first cells deployed to injury sites and must move and aggregate rapidly. A large sequestered G-actin pool means platelets can reorganize their cytoskeleton and initiate clot formation quickly. High Tβ4 concentrations in platelets are a feature, not a coincidence.
+</Callout>
+
+## Cell motility: why this matters for tissue repair
+
+When tissue is injured, repair requires cells to move — fibroblasts migrating toward the wound, endothelial cells forming new vessels, immune cells homing to the injury site. Cell migration is driven by actin dynamics: the cell extends projections at its front (by polymerizing F-actin), anchors them, and pulls itself forward while retracting its tail (by depolymerizing F-actin at the rear).
+
+Tβ4 regulates this process by controlling the available G-actin pool. Studies on dermal fibroblasts and endothelial cells show that Tβ4 accelerates migration rate and increases the speed and organization of wound closure — effects directly attributable to enhanced actin dynamics.
+
+This is the cell-level mechanism underlying TB-500's documented healing effects. It's not acting on a receptor that triggers a signaling cascade. It's modulating the internal machinery that cells use to physically move through tissue.
+
+## Stem cell mobilization
+
+Beyond cell motility in existing tissue, Tβ4 promotes the mobilization of <Term id="progenitor-cell">progenitor cells</Term> — early-stage cells capable of differentiating into tissue-specific repair cells — from the bone marrow into peripheral circulation. Once in circulation, these cells can home to injury signals (particularly inflammatory cytokines and growth factors released at damage sites).
+
+This is a fundamentally different recruitment mechanism than BPC-157 uses. BPC-157 activates fibroblasts and tenocytes that are already at the injury site. TB-500 calls in reinforcements from circulation. Both contribute to tissue repair; they're addressing the supply problem at different levels.
+
+The stem cell mobilization effect is one of the primary reasons TB-500's distribution matters — a compound mobilizing circulating progenitors needs to be systemic, which is exactly what Tβ4 is.
+
+## Anti-inflammatory effects via NF-κB
+
+<Term id="nf-kb">NF-κB</Term> (nuclear factor kappa-light-chain-enhancer of activated B cells) is the master transcription factor for inflammatory gene expression. When activated, it drives production of pro-inflammatory cytokines including IL-1β, IL-6, TNF-α, and others. Chronic inflammation involves persistent NF-κB activation — the signal for resolution never arrives.
+
+Tβ4 has been shown to downregulate NF-κB signaling, reducing pro-inflammatory cytokine production. This anti-inflammatory effect is secondary to the actin/motility mechanism in terms of TB-500's primary identity as a repair compound — but it contributes meaningfully to the overall profile. Reduced inflammatory burden at an injury site lets the repair phase proceed without the ongoing damage that chronic inflammation produces.
+
+<Callout type="key" title="What makes this mechanism distinct">
+TB-500's mechanism is upstream of most peptide mechanisms covered in this course. Most peptides bind a cell-surface receptor and trigger intracellular signaling cascades. Tβ4 enters cells (or is produced intracellularly) and directly interacts with the actin pool — modulating the physical machinery of cell function rather than sending a message to it.
+
+This is relevant to the "no confirmed receptor" issue: Tβ4 doesn't primarily work through a receptor in the classical sense. Its actin-binding activity is a direct protein-protein interaction. Some extracellular signaling through cell surface interactions has been proposed and studied, but the primary mechanism is intracellular actin regulation.
+</Callout>
+
+<Checkpoint number={1}>
+<span slot="question">Explain how TB-500's actin sequestration mechanism translates into faster wound closure. Trace from "Tβ4 binds G-actin" to "wound closes faster."</span>
+
+Tβ4 binds free G-actin monomers in the cytoplasm, maintaining a large buffered pool of ready monomers. When a cell at the wound edge receives migration signals, it needs to rapidly build F-actin filaments at its leading edge to extend projections and advance across the wound. With a large Tβ4-sequestered G-actin pool, the cell has monomers immediately available for polymerization — faster projection formation, faster cell advance. Simultaneously, Tβ4 mobilizes progenitor cells from bone marrow into circulation, which home to wound signaling molecules. More cells arrive at the wound. Each cell already present migrates faster. The result is accelerated wound closure — the direct product of enhanced actin dynamics and increased cell recruitment.
+</Checkpoint>
+
+The mechanism explains the effect. Next lesson shows where that effect shows up in the evidence — and where it's strongest versus where it's still being established.
