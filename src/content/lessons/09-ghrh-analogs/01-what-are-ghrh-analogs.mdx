@@ -1,0 +1,68 @@
+---
+module: "09-ghrh-analogs"
+order: 1
+title: What are GHRH analogs — and what do they all share?
+summary: The receptor, the signaling cascade, and the pharmacological problem that native GHRH can't solve on its own. The foundation every compound in this module builds on.
+duration: "4 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+Native <Term id="ghrh">GHRH</Term> — the actual peptide your hypothalamus releases to signal the pituitary — has a half-life of roughly 7 minutes. It travels the short distance from the hypothalamus to the <Term id="anterior-pituitary">anterior pituitary</Term> via the portal blood supply, binds receptors on <Term id="somatotroph">somatotroph</Term> cells, triggers a GH pulse, and is then degraded almost immediately. That speed is intentional. Pulsatile GH release requires rapid signal clearance — a stimulus that persists becomes background noise the axis learns to ignore.
+
+The pharmacological problem is obvious: you can't build a drug around a molecule with a 7-minute half-life. You'd need to infuse it continuously to maintain any effect, which is impractical and would defeat the purpose by eliminating the pulsatile pattern entirely. GHRH analogs solve this problem by modifying the native sequence to resist the enzymes that destroy it — extending the time each dose keeps the GHRH receptor occupied, from minutes to hours or days depending on the modification.
+
+## The receptor and cascade — what all three analogs share
+
+If you covered Module 4, the mechanism here is familiar. The <Term id="ghrh-receptor">GHRH receptor</Term> is a Gs-coupled GPCR on the surface of anterior pituitary somatotrophs. When GHRH — or any GHRH analog — binds it, the signaling sequence is:
+
+1. Gs protein activates adenylyl cyclase
+2. <Term id="camp">cAMP</Term> rises inside the somatotroph
+3. PKA activates and phosphorylates CREB
+4. CREB drives GH gene transcription — more GH synthesized — and triggers exocytosis of stored GH vesicles
+
+The result is a GH pulse: stored GH is released into circulation, where it signals the liver to produce <Term id="igf-1">IGF-1</Term> and acts directly on fat cells to drive <Term id="lipolysis">lipolysis</Term>.
+
+All three GHRH analogs in this module trigger exactly this cascade. The differences between them are entirely pharmacokinetic — how long the signal lasts, how it shapes the GH pulse that follows.
+
+## The active fragment: GHRH(1-29)
+
+Native GHRH is a 44-amino acid peptide, but the biological activity lives entirely in the first 29 residues. The C-terminal portion (positions 30–44) doesn't bind the receptor and isn't required for signaling. Researchers identified this in the 1980s, and it's why sermorelin — the oldest and simplest of the three analogs — uses only the 1–29 sequence. You don't need the rest.
+
+This also explains why GHRH analogs and the GHRH sequence they're based on look different from each other. They're all modifications of that same 29-residue core, engineered to survive longer in circulation.
+
+## Why native GHRH is destroyed so quickly
+
+Two main mechanisms:
+
+**DPP-4** (<Term id="dpp-4">dipeptidyl peptidase-4</Term>) is a plasma enzyme that cleaves at the N-terminus of many peptides, removing the first two amino acids. For GHRH, that cleavage inactivates the peptide — positions 1 and 2 are part of the receptor-binding region. This is the primary degradation route. It's why modifications that protect the N-terminus (like tesamorelin's hexenoyl group) extend half-life meaningfully.
+
+**Plasma proteases** attack at multiple other sites in the GHRH sequence, progressively fragmenting the peptide. Position 8 and several other sites are particularly vulnerable.
+
+GHRH analogs protect against these attacks through amino acid substitutions at vulnerable positions (Mod GRF 1-29), N-terminal chemical modification (tesamorelin), or a completely different strategy: binding to a long-lived carrier protein (CJC-1295 with DAC).
+
+<Callout type="key" title="These compounds don't introduce GH — they stimulate your own">
+This point from Module 4 is worth repeating in the context of specific analogs. Sermorelin, Mod GRF 1-29, CJC-1295 with DAC, and tesamorelin are not GH. They bind the GHRH receptor and signal the pituitary to release the GH your somatotroph cells have already made and stored. The anabolic and lipolytic effects come from that endogenous GH pulse — and the IGF-1 the liver produces downstream.
+
+This is mechanistically different from exogenous recombinant GH, which bypasses the pituitary entirely and delivers GH directly into circulation. The distinction matters for how <Term id="negative-feedback">negative feedback</Term> works, how <Term id="pulsatility">pulsatility</Term> is maintained, and what happens to your own axis over time.
+</Callout>
+
+## The pharmacokinetic variable that changes everything
+
+Since all three analogs hit the same receptor and trigger the same cascade, the meaningful difference between them is how long they keep the GHRH receptor occupied — and what that means for the shape of the GH response.
+
+A short-acting GHRH analog (sermorelin, ~15 min) fires and clears. The pituitary gets a sharp signal, releases a GH pulse, and then the stimulus disappears. Somatostatin tone can rise, troughs can develop, receptor sensitivity can recover. This closely mirrors what the hypothalamus does naturally.
+
+A very long-acting GHRH analog (CJC-1295 with DAC, ~7 days) maintains near-continuous GHRH receptor stimulation. The pituitary sees a persistent signal rather than a discrete one. GH output is more sustained but less pulsatile — lower peak amplitude, shallower troughs, and over weeks, potential receptor <Term id="desensitization">desensitization</Term>.
+
+That trade-off is the core question of this module. The next three lessons put numbers and mechanisms on each compound.
+
+<Checkpoint number={1}>
+<span slot="question">Why can't native GHRH be used practically as a pharmaceutical drug — and what two problems does any GHRH analog need to solve to be useful?</span>
+
+Native GHRH has a half-life of approximately 7 minutes, destroyed primarily by DPP-4 cleavage at the N-terminus and by plasma proteases at multiple other sites. This makes it pharmacologically impractical: continuous infusion would be required to sustain any effect, which would eliminate the pulsatile GH pattern that makes physiologic GHRH signaling work. A useful GHRH analog needs to solve two problems: (1) resist DPP-4 and protease degradation long enough to produce a meaningful GH pulse, and (2) do so in a way that preserves enough of the pulsatile signaling architecture that makes the GH axis responsive over time — or, if pulsatility is sacrificed, do so intentionally for a specific dosing rationale.
+</Checkpoint>
+
+Each analog solves these problems differently. Start with the simplest approach.

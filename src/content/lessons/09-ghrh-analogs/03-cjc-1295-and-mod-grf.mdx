@@ -1,0 +1,73 @@
+---
+module: "09-ghrh-analogs"
+order: 3
+title: CJC-1295 with DAC vs. Mod GRF 1-29 — the mislabeling problem
+summary: Two compounds with the same base sequence and a half-life gap of nearly 7 days. The DAC mechanism, why research supply chains routinely confuse them, and what the pharmacokinetic difference actually produces downstream.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+Before the mechanism, the naming problem — because getting the names right is more practically important than getting the chemistry right if you're working with research supply chains.
+
+**Mod GRF 1-29** is GHRH(1-29) with four amino acid substitutions engineered to resist <Term id="dpp-4">DPP-4</Term> and plasma proteases. Half-life approximately 30 minutes. Pulsatile pharmacokinetics.
+
+**CJC-1295 with DAC** is Mod GRF 1-29 plus one additional modification: a reactive maleimide group that covalently bonds to <Term id="albumin">albumin</Term> in vivo. Half-life approximately 6–8 days. Near-continuous pharmacokinetics.
+
+Many research peptide vendors label Mod GRF 1-29 as "CJC-1295." Some label CJC-1295 with DAC without specifying DAC. A buyer who receives "CJC-1295" from a research supply chain has no reliable way to know which compound they have without independent analytical verification — and the difference between the two is not a minor pharmacokinetic nuance. It is the difference between a compound that lasts 30 minutes and one that lasts 7 days.
+
+## Mod GRF 1-29 — the protected fragment
+
+The four amino acid substitutions in Mod GRF 1-29 are at positions 2, 8, 15, and 27 of the GHRH(1-29) sequence. Position 2 is particularly important: DPP-4 cleaves at the peptide bond after position 2, inactivating the peptide. Substituting the amino acid at position 2 with a DPP-4-resistant variant blocks the primary degradation route and extends half-life from ~7 minutes (native GHRH) to ~30 minutes.
+
+The other substitutions resist serine proteases that attack the backbone at various points. The result is a more stable GHRH(1-29) variant that still behaves like a short-acting analog — pulsatile, cleared within a single GH pulse window, requiring daily dosing.
+
+<Term id="mod-grf-1-29">Mod GRF 1-29</Term> is the better sermorelin in terms of protease resistance, but its pharmacokinetic profile is similar: it fires a pulse, clears, and leaves the receptor unoccupied between doses. For individuals who want pulsatile GH output but with a slightly longer window than sermorelin, Mod GRF 1-29 is frequently stacked with a GHRP (Modules 10 covers GHRPs) to produce a timed, combined pulse.
+
+## CJC-1295 with DAC — the albumin-binding modification
+
+<Term id="dac">DAC</Term> stands for Drug Affinity Complex. It is a maleimide ester group added to position 31 of the Mod GRF 1-29 sequence (a lysine-like linker position added beyond the natural 29-residue sequence). In the body after injection, this maleimide group undergoes a Michael addition reaction with the free thiol (−SH) group of cysteine-34 on circulating albumin molecules — forming a stable covalent bond.
+
+What this does: the peptide is now covalently tethered to albumin. <Term id="albumin">Albumin</Term> has a circulating half-life of approximately 19 days and is too large to be cleared rapidly by the kidneys. The CJC-1295 molecule riding on albumin inherits a fraction of that longevity. The practical functional half-life of CJC-1295 with DAC is approximately 6–8 days — not the full 19-day albumin half-life, because the peptide also undergoes some catabolism and dissociation from albumin over time, but far longer than any other GHRH analog.
+
+The result: a single injection of CJC-1295 with DAC maintains plasma concentrations of the GHRH analog for approximately one week. Dosing can be once weekly. The GHRH receptor on somatotrophs sees near-continuous stimulation across that entire window.
+
+<Callout type="key" title="The DAC bond is covalent — not reversible like lipidation">
+This is the mechanistic distinction from how semaglutide or GHK-Cu extend half-life. Semaglutide uses a fatty acid tail (lipidation) to bind albumin non-covalently — the interaction is reversible, with a constant equilibrium between bound and free drug. CJC-1295 with DAC forms a true covalent bond via Michael addition. There is no equilibrium — the bond is permanent until the albumin molecule itself is catabolized. This is why DAC produces such a dramatically longer effective half-life than lipidation-based approaches of similar molecular design.
+</Callout>
+
+## What the half-life difference produces downstream
+
+The 30-minute vs. 7-day half-life gap translates directly into different GH profiles — and this is where Module 4's pulsatility discussion becomes concrete.
+
+**Mod GRF 1-29:** fires a discrete GH pulse, receptor is occupied for ~30 minutes, then cleared. Genuine inter-pulse troughs develop. <Term id="pulsatility">Pulsatility</Term> is preserved. Peak GH concentrations are higher relative to baseline. Receptor sensitivity is maintained between doses. Requires daily dosing.
+
+**CJC-1295 with DAC:** the GHRH receptor is essentially never unoccupied. GH output rises and stays elevated relative to baseline across the week. Peak amplitudes are lower because the somatotroph is not releasing GH into a low-baseline window — it's adding to an already-elevated floor. Over weeks, <Term id="desensitization">desensitization</Term> risk increases as the receptor never gets a recovery window. Requires weekly dosing.
+
+Neither profile is inherently superior — it depends on the goal and individual response. The convenience argument for CJC-1295 with DAC is real; weekly dosing versus daily is a meaningful difference in a protocol. The pulsatility argument for Mod GRF 1-29 (or sermorelin) is also real: for long-term protocols, maintaining receptor sensitivity and physiologic peak amplitudes may produce better sustained GH output than continuous low-level elevation.
+
+<Callout type="caution" title="The mislabeling problem has no easy fix">
+Research supply chains have inconsistently labeled these compounds for years. A vial labeled "CJC-1295" may contain Mod GRF 1-29 (no DAC), CJC-1295 with DAC, or in some cases neither. The compounds have different base sequences and dramatically different half-lives — but they look identical as clear injectable solutions, and most consumers have no way to distinguish them at the point of use.
+
+The Module 5 COA framework applies here: a genuine certificate of analysis from an ISO-accredited laboratory, including molecular identity confirmation by mass spectrometry, is the only way to verify which compound is in a vial. A vendor-supplied purity sheet with no lot number or methodology is not meaningful verification for this distinction. This is one of the cleaner examples in the research peptide space of why COA literacy matters practically, not just theoretically.
+</Callout>
+
+## Combining with GHRPs — and why it pairs differently depending on half-life
+
+One of the most common protocols in GH-axis optimization combines a GHRH analog with a GHRP (Module 10). Module 4 explained the mechanistic basis: GHRH analogs prime the somatotroph via the cAMP pathway; GHRPs fire the calcium/exocytosis pathway; the combination is multiplicative.
+
+How that combination works pharmacokinetically depends on which GHRH analog you're using.
+
+With **Mod GRF 1-29**: both compounds are short-acting. You inject them together, they both peak together, you get a synchronized pulse — then both clear. The timing of the injection determines the timing of the pulse. Pre-sleep injection (both together) is the typical protocol, adding a pharmacological signal on top of the natural nocturnal GH pulse window.
+
+With **CJC-1295 with DAC**: the GHRH receptor is continuously stimulated across the week. Adding a GHRP produces a pulse on top of that continuous background — you still get a calcium-driven exocytotic response, but the GHRH priming is always present. The GHRP becomes the acute trigger; the GHRH analog is the permanent background. Some researchers find this combination keeps IGF-1 elevated consistently; others prefer the cleaner pulsatile profile of the short-acting approach.
+
+<Checkpoint number={1}>
+<span slot="question">A researcher orders "CJC-1295" from a research supplier. The vial has no DAC notation. They inject it daily before sleep. What are the two possible compounds they might actually have — and how would each one behave differently under that dosing protocol?</span>
+
+Without DAC notation, the vial could contain either Mod GRF 1-29 (~30 min half-life) or CJC-1295 with DAC (~6–8 day half-life). If it's Mod GRF 1-29: daily pre-sleep dosing produces a discrete GH pulse each night followed by a genuine trough — pulsatile, physiologically appropriate, receptor sensitivity maintained. If it's CJC-1295 with DAC: daily injection of a 7-day compound produces rapid accumulation — by day 3 or 4, plasma levels are building toward a plateau rather than pulsing. The GHRH receptor is near-continuously occupied, GH output is more sustained but less pulsatile, and daily dosing adds no meaningful benefit over weekly dosing once plateau levels are reached. The protocols are pharmacologically incompatible — one makes daily dosing appropriate; the other makes it redundant and potentially more suppressive of the pulsatile pattern. Independent COA verification is the only way to know which compound is actually in the vial.
+</Checkpoint>
+
+The third analog in this module is the outlier — it went through the full FDA approval process, which makes it the most thoroughly characterized GHRH compound in clinical medicine.

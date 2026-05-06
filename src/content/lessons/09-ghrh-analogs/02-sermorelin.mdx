@@ -1,0 +1,63 @@
+---
+module: "09-ghrh-analogs"
+order: 2
+title: Sermorelin — the simplest analog, and why that matters
+summary: GHRH(1-29)-NH₂ with no exotic modifications. Its short half-life is its clinical advantage — and its FDA history gives it a different evidence standing than most research peptides.
+duration: "4 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+<Term id="sermorelin">Sermorelin</Term> is the most straightforward compound in this module. It is GHRH(1-29)-NH₂: the 29-amino acid active fragment of native <Term id="ghrh">GHRH</Term>, with one modification — a C-terminal amide group (the NH₂ notation) that offers a modest degree of protection against exopeptidase degradation from the C-terminal end. There is no carrier protein. No covalent albumin binding. No special chemical groups protecting the N-terminus from <Term id="dpp-4">DPP-4</Term>.
+
+This simplicity is not a limitation the pharmaceutical industry forgot to fix. It was a deliberate clinical starting point — and it turned out to produce a pharmacokinetic profile that, for specific applications, is more physiologically appropriate than the longer-acting alternatives.
+
+## The mechanism — familiar from Module 4
+
+Sermorelin binds the <Term id="ghrh-receptor">GHRH receptor</Term> on <Term id="somatotroph">somatotroph</Term> cells in the <Term id="anterior-pituitary">anterior pituitary</Term>, activates the Gs/cAMP/PKA/CREB cascade, and produces a GH pulse. IGF-1 rises from the liver in response. <Term id="lipolysis">Lipolysis</Term> occurs in adipose tissue. If somatostatin tone is low at the time of dosing — as it is during the early stages of slow-wave sleep — the pulse is larger. This is the same axis mechanism covered in Module 4, now applied to a specific injectable compound.
+
+The difference from native GHRH is primarily duration: sermorelin's half-life is approximately 10–20 minutes. Not hours, not days — minutes. It fires the receptor, the somatotroph responds, and the peptide is cleared before the next pulse would naturally occur.
+
+## Why the short half-life is a feature
+
+This is counterintuitive. Usually, longer half-life = better drug. More time in circulation, fewer injections, more sustained effect. For most drugs, that logic holds.
+
+For a GHRH analog, it's more complicated — and Module 4's pulsatility lesson covered exactly why.
+
+<Term id="pulsatility">Pulsatility</Term> in the GH axis serves two functions: it drives the sharp IGF-1 responses that correlate with anabolic activity, and it provides the inter-pulse troughs that allow somatotroph receptors to reset their sensitivity. Without troughs, <Term id="desensitization">desensitization</Term> develops over weeks: receptors are internalized, downstream signaling machinery is downregulated, and the same GHRH stimulus produces progressively less GH output.
+
+Sermorelin's 10–20 minute clearance means each injection produces a discrete pulse followed by a genuine trough. The GHRH receptor is stimulated, it fires, and then it's left alone. Over the course of a protocol lasting weeks or months, this preserves receptor responsiveness better than a compound that continuously occupies the receptor and prevents the recovery cycle.
+
+The practical trade-off is dosing frequency. Sermorelin typically requires daily injections — often twice daily in some protocols — to produce meaningful cumulative GH output. That inconvenience is the cost of preserving pulsatile physiology.
+
+<Callout type="info" title="Why pre-sleep timing became consensus">
+The largest GH pulse of the day occurs in the first 90 minutes of slow-wave sleep, when somatostatin tone drops to its daily minimum. Injecting sermorelin 30–60 minutes before sleep means the GHRH analog arrives at the somatotroph just as the natural inhibitory brake is releasing. The injection amplifies a pulse that was going to occur anyway, rather than firing a new one against elevated somatostatin resistance. This is why pre-sleep timing became standard practice — it follows the axis's own rhythm rather than fighting it.
+</Callout>
+
+## The FDA history — and what it tells you
+
+Sermorelin was FDA-approved in 1997 under the brand name Geref, manufactured by Serono, for the treatment of pediatric growth hormone deficiency. It went through the full regulatory process: Phase 1 safety and pharmacokinetic studies, Phase 2 dose-finding, Phase 3 efficacy trials in children with growth hormone deficiency, post-marketing surveillance.
+
+In 2008, Serono voluntarily withdrew Geref from the US market. The reason was manufacturing — not safety signals, not failed trials, not evidence of harm. The commercial product disappeared; the compound did not.
+
+What this means for sermorelin's evidence standing: it has human clinical data that most research peptides in this category simply don't have. Pharmacokinetic characterization in humans, dose-response relationships, safety data from pediatric patients receiving it chronically. That's not the same as proven efficacy for adult body composition goals — the approved indication was pediatric GHD, not GH optimization in healthy adults. But it means sermorelin sits above research-only compounds on the evidence hierarchy because the human safety and PK work was done and published.
+
+<Callout type="caution" title="What 'FDA-approved history' doesn't mean here">
+Sermorelin is no longer FDA-approved — it was withdrawn. The withdrawal was manufacturing-driven, not a safety or efficacy failure, and the compound is now used off-label in anti-aging and wellness contexts. This is meaningfully different from a compound that has never been through the FDA process. But the historical approval applies to a specific indication in a specific population. Using that history to imply blanket safety or efficacy for adult GH optimization is an overclaim. The evidence supports investigated interest in the mechanism and the safety profile — not proven outcomes for off-label goals.
+</Callout>
+
+## Where sermorelin sits in the GHRH analog landscape
+
+Sermorelin is the most physiologically conservative choice: the shortest half-life, the most pulsatile GH profile, the oldest and most characterized compound in the group. If the goal is to stimulate GH release while minimally disrupting the axis's own regulatory logic — particularly for individuals who want to preserve long-term axis responsiveness — the short half-life analog argument is strongest here.
+
+The limitation is the dosing commitment. Daily subcutaneous injections, timed around sleep, indefinitely. For practitioners and researchers who prioritize convenience and less frequent dosing, the next two compounds address that at the cost of different pharmacokinetic trade-offs.
+
+<Checkpoint number={1}>
+<span slot="question">Why does sermorelin's short (~15 min) half-life make it potentially better for long-term GH axis responsiveness than a GHRH analog with a multi-day half-life — even though more frequent dosing is required?</span>
+
+Sermorelin fires the GHRH receptor and clears within 15–20 minutes, producing a discrete GH pulse followed by a genuine inter-pulse trough. The trough is what preserves receptor sensitivity: somatotroph GHRH receptors are internalized and downregulated under continuous stimulation (desensitization), reducing the GH output each pulse produces over time. With a short-acting analog, the receptor gets a recovery window after each dose — receptors recycle to the surface, the cAMP signaling machinery resets, and the next injection produces a full response. A multi-day analog maintains near-continuous GHRH receptor occupancy, eliminating the trough. Over weeks, this can produce desensitization that blunts GH output. Sermorelin's inconvenience (daily dosing) is the price of maintaining that physiologic recovery cycle.
+</Checkpoint>
+
+The next step up in modification complexity — and half-life — is Mod GRF 1-29 and its more heavily engineered cousin, CJC-1295 with DAC.

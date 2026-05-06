@@ -327,4 +327,29 @@ export const glossary: Record<string, GlossaryEntry> = {
     short: "Secreted Protein Acidic and Rich in Cysteine — also called osteonectin. A matrix protein whose proteolytic cleavage releases the GHK tripeptide during tissue remodeling.",
     long: "SPARC is involved in extracellular matrix organization and the cell response to injury. When SPARC is cleaved during normal ECM turnover and tissue repair, GHK is among the peptide fragments released. This makes GHK genuinely endogenous — not just a sequence derived from a human protein in principle, but a peptide that actually circulates in the body at measurable concentrations as a result of normal biological processes. Its endogenous origin distinguishes GHK from BPC-157, which is derived from a gastric protein sequence but is not produced as a free peptide by the body.",
   },
+  "ghrh-receptor": {
+    term: "GHRH receptor",
+    short: "A Gs-coupled GPCR on anterior pituitary somatotroph cells. Binding by GHRH or a GHRH analog triggers cAMP → PKA → CREB → GH synthesis and release.",
+    long: "The GHRH receptor is the specific target of all GHRH analogs (sermorelin, Mod GRF 1-29, CJC-1295 with DAC, tesamorelin). It is distinct from the GHS-R1a ghrelin receptor that GHRPs bind — different receptor, different G-protein, different signaling cascade. GHRH-R uses the Gs/cAMP pathway; GHS-R1a uses the Gq/calcium pathway. This is why combining a GHRH analog with a GHRP is synergistic rather than redundant: they use different inputs to converge on the same somatotroph output.",
+  },
+  sermorelin: {
+    term: "Sermorelin",
+    short: "GHRH(1-29)-NH₂ — the 29-amino acid active fragment of GHRH with C-terminal amidation. Half-life ~10–20 min. The most pulsatile GHRH analog.",
+    long: "Sermorelin was FDA-approved in 1997 as Geref (Serono) for pediatric growth hormone deficiency — giving it human pharmacokinetic and safety data that most research GHRH analogs lack. It was withdrawn from the US market in 2008 due to manufacturing discontinuation, not safety or efficacy failure. Its short half-life is its main clinical advantage: it fires a discrete GH pulse and clears, allowing genuine inter-pulse troughs that preserve receptor sensitivity and pulsatile axis physiology. Requires daily subcutaneous dosing; typically timed pre-sleep to amplify the natural nocturnal GH pulse window.",
+  },
+  "mod-grf-1-29": {
+    term: "Mod GRF 1-29",
+    short: "GHRH(1-29) with four amino acid substitutions at positions 2, 8, 15, and 27 to resist DPP-4 and plasma proteases. Half-life ~30 min. Often mislabeled as 'CJC-1295' in research supply chains.",
+    long: "Mod GRF 1-29 is a more protease-stable version of sermorelin, with the same pulsatile pharmacokinetic profile. The position-2 substitution is the most important: it blocks DPP-4 access to the primary cleavage site, extending half-life from ~7 min (native GHRH) to ~30 min. It is frequently mislabeled as 'CJC-1295' without DAC notation in research supply chains — creating significant confusion with CJC-1295 with DAC, which has a ~6–8 day half-life from albumin binding. The two compounds produce fundamentally different GH profiles and cannot be distinguished by appearance.",
+  },
+  tesamorelin: {
+    term: "Tesamorelin",
+    short: "FDA-approved GHRH analog (brand name Egrifta). Full GHRH(1-44) sequence stabilized by N-terminal trans-3-hexenoic acid conjugation. Half-life ~26 min.",
+    long: "Tesamorelin was approved by the FDA in 2010 (Theratechnologies) for HIV-associated lipodystrophy — the only GHRH analog to complete Phase 2 and Phase 3 randomized controlled trials. The trans-3-hexenoic acid group blocks DPP-4 access to the N-terminus, extending half-life from ~7 min (native GHRH) to ~26 min. This makes it more stable than sermorelin while remaining pulsatile (unlike CJC-1295 with DAC). Its mechanism is identical to other GHRH analogs: GHRH-R → cAMP → GH pulse → lipolysis and IGF-1. FDA approval establishes its clinical evidence base for HIV lipodystrophy; it does not establish efficacy for off-label GH optimization goals.",
+  },
+  lipodystrophy: {
+    term: "Lipodystrophy (HIV-associated)",
+    short: "A fat redistribution syndrome in HIV patients: visceral fat accumulates in the trunk while subcutaneous fat is lost from the limbs and face. The approved indication for tesamorelin.",
+    long: "HIV-associated lipodystrophy develops in a significant fraction of HIV-positive patients, particularly on certain antiretroviral regimens. The visceral fat accumulation component raises triglycerides, drives insulin resistance, and substantially increases cardiovascular risk. Because visceral adipocytes are more GH-responsive than subcutaneous adipocytes, GH-axis stimulation via a GHRH analog preferentially reduces visceral fat — the mechanistic rationale for tesamorelin's development and approval. The Phase 3 trials demonstrated significant CT-measured visceral adipose tissue reduction with tesamorelin vs. placebo.",
+  },
 };

@@ -1,0 +1,104 @@
+---
+module: "09-ghrh-analogs"
+order: 5
+title: Recap & quick check
+summary: GHRH analogs consolidated — the shared mechanism, the pharmacokinetic spectrum, the mislabeling trap, and 6 questions before the Dr. Harmon interview.
+duration: "5 min"
+---
+
+import KeyTerms from "../../../components/KeyTerms.astro";
+import Quiz from "../../../components/Quiz.astro";
+
+<KeyTerms ids={[
+  "ghrh",
+  "ghrh-receptor",
+  "somatotroph",
+  "dac",
+  "albumin",
+  "pulsatility",
+  "sermorelin",
+  "mod-grf-1-29",
+  "tesamorelin",
+  "lipodystrophy",
+]} />
+
+## The module in one paragraph
+
+Sermorelin, Mod GRF 1-29, CJC-1295 with DAC, and tesamorelin are all GHRH receptor agonists — they bind the same Gs-coupled GPCR on anterior pituitary somatotroph cells, trigger the same cAMP/PKA/CREB cascade, and produce endogenous GH pulses. None of them introduce exogenous GH. The differences between them are entirely pharmacokinetic: half-lives span from ~15 minutes (sermorelin) to ~30 minutes (Mod GRF 1-29) to ~26 minutes (tesamorelin) to ~6–8 days (CJC-1295 with DAC). The longer the half-life, the more continuous the GHRH receptor stimulation — flatter GH profiles, reduced pulsatility, potential receptor desensitization over time. The DAC modification in CJC-1295 is a covalent Michael addition between a maleimide group and albumin's Cys-34 — a permanently bonded half-life extension, not a reversible lipidation. Mod GRF 1-29 is chronically mislabeled as "CJC-1295" in research supply chains; the two have a 7-day vs. 30-minute half-life gap that cannot be distinguished without independent COA verification. Tesamorelin is the only FDA-approved GHRH analog (Egrifta, HIV-associated lipodystrophy, 2010); it has completed Phase 3 RCT data establishing human efficacy and safety — a categorically stronger evidence base than any research-only compound in this category, while still limited to its approved indication and population.
+
+## Quick check
+
+<Quiz questions={[
+  {
+    q: "What do sermorelin, Mod GRF 1-29, CJC-1295 with DAC, and tesamorelin all share mechanistically — and what does each one actually do to produce GH?",
+    options: [
+      "They all bind the GHS-R1a ghrelin receptor on somatotroph cells, triggering a calcium spike that causes rapid exocytosis of stored GH vesicles.",
+      "They all directly introduce GH into circulation — the differences between them are in how much GH each delivers and how quickly.",
+      "They all bind the Gs-coupled GHRH receptor on anterior pituitary somatotroph cells. Binding activates adenylyl cyclase → cAMP rises → PKA activates → CREB is phosphorylated → GH gene transcription increases and stored GH vesicles are released. The GH pulse that follows is the body's own endogenous GH, not the compound itself.",
+      "They all produce identical GH profiles because they act on the same receptor — the differences in half-life only affect dosing convenience, not the pharmacodynamic outcome.",
+    ],
+    answer: 2,
+    explain: "All four are GHRH receptor agonists binding the same Gs-coupled GPCR on somatotroph cells. The signaling cascade (Gs → adenylyl cyclase → cAMP → PKA → CREB → GH synthesis/release) is identical across the group. What they produce is endogenous GH — the compound is the signal, not the output. The GHS-R1a ghrelin receptor is what GHRPs bind (Module 10) — a completely different receptor with a different cascade. The half-life differences do produce meaningfully different GH profiles, not just dosing convenience — pulsatility, peak amplitude, and receptor sensitivity all vary with temporal exposure pattern.",
+  },
+  {
+    q: "What does the DAC modification in CJC-1295 actually do — and why does it produce a dramatically different half-life than Mod GRF 1-29?",
+    options: [
+      "DAC is a maleimide group that undergoes a Michael addition with the free thiol of albumin's Cys-34, forming a stable covalent bond in vivo. The peptide rides albumin's long circulatory half-life, extending from ~30 minutes (Mod GRF 1-29) to ~6–8 days. Unlike lipidation-based half-life extension (reversible albumin binding), the DAC bond is permanent until the albumin molecule is catabolized.",
+      "DAC is a polyethylene glycol chain (PEGylation) that shields the peptide from protease cleavage, extending half-life by steric protection rather than albumin binding.",
+      "DAC is a sugar modification that slows renal clearance by increasing the peptide's molecular weight above the glomerular filtration threshold.",
+      "DAC makes the peptide bind albumin reversibly via fatty acid lipidation — the same mechanism used by semaglutide — giving it a half-life of approximately 7 hours rather than days.",
+    ],
+    answer: 0,
+    explain: "The DAC (Drug Affinity Complex) is a maleimide ester group at a lysine-derived linker position. After injection, it reacts with cysteine-34's free thiol on circulating albumin via Michael addition — forming a covalent, not reversible, bond. Albumin's half-life is ~19 days; CJC-1295 with DAC achieves ~6–8 days because catabolism and dissociation reduce the full albumin benefit. This is mechanistically distinct from lipidation (semaglutide, GHK-Cu), where the drug-albumin interaction is reversible and in equilibrium. The irreversible bond is why the half-life extension is so dramatic compared to Mod GRF 1-29's ~30-minute protease-resistance approach.",
+  },
+  {
+    q: "Why does the CJC-1295 vs. Mod GRF 1-29 mislabeling problem matter practically — and what is the only reliable way to know which compound is in a vial?",
+    options: [
+      "The mislabeling problem is mainly a labeling formality — since both compounds act on the same receptor, the clinical effects are nearly identical regardless of which one is used.",
+      "The mislabeling matters for dosing frequency: Mod GRF 1-29 requires twice-daily dosing while CJC-1295 with DAC is once-weekly, but both produce the same pulsatile GH profile once dosing frequency is adjusted.",
+      "Both compounds are often labeled 'CJC-1295' in research supply chains, but the distinction can be made by comparing the compound's color and viscosity after reconstitution.",
+      "Mod GRF 1-29 has a ~30-minute half-life; CJC-1295 with DAC has a ~6–8 day half-life. Many vendors label Mod GRF 1-29 simply as 'CJC-1295' without DAC notation, and some omit DAC specification for CJC-1295 with DAC. Someone who receives the wrong compound may dose daily when weekly is appropriate — accumulating to plateau rather than pulsing — or the reverse. The only reliable verification is an independent COA from an ISO-accredited lab with molecular identity confirmed by mass spectrometry.",
+    ],
+    answer: 3,
+    explain: "The half-life gap (30 min vs. 6–8 days) produces fundamentally different GH profiles: pulsatile vs. continuous. Using CJC-1295 with DAC on a daily schedule doesn't produce more pulsatile output — it causes accumulation and near-flat GHRH receptor occupancy. Using Mod GRF 1-29 on a weekly schedule misses most of the intended pulses. Neither error is caught by looking at the vial — both are clear solutions after reconstitution. Reconstituted peptide solutions have no color or viscosity differences distinguishable by sight. A vendor purity sheet with no lot number, methodology, or accredited lab is not a COA in the Module 5 sense; mass spectrometry confirmation of molecular identity is required to actually know which compound a vial contains.",
+  },
+  {
+    q: "CJC-1295 with DAC produces more total GH output per week than daily sermorelin. Why might daily sermorelin still produce better long-term GH axis responsiveness in some protocols?",
+    options: [
+      "Sermorelin contains a different amino acid sequence that specifically upregulates somatotroph GH synthesis more efficiently than CJC-1295 with DAC.",
+      "Daily sermorelin maintains higher somatostatin tone, which paradoxically strengthens the GH pulse at the next dose.",
+      "There is no meaningful difference in long-term axis responsiveness — total GH output per week is the relevant metric, and CJC-1295 with DAC is superior on that measure.",
+      "Sermorelin's ~15 min half-life fires a discrete GH pulse and then clears, allowing genuine inter-pulse troughs. Somatotroph GHRH receptors have a recovery window — they recycle to the surface, downstream signaling machinery resets, and subsequent pulses produce full responses. CJC-1295 with DAC maintains near-continuous GHRH receptor occupancy. Over weeks, this produces receptor desensitization: internalization, reduced signaling efficiency, and lower GH output per unit of GHRH stimulus. The continuous approach may frontload GH output but blunt it over time; the pulsatile approach preserves receptor sensitivity for a sustained response.",
+    ],
+    answer: 3,
+    explain: "This is the Module 4 pulsatility argument applied concretely. Somatotroph GHRH receptors, like all GPCRs, are subject to desensitization under continuous agonist exposure: phosphorylation by GRKs targets them for internalization via arrestin, receptor surface density decreases, and downstream cAMP signaling is attenuated. The inter-pulse trough is a recovery window that prevents this from compounding over weeks of a protocol. CJC-1295 with DAC eliminates troughs — the receptor never gets that recovery window. Sermorelin's frequency requirement is the cost of preserving that recovery cycle. The 'more total GH' argument for CJC-1295 with DAC is a frontloading argument that ignores what happens to receptor sensitivity over weeks of continuous stimulation.",
+  },
+  {
+    q: "Tesamorelin completed Phase 3 RCTs and received FDA approval for HIV-associated lipodystrophy. What does that approval establish — and what doesn't it tell you?",
+    options: [
+      "FDA approval establishes that tesamorelin is safe and effective for any application involving GH axis stimulation — the mechanism is the same regardless of indication.",
+      "It establishes that the GHRH-R mechanism works in humans: tesamorelin produces meaningful GH pulses, drives visceral fat reduction via GH-mediated lipolysis, and has a documented safety profile from large randomized controlled trials. What it doesn't establish: efficacy for off-label goals (GH optimization in healthy adults, body composition in non-HIV populations) or safety equivalence in populations outside the trial. Approval is specific to the population, dose, and endpoint studied.",
+      "FDA approval means tesamorelin is superior to sermorelin and Mod GRF 1-29 for all GH-axis applications because it has been validated in humans.",
+      "The approval primarily establishes manufacturing quality and purity standards — the clinical efficacy data for tesamorelin is no stronger than that for sermorelin, which also has an FDA history.",
+    ],
+    answer: 1,
+    explain: "FDA approval for a specific indication is not a blanket endorsement. It establishes that tesamorelin produces the claimed effect (visceral fat reduction) in the studied population (HIV patients with lipodystrophy) at the studied dose via the proposed mechanism (GHRH-R → GH → lipolysis), with an acceptable safety profile characterized across Phase 2, Phase 3, and post-marketing surveillance. This is categorically more human clinical evidence than research-only analogs have. What it doesn't provide: demonstrated efficacy for off-label purposes (the mechanism makes it plausible, but mechanism ≠ outcome), safety data in non-HIV populations long-term, or dose-response data for other goals. The Module 5 framework applies: mechanistic evidence and clinical evidence are different rungs on the hierarchy, and approval for one indication sits at a different rung than approval for the indication you actually care about.",
+  },
+  {
+    q: "All three GHRH analogs stimulate endogenous GH release. How is this fundamentally different from injecting recombinant exogenous GH — and why does the difference matter for axis health over time?",
+    options: [
+      "GHRH analogs and exogenous GH produce identical downstream effects and identical axis behavior — the difference is only in the source of the GH molecule (endogenous vs. synthetic).",
+      "GHRH analogs signal the anterior pituitary to release its own stored and synthesized GH in natural pulses, keeping the hypothalamic-pituitary axis actively engaged. Exogenous GH bypasses the pituitary entirely — it provides GH directly to circulation without any pituitary step. Both approaches raise GH and IGF-1, which triggers the same negative feedback: reduced GHRH release and increased somatostatin tone. But with exogenous GH, the pituitary has no endogenous stimulus to maintain its own output — over time, the axis can reduce its own GH production because elevated GH and IGF-1 signal that more isn't needed. GHRH analogs preserve the upstream signaling machinery.",
+      "Exogenous GH is safer than GHRH analogs because it bypasses the pituitary and avoids any risk of pituitary receptor desensitization.",
+      "GHRH analogs are stronger than exogenous GH because they produce GH through a physiologic cascade rather than direct injection, and the body's own GH is more anabolically active than synthetic recombinant GH.",
+    ],
+    answer: 1,
+    explain: "The key distinction is where in the axis each approach acts. GHRH analogs are upstream signals — they tell the pituitary to do its job. The hypothalamic-pituitary signaling machinery remains active and engaged; pulses come from the somatotroph's own secretory apparatus; the regulatory feedback loop (GHRH/somatostatin balance) is preserved to a greater degree. Exogenous GH injects GH directly into circulation, bypassing the pituitary entirely. The pituitary still receives the same negative feedback (elevated GH and IGF-1 suppress GHRH release and increase somatostatin) — but the pituitary itself produces no meaningful GH because the stimulus is absent. Over time, prolonged exogenous GH can suppress the pituitary's own secretory drive. GHRH analogs don't carry that specific risk in the same way because the axis is continuously being asked to perform its own function.",
+  },
+]} />
+
+## Up next
+
+Module 10 covers the GHRPs — ipamorelin, GHRP-2, GHRP-6, and hexarelin. These bind a completely different receptor (GHS-R1a, not the GHRH receptor) via a completely different cascade (Gq/calcium, not Gs/cAMP) — which is exactly what makes them synergistic with the compounds in this module rather than redundant with them.
+
+When you're ready, take the Dr. Harmon interview below. Passing it unlocks Module 10.

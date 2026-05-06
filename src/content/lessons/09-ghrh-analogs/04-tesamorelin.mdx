@@ -1,0 +1,77 @@
+---
+module: "09-ghrh-analogs"
+order: 4
+title: Tesamorelin — what FDA approval actually tells you
+summary: The only fully approved GHRH analog. Covers the trans-3-hexenoic acid modification, the HIV lipodystrophy trials, and what the clinical evidence base genuinely establishes — and what it doesn't.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+Every other compound in this module — sermorelin, Mod GRF 1-29, CJC-1295 with DAC — exists in the research peptide space. Their evidence base is primarily preclinical; their use is off-label or investigational. <Term id="tesamorelin">Tesamorelin</Term> is different. It is a licensed pharmaceutical, sold under the brand name Egrifta, with an FDA-approved indication, a completed clinical trial program, and post-marketing surveillance data. That is a categorical difference in evidence standing, and it's worth being precise about what it means — and what it doesn't.
+
+## The compound and its modification
+
+Tesamorelin is not based on the 1-29 fragment. It uses the full 44-amino acid GHRH sequence — GHRH(1-44) — conjugated at the N-terminus with a **trans-3-hexenoic acid** group. This is an aliphatic six-carbon chain with a trans double bond, added to the N-terminal amino group of the peptide.
+
+The modification does one specific thing: it blocks access to the N-terminus. <Term id="dpp-4">DPP-4</Term> cleaves GHRH by attacking the peptide bond after position 2, and it requires access to the free N-terminus to initiate cleavage. The hexenoyl group physically blocks that access — DPP-4 cannot engage the substrate correctly. The primary degradation route is eliminated.
+
+The result: a half-life of approximately 26 minutes, compared to roughly 7 minutes for native GHRH(1-44). Tesamorelin is not long-acting by the standards of CJC-1295 with DAC, but it is meaningfully more stable than sermorelin. It produces pulsatile GH release — the pulse is sharper and more sustained than with native GHRH, but the compound still clears within the window of a single GH pulse.
+
+The mechanism downstream is identical to other GHRH analogs: <Term id="ghrh-receptor">GHRH receptor</Term> on <Term id="somatotroph">somatotroph</Term> cells → Gs/cAMP → PKA/CREB → GH synthesis and release → <Term id="igf-1">IGF-1</Term> production by the liver and direct <Term id="lipolysis">lipolysis</Term> by GH on adipocytes.
+
+## The clinical trial program — HIV-associated lipodystrophy
+
+<Term id="lipodystrophy">HIV-associated lipodystrophy</Term> is a fat redistribution syndrome that develops in a significant fraction of HIV-positive patients, particularly those on certain antiretroviral (ARV) regimens. The pattern is characteristic: visceral fat accumulates in the trunk and abdomen while subcutaneous fat is lost from the limbs and face. The result is increased abdominal girth, elevated triglycerides, insulin resistance, and substantially elevated cardiovascular risk — in a patient population already managing a chronic disease.
+
+At the time of tesamorelin's development, no pharmacological treatment had been approved for the visceral fat component of this syndrome.
+
+The rationale for a GHRH analog came directly from the GH axis mechanism covered in Module 4: GH drives <Term id="lipolysis">lipolysis</Term> in adipose tissue, and this is a **direct** GH effect — it does not require IGF-1 as an intermediary. Critically, visceral adipocytes are more GH-responsive than subcutaneous adipocytes. Stimulating GH pulsatility in patients with lipodystrophy, whose GH secretion is often blunted, would be expected to preferentially reduce visceral fat rather than subcutaneous fat. The mechanistic logic was sound.
+
+Theratechnologies conducted Phase 2 and Phase 3 randomized controlled trials. The Phase 3 data showed statistically and clinically significant reductions in visceral adipose tissue measured by CT scan, with improvements in lipid profiles. The FDA approved tesamorelin (Egrifta) in November 2010 for this indication — the first pharmacological treatment approved specifically for HIV-associated lipodystrophy.
+
+<Callout type="key" title="What the FDA approval process actually required">
+To approve tesamorelin, the FDA reviewed:
+- **Phase 1 studies**: pharmacokinetics in humans, single and multiple-dose safety, dose-finding — this is human PK data, not animal modeling
+- **Phase 2 trials**: efficacy signal in the target population, dose selection, adverse event characterization
+- **Phase 3 RCTs**: large, randomized, double-blind, placebo-controlled trials with pre-specified primary endpoints
+- **Post-marketing commitments**: ongoing safety monitoring after approval
+
+Every research peptide in the GH-axis space skips all of this. The claims made for those compounds are based on preclinical data, mechanistic inference, and off-label human experience. Tesamorelin has the evidence package that approved drugs are required to have.
+</Callout>
+
+## What the approval tells you — and what it doesn't
+
+**What it does tell you:**
+
+Tesamorelin is the most thoroughly characterized GHRH analog in clinical medicine. Its pharmacokinetics in humans are measured and published, not inferred from animal data. Its safety profile across Phase 2, Phase 3, and post-marketing experience is documented. Its mechanism of action on visceral adiposity is demonstrated in randomized controlled trials in humans — not in rodents, not in vitro, not via mechanistic inference.
+
+This puts tesamorelin at a different point on the Module 5 evidence hierarchy than any other compound in this module. It has completed the process that generates the highest-quality clinical evidence: large, pre-registered, randomized, placebo-controlled human trials.
+
+**What it doesn't tell you:**
+
+FDA approval for HIV-associated lipodystrophy does not establish efficacy for general GH optimization in healthy adults. The approved population (HIV patients with documented lipodystrophy) is different from a healthy 40-year-old seeking body composition benefits. The approved endpoint (visceral fat reduction in lipodystrophy) is not the same as improved athletic performance, enhanced recovery, or general anti-aging effects.
+
+The mechanism is the same — GHRH-R activation → endogenous GH pulse → lipolysis and IGF-1. But mechanistic plausibility is not the same as demonstrated clinical efficacy, and this is exactly the Module 5 distinction between mechanistic evidence and outcome evidence. The HIV data tells you the compound works via its proposed mechanism in humans. It does not tell you it produces the specific outcomes people pursue it for in off-label contexts.
+
+<Callout type="caution" title="Approval ≠ safe for all uses">
+FDA-approved drugs are approved for specific populations, doses, and indications. Tesamorelin's approval covers subcutaneous injection at 2 mg/day in HIV patients with lipodystrophy. Off-label use at different doses, in different populations, for different goals means you are operating outside the evidence package. The drug's mechanism is understood; the outcomes for other applications are not established. The approval is a floor, not a ceiling — it confirms the mechanism works in humans, but it doesn't resolve what happens in other contexts.
+</Callout>
+
+## Tesamorelin in the GH-axis analog hierarchy
+
+Within this module's three analogs, the evidence hierarchy for human clinical data runs clearly: tesamorelin at the top (Phase 3 RCTs, FDA approval), sermorelin in the middle (FDA-approved history for pediatric GHD, withdrawn for manufacturing reasons), Mod GRF 1-29 and CJC-1295 with DAC at the bottom (no completed human clinical trials for any indication).
+
+For the <Term id="pulsatility">pulsatility</Term> and receptor-sensitivity considerations discussed in Lessons 2 and 3, tesamorelin sits between the extremes: a 26-minute half-life is longer than sermorelin (~15 min) but far shorter than CJC-1295 with DAC (~7 days). It produces pulsatile GH profiles. Its <Term id="negative-feedback">negative feedback</Term> behavior follows the same axis logic as the other short-acting analogs.
+
+Practically: tesamorelin requires a prescription. It is expensive. Its approved access point is the HIV lipodystrophy indication. Off-label prescribing exists, but it is not the straightforward research peptide purchase that Mod GRF 1-29 or CJC-1295 represent in that space. Understanding tesamorelin's mechanism and evidence base matters for comparing the category honestly — knowing what the best-characterized analog looks like makes it easier to calibrate expectations for the research-only alternatives.
+
+<Checkpoint number={1}>
+<span slot="question">Tesamorelin has completed Phase 3 clinical trials and received FDA approval. A practitioner cites this as evidence that tesamorelin is safe and effective for GH optimization in healthy adults. Where is that reasoning justified — and where does it break down?</span>
+
+The reasoning is justified on mechanism and safety characterization: tesamorelin's human pharmacokinetics are established, its GHRH-R mechanism is confirmed to work in vivo, and its safety profile across Phase 2, Phase 3, and post-marketing surveillance is documented — a categorically stronger evidence base than research-only analogs. The reasoning breaks down when it extends FDA approval for one population (HIV patients with lipodystrophy) and one endpoint (visceral fat reduction) to a different population (healthy adults) and different goals (GH optimization, body composition, performance). The approved indication establishes that the mechanism works in humans — it does not establish that the specific outcomes sought in off-label use will materialize, at what doses, or with what risk profile in a different population. This is the mechanistic evidence vs. outcome evidence distinction from Module 5, applied to a real clinical example.
+</Checkpoint>
+
+One lesson left — lock the module before the Dr. Harmon interview.
