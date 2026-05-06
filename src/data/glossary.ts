@@ -312,4 +312,19 @@ export const glossary: Record<string, GlossaryEntry> = {
     short: "An early-stage cell capable of differentiating into specific cell types. TB-500 mobilizes progenitor cells from bone marrow into circulation, where they can home to injury sites.",
     long: "Progenitor cells (also called stem cells or precursor cells depending on context) are held in reserve in bone marrow and other niches. Injury signals — and certain compounds like Tβ4 — trigger their release into peripheral circulation. Once circulating, they respond to chemokines and growth factors produced at injury sites and migrate there to support repair. This mobilization mechanism is distinct from activating cells already present at an injury.",
   },
+  chelation: {
+    term: "Chelation",
+    short: "The binding of a metal ion by a molecule with multiple coordination sites, forming a stable ring-like complex. In GHK-Cu, the peptide chelates Cu²⁺ — holding it safely without releasing it as free, reactive copper.",
+    long: "Chelation is what makes GHK-Cu pharmacologically distinct from simply administering copper ions. Free Cu²⁺ in solution is a potent pro-oxidant — it catalyzes Fenton-like reactions that generate hydroxyl radicals. GHK chelates copper through its histidine imidazole nitrogen (primary anchor), glycine amino group, and peptide backbone, suppressing that redox activity. The resulting complex is stable enough to transport copper safely but labile enough to transfer it to copper-requiring enzymes with higher affinity. This is the key safety mechanism: copper delivered as a controlled vehicle, not a reactive ion.",
+  },
+  "lysyl-oxidase": {
+    term: "Lysyl oxidase (LOX)",
+    short: "A copper-requiring enzyme that crosslinks collagen and elastin fibers, converting newly synthesized precursors into mechanically strong matrix structures.",
+    long: "Lysyl oxidase catalyzes the oxidative deamination of specific lysine and hydroxylysine residues in collagen and elastin — the chemical reaction that forms crosslinks between adjacent fibers. Without these crosslinks, collagen fibers are soluble and structurally weak: you can synthesize all the collagen you want, but without LOX activity it won't form a load-bearing matrix. LOX requires Cu²⁺ at its active site to function; copper deficiency selectively impairs matrix quality even when collagen synthesis continues normally. This is why GHK-Cu's copper delivery mechanism is most relevant to connective tissue quality.",
+  },
+  sparc: {
+    term: "SPARC",
+    short: "Secreted Protein Acidic and Rich in Cysteine — also called osteonectin. A matrix protein whose proteolytic cleavage releases the GHK tripeptide during tissue remodeling.",
+    long: "SPARC is involved in extracellular matrix organization and the cell response to injury. When SPARC is cleaved during normal ECM turnover and tissue repair, GHK is among the peptide fragments released. This makes GHK genuinely endogenous — not just a sequence derived from a human protein in principle, but a peptide that actually circulates in the body at measurable concentrations as a result of normal biological processes. Its endogenous origin distinguishes GHK from BPC-157, which is derived from a gastric protein sequence but is not produced as a free peptide by the body.",
+  },
 };
