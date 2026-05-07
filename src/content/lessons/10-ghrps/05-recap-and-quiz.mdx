@@ -1,0 +1,109 @@
+---
+module: "10-ghrps"
+order: 5
+title: Recap & quick check
+summary: GHRPs consolidated — the ghrelin receptor, the Gq/calcium cascade, the selectivity spectrum, and 6 questions before the Dr. Harmon interview.
+duration: "5 min"
+---
+
+import KeyTerms from "../../../components/KeyTerms.astro";
+import Quiz from "../../../components/Quiz.astro";
+
+<KeyTerms ids={[
+  "ghrp",
+  "ghrelin",
+  "ghs-r1a",
+  "plc",
+  "ip3",
+  "exocytosis",
+  "biased-agonism",
+  "ipamorelin",
+  "ghrp-2",
+  "ghrp-6",
+  "hexarelin",
+  "cortisol",
+  "prolactin",
+  "tachyphylaxis",
+  "cd36",
+]} />
+
+## The module in one paragraph
+
+GHRPs — ipamorelin, GHRP-2, GHRP-6, and hexarelin — are synthetic ghrelin mimetics that bind GHS-R1a, a Gq-coupled GPCR on anterior pituitary somatotrophs. Binding activates PLC → IP3 → intracellular calcium spike → rapid exocytosis of stored GH vesicles. This is mechanistically distinct from the Gs/cAMP pathway of GHRH analogs — they converge on the same output (GH release) through independent cellular machinery, which is exactly what makes combining a GHRP with a GHRH analog multiplicatively synergistic rather than redundant. GHS-R1a also partially suppresses somatostatin tone, further amplifying the GHRH analog effect when used in combination. All four GHRPs share the receptor; what differentiates them is how selectively they drive GH release without activating the full ghrelin downstream profile. Ipamorelin: most selective — clean GH pulse, minimal cortisol, minimal prolactin, no appetite stimulation; typical half-life ~2 hours; the default starting point. GHRP-2: stronger GH output, moderate cortisol and prolactin elevation, minimal appetite effect. GHRP-6: similar GH to GHRP-2, significant appetite stimulation via hypothalamic GHS-R1a, moderate-to-high cortisol and prolactin. Hexarelin: most potent acute GH pulse, most cortisol and prolactin elevation, fastest GHS-R1a desensitization (tachyphylaxis within 2–4 weeks), and a second binding site at CD36 on cardiac tissue that produces cardioprotective effects via PI3K/Akt and ERK1/2 — independent of GH release and documented in preclinical models but unproven in human clinical trials.
+
+## Quick check
+
+<Quiz questions={[
+  {
+    q: "GHRH analogs and GHRPs both produce GH release from somatotroph cells. What is the key mechanistic difference between them — and what does that difference make possible?",
+    options: [
+      "GHRH analogs bind a Gq-coupled receptor and trigger a calcium spike that releases stored GH; GHRPs bind a Gs-coupled receptor and increase cAMP to drive GH synthesis. The difference means combining them triggers two calcium cascades simultaneously, doubling the exocytosis signal.",
+      "There is no meaningful mechanistic difference — both eventually raise cAMP, both trigger GH exocytosis, and the receptor distinction is a molecular detail with no practical consequence for the magnitude or quality of GH output.",
+      "GHRH analogs bind a Gs-coupled GPCR (GHRH-R), raising cAMP via adenylyl cyclase, activating PKA and CREB, and driving both GH synthesis and release. GHRPs bind a Gq-coupled GPCR (GHS-R1a), activating PLC → IP3 → calcium spike → rapid GH exocytosis. The independence of these pathways is what makes combining them multiplicative: GHRH primes somatotrophs by filling vesicles and upregulating GH synthesis; GHRPs then fire those filled vesicles via a completely separate mechanism. Neither pathway saturates the other.",
+      "GHRH analogs act on the hypothalamus to increase GHRH production; GHRPs act directly on the pituitary to release GH. Combining them works because one addresses the upstream stimulus and the other addresses the downstream release — they cover different parts of the same axis.",
+    ],
+    answer: 2,
+    explain: "The GHRH-R/Gs/cAMP pathway and the GHS-R1a/Gq/calcium pathway are genuinely independent at the molecular level — different receptors, different G-proteins, different second messengers, different primary effectors. GHRH analogs prime the cell: they increase GH gene transcription and fill storage vesicles via the cAMP/PKA/CREB cascade. GHRPs pull the trigger: IP3-mediated calcium release causes rapid vesicle fusion and exocytosis of the GH that's been accumulated. Neither pathway saturates the other, which is why the combination produces GH output that is genuinely multiplicative rather than simply additive. This is not a theoretical synergy — multiple studies have demonstrated that GHRP + GHRH analog produces 2–10x more GH output than either alone at the same individual doses.",
+  },
+  {
+    q: "Why is ipamorelin considered the 'cleanest' GHRP — and what exactly is it clean of?",
+    options: [
+      "Ipamorelin is the purest compound in the category from a synthesis standpoint — fewest impurities, highest percentage purity in standard COA testing. 'Clean' refers to product quality, not pharmacological selectivity.",
+      "Ipamorelin is selective because it binds a different receptor than GHRP-2, GHRP-6, and hexarelin. It targets a GH-specific isoform of GHS-R1a that is only expressed on somatotrophs, not in the hypothalamus — which is why it produces GH release without appetite stimulation.",
+      "Ipamorelin is a partial agonist at GHS-R1a — it occupies the receptor without fully activating it. Because it only partially activates GHS-R1a, the downstream effects including cortisol, prolactin, and appetite are partially blocked. The 'clean' designation reflects lower receptor occupancy efficiency, not receptor selectivity.",
+      "Ipamorelin produces a GH pulse via GHS-R1a with minimal cortisol elevation, minimal prolactin elevation, and essentially no appetite stimulation. This is biased agonism: ipamorelin stabilizes a GHS-R1a conformation that preferentially drives the Gq/calcium → GH exocytosis pathway in somatotrophs without proportionally activating the ACTH/cortisol axis or the hypothalamic GHS-R1a circuits that produce ghrelin-like hunger signaling. All GHRPs bind the same receptor; ipamorelin is selective in which downstream outputs it emphasizes.",
+    ],
+    answer: 3,
+    explain: "All four GHRPs bind GHS-R1a — there is no separate GH-specific isoform that ipamorelin uniquely targets. 'Clean' refers to pharmacological selectivity at the signaling level, not purity or partial agonism. Ipamorelin was specifically engineered to drive GH release while minimizing off-target activation of cortisol, prolactin, and appetite pathways. The mechanism is biased agonism: ipamorelin's conformation at GHS-R1a preferentially couples to the GH-releasing downstream pathway without triggering the full ghrelin-like signaling profile. The practical result is a GH pulse with minimal cortisol spike, minimal prolactin elevation, and no meaningful appetite drive — which is why it's the default starting point for researchers who want to isolate the GH effect.",
+  },
+  {
+    q: "GHRP-6 causes significant appetite stimulation. A practitioner says this is an 'off-target' side effect that doesn't relate to the compound's intended mechanism. Why is this framing wrong?",
+    options: [
+      "The framing is wrong because appetite stimulation is actually the intended primary mechanism of GHRP-6 — GH release is the off-target effect in this compound class. GHRP-6 was originally developed as an appetite stimulant before its GH-releasing properties were characterized.",
+      "The framing is wrong because GHRP-6's appetite stimulation runs through the same GHS-R1a receptor that produces GH release — it is on-target activation of that receptor in a different tissue. Ghrelin's primary role is appetite regulation; GHS-R1a in the hypothalamic arcuate nucleus is a hunger signal when activated. GHRP-6 is structurally close enough to native ghrelin to activate both the pituitary GH-releasing pathway and the hypothalamic appetite pathway. The appetite effect is not a contamination or an error — it is the ghrelin pathway doing exactly what the ghrelin pathway does.",
+      "The framing is wrong because all GHRPs cause similar appetite stimulation — GHRP-6 is not special in this regard. The practitioner is incorrect to single out GHRP-6; the difference between compounds in terms of appetite effect is negligible at therapeutic doses.",
+      "The framing is correct — appetite stimulation is a GI side effect from subcutaneous injection site reactions, not a central pharmacological mechanism. GHRP-6's appetite effect is a local gastrointestinal response unrelated to GHS-R1a activation.",
+    ],
+    answer: 1,
+    explain: "Ghrelin is the endogenous hunger hormone. GHS-R1a in the hypothalamic arcuate nucleus is a primary appetite-signaling receptor — when ghrelin (or a structurally similar compound) activates it there, the output is hunger. GHRP-6's structural similarity to native ghrelin means it activates GHS-R1a not just at the pituitary somatotrophs (producing GH release) but also at hypothalamic appetite circuits (producing hunger). This is not an off-target effect in the sense of hitting an unintended receptor — it is the intended receptor (GHS-R1a) doing what it does in a tissue where appetite is the output. The 'off-target' framing implies the effect is incidental or avoidable; in reality, the appetite stimulation and GH release are both on-target consequences of GHS-R1a activation by a structurally ghrelin-like compound.",
+  },
+  {
+    q: "Hexarelin produces the highest acute GH pulse of all four GHRPs. A researcher concludes it's the best choice for a 12-week body composition protocol. What's wrong with this reasoning?",
+    options: [
+      "Nothing is wrong with the reasoning — in a 12-week body composition protocol, maximizing GH output per injection is the primary variable, and hexarelin's potency advantage makes it the rational choice regardless of side-effect profile.",
+      "Hexarelin's cortisol elevation is the primary problem: cortisol is catabolic, and the cortisol spike from each hexarelin injection would counteract the anabolic effects of the GH pulse over 12 weeks, making the net effect worse than a lower-potency compound with minimal cortisol.",
+      "Hexarelin's acute potency advantage is real but unsustainable over a 12-week protocol. GHS-R1a desensitizes faster with hexarelin than with any other GHRP in this group — within 2–4 weeks, receptor internalization significantly reduces the GH pulse per dose. A protocol requires consistent GH output across all 12 weeks, not just the first two. A less potent compound with slower desensitization — ipamorelin or GHRP-2 — is likely to deliver more total GH output over the full protocol duration, plus lower cortisol and prolactin exposure. Maximizing the week-one GH pulse is not the same as maximizing cumulative GH output over 12 weeks.",
+      "Hexarelin is the wrong choice because 12 weeks is too long for any GHRP — the maximum evidence-supported duration for any GHRP protocol is 6 weeks, after which efficacy is entirely absent regardless of which compound is used.",
+    ],
+    answer: 2,
+    explain: "The core issue is that hexarelin's potency advantage is acute, not sustained. GHS-R1a desensitization — receptor phosphorylation by GRKs, arrestin recruitment, internalization — progresses faster with hexarelin's stronger receptor activation than with the other GHRPs. By weeks 2–4, the GH pulse from hexarelin has diminished substantially compared to day one. Over a 12-week protocol, the compound's initial potency advantage erodes to the point where a less desensitizing compound with 70–80% of hexarelin's initial GH output but consistent response over time will produce more total GH and more total protocol benefit. Additionally, hexarelin's cortisol and prolactin profiles add ongoing cost. The 'best GH pulse in the literature' framing treats acute potency as the only variable when protocol duration, receptor dynamics, and side-effect accumulation all matter for 12-week outcomes.",
+  },
+  {
+    q: "What is the CD36 mechanism in hexarelin — and why is it scientifically significant even for researchers who don't plan to use hexarelin?",
+    options: [
+      "CD36 is a GH receptor isoform on cardiac tissue that hexarelin binds more selectively than GHS-R1a. Its activation drives GH-mediated IGF-1 production specifically in cardiac muscle, explaining why hexarelin's GH effects are more anabolic to cardiac tissue than other GHRPs.",
+      "CD36 is a scavenger receptor on cardiac muscle cells. Hexarelin binds CD36 and activates PI3K/Akt and ERK1/2 survival pathways in cardiac tissue — producing cardioprotective effects that are entirely independent of GH release. This was demonstrated by showing hexarelin reduced ischemia-reperfusion injury in GH-deficient animals that couldn't respond to GHS-R1a via the GH axis. The scientific significance: it demonstrates that a compound developed for one purpose (GH secretagogue) can have a completely orthogonal mechanism with different downstream biology in a different tissue. It's also an example of how peptide research occasionally discovers mechanisms through serendipity rather than design.",
+      "CD36 is a blood-brain barrier transporter that hexarelin uses to enter the CNS, explaining its more pronounced hypothalamic effects compared to other GHRPs. The cardioprotective framing comes from a misinterpretation of CNS-mediated hemodynamic effects.",
+      "CD36 activation by hexarelin is a pro-inflammatory pathway in macrophages that increases oxidative stress in cardiac tissue — the 'cardioprotective' characterization in early literature has since been revised, and the current consensus is that hexarelin's CD36 binding represents a potential cardiac risk, not a benefit.",
+    ],
+    answer: 1,
+    explain: "CD36 is a scavenger receptor expressed on cardiac muscle cells, macrophages, and other tissues. It is structurally and functionally unrelated to GHS-R1a. Hexarelin was found to bind CD36 at a different binding site, activating PI3K/Akt and ERK1/2 survival signaling pathways in cardiac tissue — pathways associated with reduced apoptosis and protection from ischemic injury. Crucially, this effect was demonstrated in GH-deficient animals where the GHS-R1a → GH → IGF-1 axis could not be responsible, confirming the cardioprotection runs through CD36 directly, not through downstream GH effects. The broader significance: it's an example of a compound with two completely independent mechanisms in two different tissue types — a relatively unusual finding in peptide research that illustrates why characterizing the full binding profile of a compound matters beyond its primary intended target.",
+  },
+  {
+    q: "Someone is designing a GH secretagogue protocol and asks whether to use ipamorelin alone or ipamorelin combined with a GHRH analog. What's the most accurate explanation of what they'd gain from the combination?",
+    options: [
+      "The combination primarily reduces the required dose of ipamorelin — since GHRH analogs prime the somatotrophs, a lower ipamorelin dose achieves the same GH pulse, reducing cost and side-effect exposure while maintaining equivalent output.",
+      "The combination is useful mainly for convenience — GHRH analogs have longer half-lives, so pairing one with ipamorelin reduces the total injection frequency required to maintain steady GH output through the day.",
+      "Ipamorelin alone activates GHS-R1a → Gq/calcium → rapid exocytosis of whatever GH the somatotroph has stored at the time of injection. A GHRH analog activates GHRH-R → Gs/cAMP → PKA/CREB → increased GH synthesis and vesicle loading — a separate pathway that fills the chamber before ipamorelin fires it. The combination is multiplicative because it addresses both inputs simultaneously: GHRH primes a larger pool of available GH; ipamorelin fires that larger pool more completely via calcium-triggered exocytosis. Studies comparing the combination to either compound alone consistently show GH output substantially higher than the sum of the individual effects — the pathways amplify each other because they are genuinely independent.",
+      "The combination is primarily relevant for blunting somatostatin tone — ipamorelin suppresses somatostatin while GHRH analogs override it, and the double suppression is what accounts for the increased GH output, not any synergy in the synthesis or release pathways.",
+    ],
+    answer: 2,
+    explain: "The synergy is mechanistic, not incidental. Ipamorelin (GHS-R1a/Gq/calcium) and GHRH analogs (GHRH-R/Gs/cAMP) are independent signaling pathways in the somatotroph that both converge on GH exocytosis. GHRH analogs prime the somatotroph by driving GH gene transcription and filling vesicles — increasing the available pool. Ipamorelin then fires that pool via calcium-triggered exocytosis. Neither pathway alone does both jobs: ipamorelin fires whatever is stored but doesn't build the store; a GHRH analog builds and releases but the release is partly limited by what the calcium pathway can add. Combined, the GHRH analog raises the ceiling and ipamorelin empties it. The multiplication effect is well-documented in multiple studies. The dose-reduction framing gets the direction backwards — the combination is used to increase GH output, not to use less of each compound for equivalent output.",
+  },
+]} />
+
+## Up next
+
+Module 11 covers GLP-1 analogs — semaglutide, tirzepatide, and retatrutide. A completely different peptide family targeting entirely different receptors, but the most widely prescribed peptides on earth. The GH axis you've been building across Modules 4, 9, and 10 stays relevant as background — GLP-1 analogs interact with body composition through weight loss and metabolic effects rather than direct anabolism, and understanding both sides of the picture gives you the complete framework for thinking about peptide-based body composition interventions.
+
+When you're ready, take the Dr. Harmon interview below. Passing it unlocks Module 11.

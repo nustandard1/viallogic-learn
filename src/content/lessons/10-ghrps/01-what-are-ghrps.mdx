@@ -1,0 +1,64 @@
+---
+module: "10-ghrps"
+order: 1
+title: What are GHRPs — and why do they work differently than GHRH analogs?
+summary: The ghrelin receptor, the Gq/calcium cascade, and the synergy logic that makes GHRPs and GHRH analogs more powerful together than either is alone.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+If you came from Module 9, you spent a lot of time with the GHRH receptor — a Gs-coupled GPCR that triggers cAMP, activates PKA, phosphorylates CREB, and drives GH synthesis and release in anterior pituitary <Term id="somatotroph">somatotrophs</Term>. <Term id="ghrp">GHRPs</Term> do not use that receptor. They do not use that cascade. They trigger GH release through a completely different molecular pathway — and that difference is exactly what makes them useful alongside GHRH analogs rather than simply an alternative to them.
+
+## The ghrelin receptor — GHS-R1a
+
+GHRPs are synthetic mimetics of <Term id="ghrelin">ghrelin</Term>, a 28-amino acid peptide produced primarily by the stomach. Ghrelin's best-known job is appetite regulation — it's the "hunger hormone" that rises before meals and signals the brain to eat. But ghrelin also triggers GH release, and it does this via a specific receptor: <Term id="ghs-r1a">GHS-R1a</Term>, the growth hormone secretagogue receptor type 1a.
+
+GHS-R1a is expressed heavily on anterior pituitary somatotrophs — the same cells GHRH analogs target. When GHRPs bind it, they are doing what ghrelin does: activating a pathway that ends in GH exocytosis. But the pathway itself is the opposite of what GHRH uses.
+
+## The Gq/calcium cascade — how GHRPs actually release GH
+
+GHS-R1a is a **Gq-coupled GPCR**. When a GHRP binds it:
+
+1. Gq protein activates <Term id="plc">phospholipase C (PLC)</Term>
+2. PLC cleaves PIP2 into <Term id="ip3">IP3</Term> and DAG
+3. IP3 binds receptors on the endoplasmic reticulum, releasing stored calcium into the cell
+4. The calcium spike triggers rapid fusion of GH storage vesicles with the cell membrane — <Term id="exocytosis">exocytosis</Term>
+
+The result is a rapid, acute GH release from vesicles the somatotroph has already packed. This is mechanistically different from the GHRH pathway in one important way: the Gq/calcium cascade is faster and more direct. It pulls the trigger on stored GH. The Gs/cAMP cascade that GHRH analogs use also triggers exocytosis — but it additionally upregulates GH gene transcription, meaning it's doing double duty: releasing stored GH and building more.
+
+<Callout type="key" title="Two inputs, one output — that's the synergy">
+GHRH analogs (Gs/cAMP → PKA → CREB) prime the somatotroph: they increase GH gene transcription, upregulate GH synthesis, and fill vesicles. GHRPs (Gq/calcium) then fire those vesicles rapidly. Neither pathway knows about the other's activity — they converge on the same output (GH exocytosis) through independent molecular routes.
+
+When you combine a GHRH analog with a GHRP, the result is multiplicative rather than additive. GHRH primes a larger available pool; the GHRP empties it more completely. Multiple studies comparing the combination to either compound alone have shown GH output 2–10x higher with the combination than with either alone — not because the doses were doubled, but because the mechanisms genuinely amplify each other.
+
+This is why experienced researchers typically pair them rather than simply taking more of one.
+</Callout>
+
+## What GHRPs are not doing
+
+Two points worth making explicit before going deeper into individual compounds.
+
+**GHRPs are not GHRH analogs with extra steps.** They bind a different receptor, use a different G-protein, activate different intracellular enzymes, and release GH through a different primary mechanism. The endpoint (GH in circulation) looks the same; the path to get there is not. A GHRP alone with no GHRH analog is a different physiological stimulus than a GHRH analog alone.
+
+**GHRPs are not exogenous GH.** Like GHRH analogs, they are signals to the pituitary — the GH released is your own. The <Term id="negative-feedback">negative feedback</Term> loop still applies: elevated GH and IGF-1 suppress subsequent GHRH release and increase somatostatin tone. GHRPs do not bypass that regulation.
+
+## The appetite connection — and why it matters for selectivity
+
+Ghrelin's role as a hunger signal is not incidental to this module. When GHRPs activate GHS-R1a in the pituitary to release GH, GHS-R1a is also expressed in the hypothalamus — where ghrelin signals appetite. GHRPs that are structurally similar to ghrelin, or that activate GHS-R1a without selectivity for the GH-signaling downstream pathway, will produce some degree of appetite stimulation alongside their GH effect.
+
+This is the first hint of what the "clean pulse vs. dirty spike" framing captures: the compounds in this module differ not in what receptor they bind — they all bind GHS-R1a — but in how selectively they drive GH release without activating the full range of ghrelin-like downstream effects. That selectivity spectrum is what the next three lessons map.
+
+<Callout type="info" title="GHRPs also partially suppress somatostatin">
+One additional mechanism worth knowing: GHRPs reduce somatostatin tone at the hypothalamus. Somatostatin is the GH-axis brake — it suppresses GH release and opposes GHRH. By partially lifting that brake, GHRPs create a permissive environment for a larger GH pulse when combined with a GHRH analog. This is part of why the combination is multiplicative: GHRH pushes the accelerator, GHRP eases off the brake.
+</Callout>
+
+<Checkpoint number={1}>
+<span slot="question">A GHRH analog and a GHRP both end up releasing GH from the same somatotroph cells. Why is combining them synergistic rather than redundant — and what would the argument be against just taking twice the dose of one compound instead?</span>
+
+GHRH analogs and GHRPs use independent signaling pathways to converge on GH exocytosis. GHRH analogs (Gs/cAMP/PKA/CREB) increase GH synthesis and vesicle loading — they prime the somatotroph and build the available pool. GHRPs (Gq/calcium/IP3) trigger rapid exocytosis of that stored GH — they pull the trigger. These mechanisms do not overlap: doubling the dose of a GHRH analog produces more priming but the same calcium-mediated exocytosis signal; doubling the GHRP dose fires the trigger harder but against the same vesicle pool. The combination is multiplicative because GHRH raises the ceiling (available GH to release) while the GHRP empties that ceiling more efficiently. Neither compound alone does both. Doubling the dose of one hits diminishing returns from receptor saturation and desensitization; the combination exploits two separate amplification points simultaneously.
+</Checkpoint>
+
+The next lesson starts with the compound that maximizes GH release while keeping the rest of the ghrelin effect profile as quiet as possible.
