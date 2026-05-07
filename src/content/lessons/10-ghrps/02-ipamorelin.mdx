@@ -1,0 +1,59 @@
+---
+module: "10-ghrps"
+order: 2
+title: Ipamorelin — what a clean GH pulse actually means
+summary: The most selective GHRP — minimal cortisol, prolactin, and appetite effects. Covers what biased agonism is doing here and why ipamorelin became the default starting point for GH secretagogue protocols.
+duration: "4 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+<Term id="ipamorelin">Ipamorelin</Term> is a synthetic pentapeptide — five amino acids — developed specifically to produce GH release via GHS-R1a with minimal activation of the other downstream effects that ghrelin-family compounds typically carry. When the research peptide community talks about a "clean" GHRP, this is the reference point. Understanding what makes ipamorelin clean requires understanding what the alternatives do that ipamorelin doesn't.
+
+## The selectivity question
+
+All GHRPs bind <Term id="ghs-r1a">GHS-R1a</Term>. What differs between them is how completely they activate the full downstream signaling profile of that receptor. GHS-R1a, like most GPCRs, doesn't have a single output — it connects to multiple intracellular pathways depending on what ligand is bound and how it changes the receptor's conformation.
+
+This is <Term id="biased-agonism">biased agonism</Term> in practice: the same receptor, different downstream emphasis depending on the ligand. Native <Term id="ghrelin">ghrelin</Term> drives GH release, appetite stimulation, and various neuroendocrine effects — it's a full agonist triggering the complete GHS-R1a signaling profile. Ipamorelin was engineered to preferentially drive GH release while minimally activating the pathways that produce cortisol elevation, prolactin elevation, and appetite stimulation.
+
+The practical outcome: ipamorelin produces a GH pulse — a real one, comparable in magnitude to GHRP-2 at equivalent doses in many studies — with significantly less cortisol and prolactin elevation than the other GHRPs in this module, and essentially no appetite stimulation. The GH output is the signal; the rest stays quiet.
+
+## Cortisol and prolactin — why they matter in this context
+
+A brief note on why cortisol and prolactin elevation are worth thinking about.
+
+<Term id="cortisol">Cortisol</Term> is a glucocorticoid produced by the adrenal glands in response to ACTH from the pituitary. An acute cortisol spike after a single GHRP injection is not the same as chronically elevated cortisol — the response clears within an hour or two, and a single modest spike is unlikely to produce the tissue-level effects (muscle catabolism, insulin resistance, immune suppression) associated with chronic hypercortisolemia. The concern with less selective GHRPs is consistent ACTH/cortisol elevation with every dose over weeks of a protocol — a pattern that could work against body composition goals in a context where GH is being used partly for its anabolic and lipolytic effects.
+
+<Term id="prolactin">Prolactin</Term> is also released by the anterior pituitary. Its relevance here is primarily context-dependent: in men, chronically elevated prolactin suppresses testosterone production by interfering with LH and FSH signaling. In women, the effects are different and depend on where baseline prolactin sits. Again — acute transient elevation is not chronic elevation, but the pattern across multiple doses per day, every day, is worth weighing.
+
+Ipamorelin's selectivity removes both concerns from the picture. Its cortisol and prolactin responses are close to baseline in most studies.
+
+<Callout type="key" title="Why ipamorelin is the default starting point">
+Ipamorelin produces a meaningful GH pulse with the fewest side-effect trade-offs in the GHRP category. It doesn't cause appetite stimulation, doesn't drive cortisol spikes with each dose, and doesn't elevate prolactin meaningfully. For researchers building a GH-axis protocol, it's the compound that isolates the intended effect — GH release — from the noise. The more potent GHRPs offer larger pulses at the cost of that cleanliness. Whether the extra GH output is worth the added side-effect profile is the question the next lesson addresses.
+</Callout>
+
+## Half-life and dosing profile
+
+Ipamorelin has a plasma half-life of approximately 2 hours — longer than native ghrelin (minutes) but short enough that it still produces a relatively discrete GH pulse rather than continuous stimulation. This matters for the same pulsatility reasons discussed in Module 9: somatotroph GHS-R1a receptors, like GHRH receptors, are subject to desensitization under prolonged continuous stimulation. Ipamorelin's 2-hour half-life means the receptor gets a recovery window between doses.
+
+Typical research protocols dose ipamorelin 2–3 times daily, often timed around sleep and workouts — the same logic as sermorelin from Module 9 applies here: the natural nocturnal GH pulse window is amplified when somatostatin tone is low.
+
+## What ipamorelin does not do
+
+Worth stating explicitly: ipamorelin does not stimulate GH synthesis the way GHRH analogs do. It fires exocytosis of stored GH. It doesn't upregulate GH gene transcription, doesn't increase vesicle loading, doesn't build the pool. This is why it's typically paired with a GHRH analog rather than used alone — ipamorelin is the trigger; a GHRH analog is what fills the chamber.
+
+Used alone, ipamorelin will produce GH pulses from whatever the somatotroph has stored at the time. Combined with a GHRH analog, it's releasing from a larger, primed pool. The combination produces meaningfully more GH output than either alone.
+
+<Callout type="info" title="Evidence level">
+Ipamorelin is a research compound with no FDA approval. Its pharmacokinetics and GH-stimulating efficacy have been characterized in human studies — primarily early-phase clinical work from the 1990s and 2000s. The basic mechanism (GHS-R1a agonism → GH release) is well-established. Long-term safety data in healthy adults does not exist. The selectivity advantage over other GHRPs is mechanistically demonstrated and reproduced across multiple studies. The question of what that translates to for body composition or recovery outcomes in off-label use remains in the research gap common to all non-approved compounds.
+</Callout>
+
+<Checkpoint number={1}>
+<span slot="question">What does it mean to say ipamorelin is a "selective" GHS-R1a agonist — and what specifically is it less likely to activate compared to less selective GHRPs?</span>
+
+GHS-R1a connects to multiple downstream pathways. Native ghrelin activates the full profile: GH release via Gq/calcium in the pituitary, appetite stimulation via hypothalamic GHS-R1a signaling, and ACTH/cortisol plus prolactin elevation through pituitary pathways. Ipamorelin is selective in that it preferentially drives the GH-releasing output of GHS-R1a while activating the cortisol, prolactin, and appetite pathways minimally. This is biased agonism: different ligands binding the same receptor can stabilize different conformations of that receptor, which couple differently to downstream G-proteins and effectors. Ipamorelin's conformation at GHS-R1a preferentially drives Gq/calcium in the somatotroph context without proportional activation of the ACTH or hypothalamic-appetite circuits that less selective compounds engage.
+</Checkpoint>
+
+The next lesson introduces the compounds that give up some of that selectivity in exchange for more potent GH output.

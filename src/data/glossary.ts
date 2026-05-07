@@ -352,4 +352,44 @@ export const glossary: Record<string, GlossaryEntry> = {
     short: "A fat redistribution syndrome in HIV patients: visceral fat accumulates in the trunk while subcutaneous fat is lost from the limbs and face. The approved indication for tesamorelin.",
     long: "HIV-associated lipodystrophy develops in a significant fraction of HIV-positive patients, particularly on certain antiretroviral regimens. The visceral fat accumulation component raises triglycerides, drives insulin resistance, and substantially increases cardiovascular risk. Because visceral adipocytes are more GH-responsive than subcutaneous adipocytes, GH-axis stimulation via a GHRH analog preferentially reduces visceral fat — the mechanistic rationale for tesamorelin's development and approval. The Phase 3 trials demonstrated significant CT-measured visceral adipose tissue reduction with tesamorelin vs. placebo.",
   },
+  "ghs-r1a": {
+    term: "GHS-R1a",
+    short: "Growth hormone secretagogue receptor type 1a — the ghrelin receptor. A Gq-coupled GPCR on anterior pituitary somatotrophs (and hypothalamus) that all GHRPs bind to trigger GH release.",
+    long: "GHS-R1a is the receptor through which ghrelin — and all synthetic GHRPs — act. In the anterior pituitary, GHS-R1a activation triggers the Gq/PLC/IP3/calcium cascade that causes rapid exocytosis of stored GH vesicles. In the hypothalamus (arcuate nucleus), the same receptor mediates appetite signaling — which is why less selective GHRPs produce hunger alongside GH release. GHS-R1a is mechanistically distinct from the GHRH receptor: different G-protein coupling (Gq vs. Gs), different second messenger (calcium vs. cAMP), different primary output emphasis (rapid exocytosis vs. synthesis + release). Their independence is what makes GHRP + GHRH analog combinations synergistic.",
+  },
+  ipamorelin: {
+    term: "Ipamorelin",
+    short: "A synthetic pentapeptide GHRP. The most selective compound in the class — produces a clean GH pulse via GHS-R1a with minimal cortisol, prolactin, or appetite side effects.",
+    long: "Ipamorelin was specifically engineered to drive GH release via GHS-R1a while minimizing off-target activation of the ACTH/cortisol and hypothalamic-appetite pathways that less selective GHRPs engage. This is biased agonism: ipamorelin's conformation at GHS-R1a preferentially couples to the GH-releasing downstream pathway. Half-life ~2 hours. No FDA approval; pharmacokinetics and GH-stimulating efficacy characterized in early human studies. The default starting point for GH secretagogue protocols because it isolates the GH effect from the noise. Typically paired with a GHRH analog to exploit the independent Gs/cAMP priming pathway for multiplicative GH output.",
+  },
+  "ghrp-2": {
+    term: "GHRP-2",
+    short: "A synthetic hexapeptide GHRP. Stronger GH pulse than ipamorelin with moderate cortisol and prolactin elevation. The middle-ground compound between selectivity and potency.",
+    long: "GHRP-2 produces dose-dependent GH release via GHS-R1a with measurably higher output than ipamorelin in most comparisons. The trade-off is moderate ACTH/cortisol elevation and prolactin release with each dose — both more pronounced than ipamorelin but less than GHRP-6 or hexarelin. Minimal appetite stimulation. Half-life approximately 30–60 minutes. Has human pharmacokinetic data from 1990s–2000s clinical studies. No FDA approval. Chosen over ipamorelin when stronger GH output is the priority and the cortisol/prolactin trade is acceptable.",
+  },
+  "ghrp-6": {
+    term: "GHRP-6",
+    short: "A synthetic hexapeptide GHRP structurally close to native ghrelin. Produces strong GH release alongside significant appetite stimulation and moderate-to-high cortisol/prolactin elevation.",
+    long: "GHRP-6's structural similarity to native ghrelin means it activates GHS-R1a broadly — including hypothalamic arcuate nucleus circuits that mediate ghrelin's hunger signaling. The result is pronounced appetite stimulation within 30–60 minutes of injection alongside the GH pulse. This effect is mechanistically inseparable from the compound's structure: the appetite drive and GH release both come from GHS-R1a activation by a ghrelin-like ligand. GHRP-6 is sometimes deliberately chosen when caloric surplus support is as important as GH output — useful for bulking protocols or recovery from illness. Cortisol and prolactin elevation are moderate-to-high. No FDA approval.",
+  },
+  hexarelin: {
+    term: "Hexarelin",
+    short: "The most potent GHRP — largest acute GH pulse, but fastest GHS-R1a desensitization and highest cortisol/prolactin profile. Also binds CD36 on cardiac tissue via an independent mechanism.",
+    long: "Hexarelin produces the largest acute GH pulse of the synthetic GHRPs via high-affinity GHS-R1a binding. The same potency that drives strong initial GH output accelerates receptor desensitization — GRK-mediated phosphorylation and arrestin-driven internalization reduce the GH response substantially within 2–4 weeks of daily use (tachyphylaxis). This makes hexarelin a poor choice for longer protocols despite its acute potency advantage. Cortisol and prolactin elevation are the most pronounced in the GHRP class. CD36 discovery: hexarelin also binds CD36 (a scavenger receptor on cardiac muscle) independently of GHS-R1a, activating PI3K/Akt and ERK1/2 survival pathways — producing cardioprotective effects in preclinical ischemia models that are independent of GH release. This CD36 mechanism is well-characterized in animal models; human clinical cardioprotection has not been established in controlled trials.",
+  },
+  cortisol: {
+    term: "Cortisol",
+    short: "A glucocorticoid produced by the adrenal glands in response to ACTH. The primary stress hormone — catabolic in muscle, pro-lipolytic in fat, immunosuppressive at high levels.",
+    long: "Cortisol is released from the adrenal cortex when ACTH (adrenocorticotropic hormone) signals from the anterior pituitary. Acute cortisol spikes are normal and generally benign — they're part of the stress response and morning cortisol awakening reaction. The concern with GHRPs that elevate ACTH/cortisol is chronic, repetitive elevation with every injection over weeks of a protocol: cortisol opposes insulin signaling (increasing insulin resistance), promotes muscle protein catabolism, and suppresses immune function at elevated levels. This directly counteracts body composition goals in a context where GH is being used partly for anabolic and lipolytic effects. The less selective GHRPs (GHRP-2, GHRP-6, hexarelin) produce measurable ACTH/cortisol elevation with each dose; ipamorelin does not.",
+  },
+  prolactin: {
+    term: "Prolactin",
+    short: "A hormone secreted by anterior pituitary lactotroph cells. Elevated prolactin suppresses LH and FSH — reducing testosterone production in men.",
+    long: "Prolactin is primarily known for its role in lactation, but it's present in both sexes and has broader neuroendocrine effects. For men using GH secretagogues, the relevant concern is prolactin's suppression of the hypothalamic-pituitary-gonadal axis: elevated prolactin reduces gonadotropin-releasing hormone (GnRH) pulsatility, which lowers LH and FSH, which reduces testicular testosterone production. This effect is dose- and duration-dependent — a modest acute elevation with each GHRP dose is different from chronically elevated prolactin. Less selective GHRPs (GHRP-2, GHRP-6, hexarelin) stimulate prolactin release more than ipamorelin, which is one reason ipamorelin is preferred when minimizing off-target neuroendocrine effects matters.",
+  },
+  cd36: {
+    term: "CD36",
+    short: "A scavenger receptor expressed on cardiac muscle, macrophages, and other tissues. Hexarelin binds CD36 independently of GHS-R1a, producing cardioprotective signaling via PI3K/Akt and ERK1/2.",
+    long: "CD36 (cluster of differentiation 36) is a multifunctional receptor involved in fatty acid uptake, lipid metabolism, and immune function. Its relevance to GHRPs comes from the unexpected discovery that hexarelin binds CD36 at a separate binding site from GHS-R1a. This activation drives PI3K/Akt and ERK1/2 survival pathways in cardiac tissue — mechanisms associated with protection from apoptosis and ischemia-reperfusion injury. The cardiac effects were demonstrated to be independent of GH release in GH-deficient animal models: blocking the GHS-R1a/GH axis did not eliminate hexarelin's cardioprotective effects, confirming CD36 as the mediating receptor. The CD36 mechanism is well-characterized preclinically; no large human RCT has established cardioprotective clinical outcomes from hexarelin administration.",
+  },
 };

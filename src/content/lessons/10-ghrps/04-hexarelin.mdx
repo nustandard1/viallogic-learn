@@ -1,0 +1,68 @@
+---
+module: "10-ghrps"
+order: 4
+title: Hexarelin — peak potency, fastest desensitization, and a second receptor nobody expected
+summary: The most potent GHRP is also the least practical for ongoing use. Covers tachyphylaxis, the full side-effect profile, and the CD36 discovery — a cardioprotective mechanism completely independent of GH.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+<Term id="hexarelin">Hexarelin</Term> is the most potent <Term id="ghrp">GHRP</Term> in this module. In direct comparisons, it produces larger GH pulses than ipamorelin, <Term id="ghrp-2">GHRP-2</Term>, or <Term id="ghrp-6">GHRP-6</Term> at equivalent doses. If GH output per injection were the only variable that mattered, hexarelin would win the comparison easily. It doesn't win the comparison, and the reason is a combination of things: the worst side-effect profile in the group, the fastest <Term id="desensitization">desensitization</Term>, and a pharmacological behavior that undermines its own potency advantage over any meaningful protocol duration.
+
+## The potency mechanism
+
+Hexarelin is a synthetic hexapeptide with high affinity for <Term id="ghs-r1a">GHS-R1a</Term>. Its GH-releasing potency is above the other GHRPs by a measurable margin in human studies. It activates the same Gq/<Term id="plc">PLC</Term>/<Term id="ip3">IP3</Term>/calcium cascade as the other compounds in this module and produces acute GH pulses through the same exocytosis mechanism.
+
+What comes with that potency:
+
+- **Cortisol:** Hexarelin produces the most significant cortisol elevation in the GHRP class. ACTH stimulation is more pronounced than with GHRP-2 or GHRP-6.
+- **Prolactin:** Similarly elevated — more than any other compound in this group.
+- **Appetite:** Present but somewhat less pronounced than GHRP-6 in most reports, suggesting hexarelin's structural differences shift it toward potency at the pituitary more than at hypothalamic appetite circuits.
+
+None of this would necessarily be disqualifying if the potency held up. The problem is that it doesn't.
+
+## Tachyphylaxis — the potency paradox
+
+<Term id="tachyphylaxis">Tachyphylaxis</Term> refers to rapid-onset tolerance — a receptor response that diminishes substantially within days to weeks of continuous stimulation. Hexarelin is the most thoroughly documented case of this in the GHRP category.
+
+The mechanism runs through the same desensitization pathway discussed in Module 1 and revisited in Module 9: sustained receptor occupancy triggers GRK-mediated phosphorylation of GHS-R1a → arrestin recruitment → receptor internalization → reduced surface density → diminished calcium response per unit of GHRP. But hexarelin's higher receptor affinity and stronger GHS-R1a activation means this process unfolds faster. The receptor gets hit harder, and the signal for internalization is stronger.
+
+In practice: hexarelin users report a noticeable drop-off in GH pulse magnitude — and the associated effects — within 2–4 weeks of daily use. The compound that produced the strongest initial GH response becomes progressively less effective. Cycling (periods of use followed by rest to allow receptor recovery) is required to restore responsiveness, but this also means hexarelin's practical GH output over a longer protocol is not as superior as its acute potency numbers suggest.
+
+<Callout type="key" title="Potency at week one is not the same as potency at week eight">
+Hexarelin's acute GH pulse is the strongest in this category. But receptor desensitization erodes that advantage faster than the other GHRPs. A compound with 70% of hexarelin's initial potency that maintains that response over eight weeks of a protocol produces more total GH output than a compound that starts 40% higher and drops to 30% of baseline by week three. This is the hexarelin paradox: the most potent GHRP on paper is often not the best choice for a protocol of any real duration. Ipamorelin and GHRP-2, with lower initial potency but less aggressive desensitization, typically win on cumulative GH output over time.
+</Callout>
+
+## The CD36 discovery
+
+This is the genuinely surprising part of the hexarelin story — and the part that makes it worth knowing even if hexarelin isn't your first choice for a GH protocol.
+
+Research in the late 1990s and early 2000s found that hexarelin binds a second receptor: <Term id="cd36">CD36</Term>, a scavenger receptor expressed on cardiac muscle cells, macrophages, and certain other tissues. This binding is at a completely different site from GHS-R1a and activates completely different downstream signaling — primarily the PI3K/Akt and ERK1/2 survival pathways in cardiac tissue.
+
+The key finding: hexarelin produced cardioprotective effects in animal models of ischemia-reperfusion injury that were **independent of GH release**. In GH-deficient animals that couldn't respond to GHS-R1a signaling through the GH axis, hexarelin still reduced cardiac damage and improved cardiac function after ischemic events. Blocking GHS-R1a didn't eliminate the cardiac effect. The cardioprotection runs through CD36, not through GH.
+
+This has two implications:
+
+1. Hexarelin's potential cardiac benefits are not simply downstream of the GH it releases — they're a separate pharmacological action through a separate receptor.
+2. The cardiac work on hexarelin is an example of serendipitous mechanism discovery in peptide research — the compound was being studied as a GH secretagogue, and researchers stumbled onto a completely orthogonal biology.
+
+<Callout type="info" title="What the cardiac evidence actually looks like">
+The hexarelin/CD36 cardioprotection data is primarily preclinical — animal models of heart failure and ischemia. Early human studies were conducted, but no large RCT has been completed for cardiac applications. The mechanism is well-characterized and reproducible in animal models. Whether it translates to meaningful cardiac protection in healthy humans or clinical cardiac patients has not been established. This sits at the "mechanistically compelling, clinically unproven" level of the Module 5 evidence hierarchy — interesting enough to follow as research develops, not established enough to claim as a demonstrated benefit.
+</Callout>
+
+## Where hexarelin fits in practice
+
+Given the desensitization problem, hexarelin is rarely the best choice for an ongoing GH secretagogue protocol. The scenario where it makes the most sense is short-term use where the acute potency advantage matters and receptor desensitization hasn't had time to accumulate — potentially as part of a pulsed or cycling approach, or when maximum acute GH output for a specific short window is the goal.
+
+The CD36 mechanism generates genuine research interest, but it's not a practical reason to choose hexarelin over ipamorelin for general body composition or recovery purposes. The cardioprotective biology is interesting science about a compound that happens to also release GH — not a body composition argument.
+
+<Checkpoint number={1}>
+<span slot="question">Hexarelin produces the strongest acute GH pulse in its class but has the fastest desensitization. A researcher argues this is just a cycling problem — take two weeks off and reset. What does this argument get right, and where does it break down as a practical protocol justification?</span>
+
+The argument gets one thing right: receptor desensitization is partially reversible. GHS-R1a that has been internalized does recycle to the cell surface, and a 2–4 week washout period does restore meaningful receptor sensitivity. So yes, cycling is a real mitigation strategy. Where the argument breaks down: it implicitly assumes hexarelin's potency advantage over ipamorelin or GHRP-2 is large enough to justify the cycling overhead. In reality, the GH output advantage at week one is real but not enormous; by week three it's already narrowing due to desensitization; and a protocol that requires two weeks off for every three to four weeks on delivers less total protocol time than a less potent compound used continuously. Additionally, the elevated cortisol and prolactin effects during the active weeks create ongoing trade-offs against the anabolic goals GH is being used to support. The cycling argument treats desensitization as a solved problem when it's actually a cost that needs to be weighed against the benefit — and in most protocols, that cost tilts the calculus toward more selective compounds.
+</Checkpoint>
+
+One lesson left — lock in the module with the recap and Dr. Harmon interview.
