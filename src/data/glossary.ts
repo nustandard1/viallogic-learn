@@ -392,4 +392,54 @@ export const glossary: Record<string, GlossaryEntry> = {
     short: "A scavenger receptor expressed on cardiac muscle, macrophages, and other tissues. Hexarelin binds CD36 independently of GHS-R1a, producing cardioprotective signaling via PI3K/Akt and ERK1/2.",
     long: "CD36 (cluster of differentiation 36) is a multifunctional receptor involved in fatty acid uptake, lipid metabolism, and immune function. Its relevance to GHRPs comes from the unexpected discovery that hexarelin binds CD36 at a separate binding site from GHS-R1a. This activation drives PI3K/Akt and ERK1/2 survival pathways in cardiac tissue — mechanisms associated with protection from apoptosis and ischemia-reperfusion injury. The cardiac effects were demonstrated to be independent of GH release in GH-deficient animal models: blocking the GHS-R1a/GH axis did not eliminate hexarelin's cardioprotective effects, confirming CD36 as the mediating receptor. The CD36 mechanism is well-characterized preclinically; no large human RCT has established cardioprotective clinical outcomes from hexarelin administration.",
   },
+  "glp-1": {
+    term: "GLP-1",
+    short: "Glucagon-like peptide-1. A gut-derived incretin hormone released after eating that suppresses appetite, triggers insulin release, and slows gastric emptying. Native half-life ~2 minutes (destroyed by DPP-4).",
+    long: "GLP-1 is secreted by L-cells in the small intestine and colon in response to nutrients. It acts on the pancreas (glucose-dependent insulin release), the stomach (slows gastric emptying), and the hypothalamus and brainstem (appetite suppression via GLP-1R in arcuate nucleus and nucleus tractus solitarius). GLP-1 receptors are also expressed in the heart and kidney, where activation appears to produce cardioprotective and renoprotective effects independent of metabolic improvement. Native GLP-1 is pharmacologically useless due to its ~2-minute half-life; GLP-1 analogs (semaglutide, tirzepatide, retatrutide) solve this via DPP-4-resistant amino acid substitutions and albumin-binding lipidation.",
+  },
+  "glp-1-receptor": {
+    term: "GLP-1 receptor",
+    short: "A Gs-coupled GPCR expressed in the pancreas, hypothalamus, heart, and kidney. Activation triggers glucose-dependent insulin release and appetite suppression.",
+    long: "The GLP-1 receptor couples to Gs → cAMP → PKA. In pancreatic beta cells, this drives insulin vesicle exocytosis in a glucose-dependent manner — the receptor amplifies an already-active glucose signal rather than triggering insulin release on its own, which is why hypoglycemia is rare with GLP-1 analogs. In the hypothalamus and brainstem, GLP-1R activation reduces appetite and food reward. In the heart and vasculature, GLP-1R signaling appears to reduce inflammation and improve myocardial efficiency — the proposed explanation for cardiovascular outcome benefits that exceed what weight loss alone predicts.",
+  },
+  gip: {
+    term: "GIP",
+    short: "Glucose-dependent insulinotropic polypeptide. The second major incretin hormone, released from K-cells in the small intestine after meals. Triggers insulin release and, controversially, affects fat storage.",
+    long: "GIP is released within minutes of fat and carbohydrate hitting the proximal small intestine. Like GLP-1, it drives glucose-dependent insulin release from pancreatic beta cells — these two incretins together account for the 'incretin effect' (roughly double the insulin response to oral vs. IV glucose). GIP also acts on adipose tissue, where pulsatile postprandial GIP promotes fat uptake and storage. The pharmacological paradox: tirzepatide activates the GIP receptor continuously (not pulsatily) and produces more weight loss than semaglutide alone. The sustained GIP receptor activation appears to shift adipocyte behavior in the opposite direction from native GIP — the mechanism is actively debated. GIP receptors in the hypothalamus contribute to satiety independently of the adipose effect.",
+  },
+  incretin: {
+    term: "Incretin",
+    short: "A gut-derived hormone released after eating that amplifies insulin secretion in a glucose-dependent way. GLP-1 and GIP are the two major incretins.",
+    long: "The 'incretin effect' refers to the observation that oral glucose produces roughly twice the insulin response of the same amount of glucose given intravenously — the difference is attributed to gut hormones (incretins) that signal the pancreas before glucose arrives in circulation. GLP-1 and GIP are the two primary incretins. The glucose-dependence of their insulinotropic effect (they amplify beta cell activity only when glucose is elevated) is what makes drugs targeting these pathways relatively safe with respect to hypoglycemia.",
+  },
+  gastroparesis: {
+    term: "Gastroparesis",
+    short: "Clinically significant impairment of gastric motility — the stomach empties too slowly. A serious side effect seen with high-dose or rapid escalation of GLP-1 analogs, and a contraindication in patients with pre-existing gastric motility disorders.",
+    long: "Gastric emptying slowing is an intended mechanism of GLP-1 analogs, contributing to satiety and post-meal glycemic blunting. Gastroparesis is what happens when that slowing becomes clinically symptomatic: food remains in the stomach for extended periods, causing chronic nausea, vomiting, early satiety, bloating, and aspiration risk during procedures requiring general anesthesia. Patients with pre-existing diabetic gastroparesis are at elevated risk. GLP-1 analog protocols use slow dose titration to allow the gut to adapt and minimize progression toward clinically significant motility impairment.",
+  },
+  semaglutide: {
+    term: "Semaglutide",
+    short: "A GLP-1 receptor agonist (26 amino acids + C-18 fatty acid chain) with ~165-hour half-life. Brand names: Ozempic (T2D), Wegovy (obesity). Produces ~15% body weight loss in Phase 3 trials.",
+    long: "Semaglutide is the most widely prescribed GLP-1 analog. Its extended half-life comes from two modifications: Aib substitution at position 2 (blocks DPP-4 cleavage) and a C-18 fatty diacid chain that binds albumin non-covalently, creating a slow-release equilibrium. FDA approvals: Ozempic (2017, T2D) and Wegovy (2021, obesity). Key trials: STEP-1 (14.9% weight loss, 68 weeks), STEP-5 (sustained at 104 weeks), SUSTAIN-6 (26% MACE reduction in T2D), SELECT (20% MACE reduction in non-diabetic obesity). The compounding controversy arose when supply shortages allowed pharmacy compounding of semaglutide; the legal and regulatory status of compounded versions remained contested as supply normalized.",
+  },
+  tirzepatide: {
+    term: "Tirzepatide",
+    short: "A dual GLP-1R/GIPR agonist (39 amino acids). Brand names: Mounjaro (T2D), Zepbound (obesity). Produces ~21% body weight loss — more than semaglutide, with a paradoxical GIP mechanism in fat tissue.",
+    long: "Tirzepatide activates both the GLP-1 receptor and the GIP receptor with similar potency. The GLP-1R mechanism is identical to semaglutide. The GIP receptor contribution is paradoxical: native GIP promotes fat storage in adipose tissue, but sustained pharmacological GIPR activation appears to shift adipocyte behavior toward lipolysis and altered energy partitioning. GIP receptors in the hypothalamus also contribute to satiety independently of adipose effects. Key trial: SURMOUNT-1 (20.9% mean weight reduction at 15 mg, 72 weeks). Lean mass loss concern is proportionally similar to semaglutide but larger in absolute terms given greater total weight loss.",
+  },
+  retatrutide: {
+    term: "Retatrutide",
+    short: "A triple GLP-1R/GIPR/glucagon receptor agonist (41 amino acids). Phase 3 underway; Phase 2 showed ~24% body weight reduction. Its 41-amino acid length triggers a regulatory classification dispute with major pricing implications.",
+    long: "Retatrutide adds glucagon receptor agonism to the dual GLP-1R/GIPR mechanism of tirzepatide. Glucagon receptor activation in adipose tissue drives lipolysis and thermogenesis — an energy expenditure mechanism the first two receptors don't directly provide. Phase 2 results (48 weeks): ~24.2% mean weight reduction at 12 mg; ~26% of participants achieving ≥30% weight loss. No cardiovascular outcomes data yet. The 41-amino acid length places retatrutide one residue above the FDA's 40-AA threshold for biologic vs. small molecule drug classification. Biologics receive 13 years before Medicare price negotiation under the Inflation Reduction Act (vs. 9 for small molecules) — a classification dispute with tens of billions of dollars in commercial implications.",
+  },
+  glucagon: {
+    term: "Glucagon",
+    short: "A 29-amino acid peptide from pancreatic alpha cells. Primary counter-regulatory hormone to insulin — raises blood glucose via liver glycogenolysis. Also drives lipolysis and thermogenesis in adipose tissue via the glucagon receptor.",
+    long: "Glucagon is released when blood glucose falls, signaling the liver to break down glycogen (glycogenolysis) and synthesize new glucose (gluconeogenesis). This is its classical role. The glucagon receptor is also expressed in adipose tissue (white and brown), where activation drives triglyceride breakdown (lipolysis) and thermogenic energy expenditure. These adipose effects are independent of the glycemic axis and are the basis for adding glucagon receptor agonism to GLP-1/GIP analogs like retatrutide — the goal is to increase energy expenditure alongside the appetite-suppressive effects of the other two receptor activations.",
+  },
+  "glucagon-receptor": {
+    term: "Glucagon receptor",
+    short: "A Gs-coupled GPCR activated by glucagon. In the liver: drives glycogenolysis and gluconeogenesis. In adipose tissue: drives lipolysis and thermogenesis. The third target of retatrutide.",
+    long: "The glucagon receptor is expressed primarily in the liver (where it mediates the blood glucose-raising effects of glucagon), adipose tissue (where it drives fat breakdown and thermogenesis), and kidney. In the context of triple agonist drugs like retatrutide, the glucagon receptor is targeted specifically for its adipose effects — lipolysis and thermogenic energy expenditure — while the co-activated GLP-1 and GIP receptors provide insulinotropic signaling that offsets the glucagon-driven hepatic glucose output. The net glycemic effect is acceptable at therapeutic doses of retatrutide despite glucagon receptor activation.",
+  },
 };

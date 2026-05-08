@@ -1,0 +1,59 @@
+---
+module: "11-glp1-analogs"
+order: 1
+title: What is GLP-1 — and why does a 2-minute hormone become a weekly drug?
+summary: How the gut-derived incretin GLP-1 works, why native GLP-1 is pharmacologically useless, and the two engineering moves that turned it into once-weekly injections with multi-year efficacy.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+<Term id="glp-1">GLP-1</Term> is a peptide hormone produced by L-cells lining the small intestine and colon. It's released within minutes of eating — in response to fat, protein, and glucose hitting the gut wall — and it does three things simultaneously: triggers insulin release from the pancreas, suppresses glucagon release, and slows gastric emptying. All three work in the same direction: reduce the glycemic excursion from a meal, slow glucose delivery, and cut off the hormonal signal that keeps blood glucose rising.
+
+There's a fourth effect that matters for this module: GLP-1 acts on the hypothalamus and brainstem to suppress appetite. The receptor is expressed in the arcuate nucleus and vagal afferent neurons — the same circuits that receive satiety signals from gut stretch, cholecystokinin, and other post-meal hormones. GLP-1 in circulation is a "meal has happened" signal that converges on the same neural network as everything else that tells you to stop eating.
+
+The problem with using GLP-1 therapeutically is that it disappears in roughly two minutes.
+
+## Why native GLP-1 has a 2-minute half-life
+
+<Term id="dpp-4">DPP-4</Term> (dipeptidyl peptidase-4) is a ubiquitous plasma enzyme that cleaves the first two amino acids off the N-terminus of peptides matching a specific structural pattern. Native GLP-1 is a substrate: within seconds of entering circulation, DPP-4 attacks position 2 of the peptide chain, producing an inactive fragment. What survives DPP-4 is then cleared renally — but DPP-4 is the rate-limiting step. In a healthy person, the circulating half-life of native GLP-1 is approximately 1–2 minutes.
+
+This is not a trivial obstacle. Continuous intravenous GLP-1 infusion does produce sustained appetite suppression and glycemic control — the biology works perfectly well. But that's not a drug. A drug needs to survive long enough in the body to have an effect from a single injection.
+
+## The two engineering moves
+
+GLP-1 analogs solve the half-life problem through two independent modifications applied together.
+
+**Move 1 — block DPP-4 access.** The critical cleavage site is at amino acid position 2 (alanine in native GLP-1). Substituting a different amino acid at that position — one DPP-4 cannot cleave — leaves the peptide chain intact but eliminates the primary degradation route. Semaglutide uses an Aib (α-aminoisobutyric acid) substitution here. This alone extends half-life from minutes to hours.
+
+**Move 2 — bind albumin via <Term id="lipidation">lipidation</Term>.** A long-chain fatty acid is attached to the peptide, typically via a linker at a lysine residue. In circulation, the fatty acid side chain binds non-covalently to serum albumin — the most abundant plasma protein, with a half-life of approximately 19 days. The GLP-1 analog now hitchhikes on albumin's extraordinarily long plasma residence. It's not covalently conjugated for life — the binding is reversible, and the free fraction is what actually activates the GLP-1 receptor. But the equilibrium between albumin-bound (protected) and free (active) forms creates a sustained reservoir that extends the effective half-life to approximately one week.
+
+<Callout type="key" title="Same approach as Module 9, different molecule">
+This is structurally identical to what CJC-1295 with DAC does in the GHRH analog space — albumin binding to extend half-life from a short-lived peptide into a long-acting depot. The difference is covalent vs. non-covalent. CJC-1295 with DAC permanently conjugates to albumin via a reactive ester; semaglutide's fatty acid chain binds albumin reversibly. The outcome is similar: both convert a peptide with a short native half-life into a weekly drug by exploiting albumin's long plasma residence.
+</Callout>
+
+## The GLP-1 receptor and what it does
+
+The <Term id="glp-1-receptor">GLP-1 receptor</Term> is a Gs-coupled GPCR. Binding activates adenylyl cyclase → cAMP → PKA, which in pancreatic beta cells triggers insulin vesicle exocytosis. This is the insulinotropic effect. But the important qualifier: GLP-1 receptor signaling in the pancreas is **glucose-dependent**. The receptor requires concurrent glucose sensing by the beta cell to drive insulin release. At low blood glucose, GLP-1 receptor activation produces minimal insulin output. At high blood glucose (post-meal), the signal amplifies insulin release substantially.
+
+This glucose-dependence is pharmacologically significant: sulfonylureas (older insulin secretagogues) drive insulin release regardless of blood glucose level, creating hypoglycemia risk with every dose. GLP-1 analogs at therapeutic doses have minimal hypoglycemia risk because the insulinotropic effect switches off when it's not needed.
+
+<Callout type="info" title="Where else the receptor lives">
+GLP-1 receptors are expressed in the pancreas (beta cells), hypothalamus, brainstem, heart, kidney, and peripheral immune cells. The appetite suppression is central — GLP-1R in the arcuate nucleus and nucleus tractus solitarius suppresses food intake independently of any effect on gastric emptying or insulin. The cardiac and renal receptor expression explains why GLP-1 analogs show cardiovascular and kidney outcome benefits in clinical trials that exceed what you'd expect from weight loss and glycemic control alone. Those extra-GI mechanisms are not fully characterized.
+</Callout>
+
+## The gastric emptying effect — and its double-edged implications
+
+Slowing gastric emptying is a feature and a liability. As a feature: it flattens post-meal glycemic excursions (food enters the duodenum more slowly) and prolongs satiety signals (food stays in the stomach longer, driving ongoing stretch-receptor activation). These both contribute to the weight loss effect.
+
+As a liability: nausea is the most common side effect of GLP-1 analogs, and it's mechanistically tied to gastric slowing. The gut adjusts to slower motility over time — which is why GLP-1 analog protocols start at low doses and titrate up over weeks. Rapid dose escalation outpaces gut adaptation and produces persistent nausea, vomiting, and in severe cases, <Term id="gastroparesis">gastroparesis</Term> (clinically significant gastric motility impairment).
+
+<Checkpoint number={1}>
+<span slot="question">GLP-1 analogs suppress appetite in part through central GLP-1 receptor signaling, and in part through peripheral effects on gastric emptying. Why does the glucose-dependence of the insulinotropic effect matter for how we think about safety — and what's the parallel concern with the gastric emptying mechanism?</span>
+
+Glucose-dependent insulin release means the GLP-1 receptor's signaling in the pancreas requires co-occurring elevated blood glucose to produce meaningful insulin output. The receptor doesn't trigger insulin release in isolation — it amplifies what the beta cell is already doing in response to glucose. This makes hypoglycemia from GLP-1 analogs rare at therapeutic doses, because once blood glucose normalizes or drops, the insulinotropic signal fades. The gastric emptying parallel is about the same dose-response logic in a different tissue: gastric slowing is continuous and not subject to the same kind of physiological shutoff. At any dose, the stomach is moving slower. The GI adaptation over time (reduced nausea) doesn't mean gastric emptying normalizes — motility is still reduced. The safety concern is that in people who already have impaired gastric motility (diabetic gastroparesis), GLP-1 analogs can push them into clinically symptomatic range. The lesson: a tissue-specific mechanism that has a built-in safety limit in one organ (glucose-dependence in the pancreas) doesn't automatically have the same limit everywhere the receptor is expressed.
+</Checkpoint>
+
+The next lesson covers semaglutide — how these two engineering moves produce a specific once-weekly molecule, what the clinical trial data actually shows, and why the GLP-1 receptor outside the gut has become the most interesting question in cardiovascular medicine.
