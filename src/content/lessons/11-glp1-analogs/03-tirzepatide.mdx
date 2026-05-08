@@ -1,0 +1,63 @@
+---
+module: "11-glp1-analogs"
+order: 3
+title: Tirzepatide — why adding GIP produces more weight loss, and the paradox at the center of it
+summary: The second incretin, what dual GIP/GLP-1 agonism changes in weight loss trials, and why GIP's role in fat tissue is the opposite of what you'd expect — which makes tirzepatide's mechanism more interesting than "just two hormones instead of one."
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+<Term id="tirzepatide">Tirzepatide</Term> is a 39-amino acid synthetic peptide that activates both the GLP-1 receptor and the <Term id="gip">GIP</Term> receptor with roughly equivalent potency. It was approved by the FDA for type 2 diabetes under the brand name Mounjaro in 2022 and for chronic weight management as Zepbound in 2023. Its SURMOUNT-1 trial result — 20.9% mean weight reduction at the 15 mg dose over 72 weeks — is the highest weight loss recorded for any approved pharmacological agent in a randomized controlled trial.
+
+The straightforward explanation for why tirzepatide outperforms semaglutide is "two receptors instead of one." That's not wrong, but it misses the more interesting part: GIP's role in fat tissue is paradoxical in a way that makes the mechanism genuinely non-obvious.
+
+## What GIP is
+
+GIP (glucose-dependent insulinotropic polypeptide) is the other major <Term id="incretin">incretin</Term> hormone — released from K-cells in the proximal small intestine within minutes of eating, primarily in response to fat and carbohydrate. Like GLP-1, native GIP is destroyed by DPP-4 rapidly (half-life ~7 minutes). Like GLP-1, it triggers glucose-dependent insulin release from pancreatic beta cells. The two incretins together account for the "incretin effect" — the observation that oral glucose produces roughly twice the insulin response of the same amount of intravenous glucose, because the gut signals the pancreas before the glucose even arrives.
+
+GIP also acts on adipose tissue. And this is where the paradox begins.
+
+## The GIP paradox in fat tissue
+
+In its normal physiological role — pulsatile release during and after meals — GIP receptor signaling in adipocytes promotes fat storage. GIP increases lipoprotein lipase activity, which facilitates fatty acid uptake from blood into adipose cells. In the postprandial state, when you've just eaten and fat is circulating in blood, GIP tells fat cells to take it up and store it. This is why GIP was once called "gastric inhibitory polypeptide" with the somewhat derisive label of "the fat storage hormone."
+
+If that's what GIP does, why would activating the GIP receptor help with weight loss?
+
+The answer appears to involve what happens when the GIP receptor is activated **continuously** by a long-acting agonist, rather than pulsatily by native GIP after a meal. Sustained GIP receptor activation seems to shift adipocyte behavior in the opposite direction — reducing fat cell sensitivity to insulin, potentially increasing lipolysis (fat breakdown) rather than storage, and altering energy partitioning in ways that aren't yet fully characterized. The receptor may behave differently under tonic vs. pulsatile stimulation — a desensitization-related shift rather than a simple dose-response.
+
+<Callout type="caution" title="The mechanism here is actively debated">
+The adipose GIP receptor story is one of the least settled mechanisms in this entire space. Preclinical data is internally contradictory across different models. There are researchers who argue GIP receptor activation in fat tissue is the primary driver of tirzepatide's superior weight loss. There are others who argue the GIP contribution is primarily via the pancreas and brain, and the adipose effect is minor. The clinical outcome (more weight loss) is established. The mechanistic explanation remains contested. This is a case where you should hold the outcome data as solid and the mechanism as provisional.
+</Callout>
+
+## What tirzepatide adds in the CNS
+
+GIP receptors are also expressed in the hypothalamus, and there's accumulating evidence that GIP signaling in the brain contributes to satiety independently of GLP-1 pathways. In rodent models, combined GLP-1R/GIPR agonism in the brain produces synergistic appetite suppression greater than either receptor alone — meaning the two pathways aren't simply additive, they interact in the satiety circuit. This may be more important for explaining tirzepatide's weight loss advantage than anything happening in fat tissue.
+
+## The SURMOUNT trials
+
+SURMOUNT-1 randomized 2,539 adults with obesity (or overweight plus comorbidity, without diabetes) to tirzepatide 5, 10, or 15 mg weekly or placebo for 72 weeks. At 15 mg, mean weight reduction was 20.9% — compared to 2.3% in the placebo group. Approximately 37% of participants in the 15 mg group achieved ≥25% weight loss. These are numbers that previously required bariatric surgery to achieve pharmacologically.
+
+SURMOUNT-2 conducted the same design in adults with type 2 diabetes and obesity — weight loss was somewhat lower (12–15% range), consistent with the well-established finding that metabolic disease modulates the weight loss response to GLP-1 family drugs.
+
+The lean mass concern applies here as well. SURMOUNT-1 body composition data showed lean mass loss as a fraction of total weight reduction. Given tirzepatide's larger absolute weight loss, the absolute lean mass reduction is larger than with semaglutide, even if the proportion is similar.
+
+<Callout type="key" title="Mounjaro vs. Zepbound — same molecule, different indication economics">
+Like semaglutide, tirzepatide exists under two brand names for different indications. Mounjaro (T2D) and Zepbound (obesity) are pharmacologically identical — same molecule, same doses. The two approvals exist because diabetes and obesity are different FDA indications requiring separate Phase 3 trials. Insurance coverage and pricing differ dramatically between them, which is why the brand name matters practically even though the drug doesn't change.
+</Callout>
+
+## How to compare tirzepatide to semaglutide
+
+No head-to-head randomized trial has directly compared semaglutide 2.4 mg (the Wegovy dose) to tirzepatide 15 mg in obesity without diabetes — the SURMOUNT-5 trial is completing this but was still enrolling at the time of this module's writing. Cross-trial comparisons have methodological issues (different populations, different timepoints), but the consistent pattern is: tirzepatide at the highest approved dose produces approximately 5–6 percentage points more absolute weight reduction than semaglutide 2.4 mg, and a higher fraction of patients reaching thresholds like 20% or 25% weight loss.
+
+Both drugs share the same core GI side-effect profile: nausea, vomiting, diarrhea during dose escalation; reduced appetite throughout. The titration schedules serve the same purpose — slow escalation to minimize GI events while the gut adapts.
+
+<Checkpoint number={3}>
+<span slot="question">GIP's physiological role in fat tissue is to promote fat storage after meals. Given that, why doesn't tirzepatide — which activates the GIP receptor alongside GLP-1R — simply put fat away faster and undermine weight loss? What's the proposed explanation for why it doesn't?</span>
+
+The paradox is that native GIP (pulsatile, meal-driven) and sustained pharmacological GIP receptor activation by tirzepatide appear to produce different adipocyte responses. The proposed explanation involves tonic vs. pulsatile receptor engagement: native GIP acts briefly and intermittently during and after meals, which is when it makes metabolic sense to promote fat storage. Tirzepatide provides sustained, continuous GIP receptor stimulation — a stimulus the receptor was never designed to experience — which appears to shift adipocyte signaling in a different direction, potentially toward reduced insulin sensitivity and altered lipolysis. The mechanism is not fully established and is actively debated. The parallel CNS contribution complicates attribution further: GIP receptors in the hypothalamus contribute to satiety independently of what's happening in fat cells, and this CNS pathway may be the more important contributor to tirzepatide's weight loss advantage. The honest summary: the outcome (more weight loss than semaglutide alone) is well-established; which GIP receptor mechanism accounts for it is not resolved.
+</Checkpoint>
+
+The next lesson adds a third receptor to the picture — and introduces the regulatory dispute that's going to determine whether retatrutide is even classified as a drug.

@@ -1,0 +1,61 @@
+---
+module: "11-glp1-analogs"
+order: 2
+title: Semaglutide — the clinical evidence, the cardiovascular signal, and the compounding controversy
+summary: How semaglutide's structure produces once-weekly dosing, what the STEP and SELECT trials actually demonstrated, why the heart and kidney outcomes surprised people, and why compounding semaglutide became a legal battleground.
+duration: "5 min"
+---
+
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+
+<Term id="semaglutide">Semaglutide</Term> is a 26-amino acid GLP-1 analog built from three modifications to the native GLP-1(7-37) sequence. The position-2 alanine is replaced with Aib (blocking DPP-4 cleavage). A C-18 fatty diacid chain is attached to the lysine at position 26 via a short linker. And two minor backbone substitutions further reduce proteolytic susceptibility. The result is a molecule that achieves approximately 80–90% subcutaneous bioavailability and a plasma half-life of roughly 165 hours — close enough to 7 days that once-weekly dosing maintains steady-state plasma concentrations with minimal fluctuation.
+
+The drug exists under two brand names for the same reason most blockbuster molecules do: the approval indication controls the label, and different indications need separate clinical trials.
+
+**Ozempic** (up to 2 mg/week) — approved for type 2 diabetes management. The pivotal SUSTAIN trial series demonstrated HbA1c reductions of 1.0–1.8% over 30–40 weeks, along with meaningful body weight reduction as a consistent secondary finding. SUSTAIN-6 is the landmark trial: 3,297 patients with type 2 diabetes and high cardiovascular risk, randomized to semaglutide or placebo. Result: 26% relative risk reduction in major adverse cardiovascular events (MACE: nonfatal MI, nonfatal stroke, cardiovascular death). This was a cardiovascular outcomes trial, which is a different class of evidence from a weight-loss efficacy trial. It established that semaglutide reduces actual heart events in high-risk patients — not just surrogates.
+
+**Wegovy** (up to 2.4 mg/week) — approved for chronic weight management. The STEP trial series ran in adults with obesity or overweight plus at least one comorbidity, without requiring diabetes. STEP-1: 1,961 patients, 68 weeks. Mean weight loss: 14.9% of body weight in the semaglutide group vs. 2.4% with placebo. STEP-5 extended this to 104 weeks and showed the effect was sustained. SELECT (2023) — 17,604 patients with obesity but without diabetes — showed a 20% reduction in MACE with semaglutide 2.4 mg vs. placebo. This confirmed the cardiovascular benefit extends to people without diabetes, at higher doses.
+
+## What's actually driving the weight loss
+
+The mechanism is multifactorial in a way that's worth being precise about. GLP-1 receptor activation does three things that each contribute:
+
+**Central appetite suppression** is probably the dominant effect at therapeutic doses. GLP-1 receptors in the arcuate nucleus and nucleus tractus solitarius reduce meal size, reduce meal frequency, and reduce the reward-driven eating that's independent of hunger. Patients on semaglutide consistently report that food is less compelling — not just less wanted, but less interesting. This is a CNS effect, not simply "fullness."
+
+**Gastric emptying slowing** blunts post-meal glycemic peaks and prolongs satiety signals from stretch receptors. This is real but probably a secondary contributor to weight loss, since the gastric emptying effect partially attenuates over time as the gut adapts.
+
+**Indirect metabolic effects** — improved insulin sensitivity, reduced glucagon, lower fasting glucose — collectively shift the body into less lipogenic conditions, but these are downstream of the weight loss rather than independent drivers of it.
+
+<Callout type="key" title="The SELECT finding changes the conversation">
+The SELECT trial's 20% MACE reduction in non-diabetic obese patients was not expected to be as large as it was. Some cardiovascular benefit could plausibly follow from weight loss and metabolic improvement — but the effect size was too large to explain purely through weight-mediated mechanisms. Cardiologists now take seriously that GLP-1 receptors on cardiac tissue and in the vasculature are producing direct cardioprotective effects, possibly through reduced inflammation, improved endothelial function, or direct myocardial signaling. The mechanism is not pinned down. What's settled is that the signal is real at the trial level.
+</Callout>
+
+## The muscle mass problem
+
+GLP-1 analog-induced weight loss has a composition problem: a meaningful fraction of what's lost is lean mass, not fat. In the STEP trials, approximately 30–40% of total weight lost was estimated to be lean mass — varying by study, methodology, and individual factors. This is not unique to GLP-1 analogs — rapid caloric restriction of any kind produces some lean mass loss, and the proportion tends to be higher with faster or larger weight reduction. But the scale of weight loss with semaglutide (and even more so tirzepatide and retatrutide) means the absolute lean mass reduction is substantial.
+
+The practical concern is compounded by the population taking these drugs: older patients with obesity frequently already have sarcopenic obesity — inadequate muscle mass relative to fat mass. Significant lean mass loss during treatment could leave them metabolically and functionally worse off in some respects even as metabolic risk factors improve.
+
+This is an active area of research, not a settled safety finding. Resistance exercise and adequate protein intake during GLP-1 analog treatment appear to substantially reduce lean mass loss. Whether that's systematically integrated into treatment protocols is a different question.
+
+<Callout type="caution" title="Stopping = regain">
+Weight regain after GLP-1 analog discontinuation is well-documented. STEP-4 randomized patients who'd achieved weight loss on semaglutide to continue or switch to placebo — the placebo group regained approximately two-thirds of their weight loss over the following year. This is not a failure of the drug; it's the expected behavior of a compound that's treating a chronic condition by suppressing appetite signaling. When the signal goes away, the underlying biology reasserts. The clinical implication: GLP-1 analogs are maintenance drugs for most patients, not courses.
+</Callout>
+
+## The compounding controversy
+
+During 2022–2023, semaglutide (Ozempic and Wegovy) was placed on the FDA's drug shortage list. When an FDA-approved drug is on shortage, compounding pharmacies may legally compound it — producing copies for patients who can't access the branded version. A significant market for compounded semaglutide developed.
+
+By late 2023, Novo Nordisk's supply had caught up. The FDA moved to remove semaglutide from the shortage list, which would require compounding pharmacies to stop producing it. Several compounders filed legal challenges arguing the shortage wasn't truly resolved, and that their products used different salt forms (semaglutide sodium or acetate vs. the free base form in Ozempic/Wegovy) that constituted distinct compounds not covered by the shortage removal. Courts have issued mixed rulings; the situation remained contested.
+
+The pharmacological issue underneath the legal dispute: compounded semaglutide is not the same thing as Ozempic or Wegovy. The FDA has not verified the purity, potency, formulation, or bioavailability of compounded versions. Some compounders have legitimate third-party COAs (apply the Module 5 framework); many do not. Patients accessing compounded semaglutide for cost reasons are operating in the same evidence gap as any research peptide — without the safety and efficacy verification that FDA approval represents.
+
+<Checkpoint number={2}>
+<span slot="question">The SELECT trial found a 20% reduction in major adverse cardiovascular events with semaglutide in non-diabetic obese patients. A commentator argues this is entirely explained by weight loss — lighter patients have healthier hearts. What would you need to argue that the benefit goes beyond weight-mediated effects, and is that argument supported?</span>
+
+To argue beyond weight-mediated effects, you'd want to show either (a) the cardiovascular benefit exceeds what's predicted from the observed weight loss alone based on prior cardiovascular risk models, (b) GLP-1 receptors on cardiac tissue are demonstrably active and produce cardioprotective downstream signaling, or (c) the benefit appears in subgroups where weight change was minimal. The SELECT data is consistent with some direct mechanism beyond weight: the effect size was larger than expected from cardiovascular risk equations based on weight reduction alone. The mechanistic support exists — GLP-1 receptors are expressed in cardiomyocytes, endothelial cells, and macrophages; preclinical data shows GLP-1R activation reduces inflammation and improves cardiac metabolic efficiency independent of body weight. The argument that it goes beyond weight-mediated effects is well-supported at the level of plausibility and partially supported at the trial level, but a definitive demonstration would require a controlled trial that equalized weight loss across arms — which hasn't been done. The honest framing: the signal is real, the mechanism is plausible, full attribution to non-weight-mediated effects is not yet established.
+</Checkpoint>
+
+The next lesson introduces tirzepatide — what happens when you add a second receptor to the picture, and why GIP's role in this story is stranger than it looks.
